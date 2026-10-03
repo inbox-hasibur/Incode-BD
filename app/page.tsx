@@ -9,11 +9,14 @@ import {
   Sparkles, 
   Cpu, 
   Code2, 
-  Palette,
-  ExternalLink 
+  Palette 
 } from "lucide-react";
 
 export default function Home() {
+  const formUrl =
+    process.env.NEXT_PUBLIC_INTERNSHIP_FORM_URL ||
+    "https://forms.gle/dE1ivECwFbrzrLHf6";
+
   return (
     <main className="relative min-h-screen w-full flex flex-col justify-between items-center bg-[#090A0F] text-slate-100 px-4 sm:px-6 md:px-8 py-6 sm:py-8 overflow-hidden cyber-grid selection:bg-[#C6F135] selection:text-black">
       {/* Dynamic Ambient Glow Backdrops */}
@@ -36,19 +39,16 @@ export default function Home() {
           </span>
         </div>
 
-        {/* Live Status indicator */}
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] backdrop-blur-md">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6F135] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C6F135]"></span>
-          </span>
-          <span className="text-xs font-medium text-slate-300 hidden sm:inline">
-            Status: Initializing Core
-          </span>
-          <span className="text-xs font-medium text-slate-300 sm:hidden">
-            Active
-          </span>
-        </div>
+        {/* Location Badge (Google Maps) */}
+        <a 
+          href="https://maps.google.com/?q=W95W%2BG8Q+Tongi" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] hover:border-[#C6F135]/40 backdrop-blur-md text-xs font-medium text-slate-300 hover:text-white transition-colors group"
+        >
+          <MapPin className="w-3.5 h-3.5 text-[#C6F135] group-hover:scale-110 transition-transform" />
+          <span>W95W+G8Q Tongi</span>
+        </a>
       </header>
 
       {/* Main Hero Container (Centered) */}
@@ -74,9 +74,14 @@ export default function Home() {
           <Sparkles className="w-3.5 h-3.5 flex-shrink-0" />
           <span>Official Launching This October</span>
           <span className="text-white/40">|</span>
-          <span className="inline-flex items-center gap-1 text-slate-200">
-            <MapPin className="w-3 h-3 text-[#C6F135]" /> College Gate, Dhaka
-          </span>
+          <a
+            href="https://maps.google.com/?q=W95W%2BG8Q+Tongi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-slate-200 hover:text-[#C6F135] transition-colors"
+          >
+            <MapPin className="w-3 h-3 text-[#C6F135]" /> College Gate, Tongi
+          </a>
         </div>
 
         {/* Brand Title */}
@@ -114,7 +119,7 @@ export default function Home() {
         {/* Primary Call To Action (Neon Button) */}
         <div className="flex flex-col items-center gap-3 w-full max-w-md">
           <a
-            href={process.env.NEXT_PUBLIC_INTERNSHIP_FORM_URL || "https://forms.google.com"}
+            href={formUrl}
             target="_blank"
             rel="noopener noreferrer"
             id="apply-internship-cta"
@@ -136,9 +141,9 @@ export default function Home() {
         <p>© 2026 Incode BD. All rights reserved.</p>
 
         {/* Quick Social & Contact links */}
-        <div className="flex items-center gap-6 text-slate-400">
+        <div className="flex flex-wrap items-center justify-center gap-6 text-slate-400">
           <a
-            href="https://facebook.com"
+            href="https://facebook.com/incodebd"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#C6F135] transition-colors"
@@ -146,12 +151,21 @@ export default function Home() {
             Facebook
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/incodebd/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#C6F135] transition-colors"
           >
             LinkedIn
+          </a>
+          <a
+            href="https://maps.google.com/?q=W95W%2BG8Q+Tongi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#C6F135] transition-colors flex items-center gap-1"
+          >
+            <MapPin className="w-3 h-3 text-[#C6F135]" />
+            <span>W95W+G8Q Tongi</span>
           </a>
           <a
             href="mailto:contact@incodebd.com"
