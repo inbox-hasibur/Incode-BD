@@ -125,7 +125,7 @@ export default function Home() {
             id="apply-internship-cta"
             className="btn-neon w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base sm:text-lg font-bold tracking-wide cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#C6F135] focus:ring-offset-2 focus:ring-offset-[#090A0F]"
           >
-            <span>Apply for Practicum / Internship</span>
+            <span>Apply for Internship</span>
             <ArrowUpRight className="w-5 h-5 text-[#090A0F] stroke-[2.5]" />
           </a>
 
