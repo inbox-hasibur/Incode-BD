@@ -114,7 +114,7 @@ export default function Home() {
         {/* Primary Call To Action (Neon Button) */}
         <div className="flex flex-col items-center gap-3 w-full max-w-md">
           <a
-            href="https://forms.google.com"
+            href={process.env.NEXT_PUBLIC_INTERNSHIP_FORM_URL || "https://forms.google.com"}
             target="_blank"
             rel="noopener noreferrer"
             id="apply-internship-cta"
