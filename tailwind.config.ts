@@ -9,18 +9,43 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        cyber: {
+          bg: "#0A0D14",
+          surface: "#0F1420",
+          card: "#121826",
+          border: "#1E293B",
+          lime: "#B4F000",
+          "lime-glow": "#C2F826",
+          "lime-dim": "#8BC200",
+        },
         brand: {
-          lime: "#C6F135",
-          "lime-glow": "#B4E620",
-          "lime-light": "#E0FAA0",
-          "lime-dim": "#8EA71A",
-          dark: "#090A0F",
-          card: "#0E1218",
-          border: "#1C2430",
+          lime: "#B4F000",
+          "lime-glow": "#C2F826",
+          "lime-light": "#E4FFA0",
+          "lime-dim": "#8BC200",
+          dark: "#0A0D14",
+          card: "#0F1420",
+          border: "#1E293B",
         },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+      },
+      animation: {
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "glow-slow": "glow 4s ease-in-out infinite alternate",
+        "float-slow": "float 5s ease-in-out infinite",
+        "spin-slow": "spin 20s linear infinite",
+      },
+      keyframes: {
+        glow: {
+          "0%": { opacity: "0.4", transform: "scale(0.98)" },
+          "100%": { opacity: "0.85", transform: "scale(1.02)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
       },
     },
   },

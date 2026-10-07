@@ -1,0 +1,179 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import {
+  Cpu,
+  Server,
+  Palette,
+  CheckCircle2,
+  ArrowUpRight,
+  Radio,
+  Layers,
+  Code2
+} from "lucide-react";
+
+export default function PillarsSection() {
+  const pillars = [
+    {
+      id: "hardware",
+      badge: "Pillar 01 // Embedded Hardware & IoT",
+      icon: Cpu,
+      title: "Hardware & IoT Systems",
+      tagline: "Connecting the physical world to cloud architectures.",
+      description:
+        "We build connected hardware devices — from pet and vehicle telematics GPS trackers to touch-capacitive smart switchboards and autonomous drone flight platforms.",
+      highlights: [
+        "Incode Track: Smart Pet & Livestock GPS/LoRa tracking",
+        "Vehicle & Transit Telematics with custom route maps",
+        "ESP32, STM32, and Nordic BLE low-power firmware",
+        "Custom PCB design, prototyping & assembly at our Dhaka lab",
+      ],
+      specs: [
+        { label: "Hardware", val: "ESP32-S3 Dual-Core" },
+        { label: "Latency", val: "< 120ms to Cloud" },
+        { label: "Endurance", val: "30-Day LiPo Sleep" },
+      ],
+      ctaText: "View Hardware & Products",
+      ctaHref: "/products",
+    },
+    {
+      id: "software",
+      badge: "Pillar 02 // Cloud & Distributed Architecture",
+      icon: Server,
+      title: "Enterprise Software & SaaS",
+      tagline: "Resilient systems, custom ERPs, and automated workflows.",
+      description:
+        "Building mission-critical business platforms: from AI-driven ERPs and CRM/HRMs to ISP billing engines and Khobor AI daily news aggregation.",
+      highlights: [
+        "Custom ERP, CRM, and biometric HRM attendance systems",
+        "ISP billing automation with MikroTik & MFS integration",
+        "Khobor AI: Automated news aggregation & neural audio summaries",
+        "High-performance Next.js 14 App Router & PostgreSQL/Supabase",
+      ],
+      specs: [
+        { label: "Framework", val: "Next.js App Router" },
+        { label: "Database", val: "PostgreSQL & Supabase" },
+        { label: "Architecture", val: "Serverless & Docker" },
+      ],
+      ctaText: "Explore Commercial Services",
+      ctaHref: "/services",
+    },
+    {
+      id: "aesthetics",
+      badge: "Pillar 03 // Visual Craft & Digital Art",
+      icon: Palette,
+      title: "Creative Technology & Aesthetics",
+      tagline: "Where rigorous engineering meets high-conversion design.",
+      description:
+        "We reject bland, cookie-cutter templates. We fuse WebGL 3D viewports, dark cyber-aesthetics, and fluid micro-interactions to build memorable digital flagships.",
+      highlights: [
+        "Awwwards-standard cyber-dark design systems",
+        "Interactive Three.js 3D geometric particles & canvas",
+        "Smooth kinetic animations powered by Framer Motion",
+        "100/100 Google Lighthouse Core Web Vitals performance",
+      ],
+      specs: [
+        { label: "3D Engine", val: "Three.js / WebGL" },
+        { label: "Animation", val: "CSS GPU & Motion" },
+        { label: "Design Token", val: "Dark Slate & Lime" },
+      ],
+      ctaText: "Learn About Our Craft",
+      ctaHref: "/about",
+    },
+  ];
+
+  return (
+    <section id="solutions" className="relative py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5 circuit-grid">
+      
+      {/* Section Header */}
+      <div className="max-w-7xl mx-auto mb-14 text-center">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono text-[#B4F000] mb-3">
+          <Layers className="w-3.5 h-3.5" />
+          <span>CORE ENGINEERING CAPABILITIES</span>
+        </div>
+
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+          The Three Engineering Pillars
+        </h2>
+        <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">
+          How Incode BD solves high-stakes business challenges with integrated hardware, cloud architectures, and visual craft.
+        </p>
+      </div>
+
+      {/* Bento Grid */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {pillars.map((pillar) => {
+          const IconComponent = pillar.icon;
+
+          return (
+            <div
+              key={pillar.id}
+              className="glass-card-interactive relative rounded-2xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden group border border-white/10"
+            >
+              <div>
+                {/* Badge & Icon Header */}
+                <div className="flex items-center justify-between mb-5">
+                  <span className="text-[11px] font-mono tracking-wider uppercase text-[#B4F000] px-2.5 py-1 rounded-lg bg-[#B4F000]/10 border border-[#B4F000]/20">
+                    {pillar.badge}
+                  </span>
+                  <div className="w-10 h-10 rounded-xl bg-[#0F1420] border border-white/10 flex items-center justify-center text-[#B4F000] group-hover:scale-105 transition-transform shadow-md">
+                    <IconComponent className="w-5 h-5" />
+                  </div>
+                </div>
+
+                {/* Title & Tagline */}
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-1.5 group-hover:text-[#B4F000] transition-colors">
+                  {pillar.title}
+                </h3>
+                <p className="text-xs font-mono text-slate-300 mb-4">
+                  {pillar.tagline}
+                </p>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                  {pillar.description}
+                </p>
+
+                {/* Bullet Highlights */}
+                <ul className="space-y-2 mb-6 text-xs text-slate-300">
+                  {pillar.highlights.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#B4F000] flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                {/* Technical Specifications Grid */}
+                <div className="pt-4 border-t border-white/10 grid grid-cols-3 gap-2 mb-5">
+                  {pillar.specs.map((spec, sIdx) => (
+                    <div key={sIdx} className="bg-white/[0.02] p-2 rounded-lg border border-white/5">
+                      <p className="text-[9px] font-mono uppercase text-slate-400 truncate">
+                        {spec.label}
+                      </p>
+                      <p className="text-xs font-mono font-bold text-slate-200 truncate mt-0.5">
+                        {spec.val}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Action Link */}
+                <Link
+                  href={pillar.ctaHref}
+                  className="btn-neon w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide"
+                >
+                  <span>{pillar.ctaText}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+                </Link>
+              </div>
+
+            </div>
+          );
+        })}
+      </div>
+
+    </section>
+  );
+}

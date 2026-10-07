@@ -4,52 +4,79 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 9, 10, 15;
-  --background-end-rgb: 5, 6, 9;
+  --background-start-rgb: 10, 13, 20;
+  --background-end-rgb: 6, 8, 12;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: #090a0f;
+  background: #0A0D14;
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
 
+/* Custom sleek dark scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0D14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B4F000;
+}
+
 /* Cyber ambient grid */
 .cyber-grid {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(198, 241, 53, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(198, 241, 53, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(180, 240, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(180, 240, 0, 0.035) 1px, transparent 1px);
+}
+
+.circuit-grid {
+  background-size: 60px 60px;
+  background-image:
+    radial-gradient(circle at 10px 10px, rgba(180, 240, 0, 0.12) 1.5px, transparent 0),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
 /* Subtle radial glow */
 .ambient-glow {
   background: radial-gradient(
-    circle at 50% 40%,
-    rgba(198, 241, 53, 0.12) 0%,
-    rgba(34, 197, 94, 0.05) 30%,
-    rgba(9, 10, 15, 0) 70%
+    circle at 50% 30%,
+    rgba(180, 240, 0, 0.14) 0%,
+    rgba(180, 240, 0, 0.04) 40%,
+    rgba(10, 13, 20, 0) 75%
   );
 }
 
 /* Neon glow button */
 .btn-neon {
-  background-color: #c6f135;
-  color: #090a0f;
-  box-shadow: 0 0 20px rgba(198, 241, 53, 0.35), 0 0 45px rgba(198, 241, 53, 0.15);
+  background-color: #B4F000;
+  color: #0A0D14;
+  box-shadow: 0 0 20px rgba(180, 240, 0, 0.4), 0 0 45px rgba(180, 240, 0, 0.15);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-neon:hover {
-  background-color: #d6ff47;
-  box-shadow: 0 0 30px rgba(198, 241, 53, 0.6), 0 0 60px rgba(198, 241, 53, 0.3);
+  background-color: #C2F826;
+  box-shadow: 0 0 30px rgba(180, 240, 0, 0.7), 0 0 65px rgba(180, 240, 0, 0.3);
   transform: translateY(-2px) scale(1.02);
 }
 
@@ -59,14 +86,28 @@ body {
 
 /* Glass card styling */
 .glass-panel {
-  background: rgba(14, 18, 24, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(15, 20, 32, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-panel:hover {
-  border-color: rgba(198, 241, 53, 0.25);
+  border-color: rgba(180, 240, 0, 0.3);
+}
+
+.glass-card-interactive {
+  background: rgba(15, 20, 32, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-interactive:hover {
+  transform: translateY(-4px);
+  border-color: rgba(180, 240, 0, 0.4);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.6), 0 0 24px -4px rgba(180, 240, 0, 0.15);
 }
 
 /* Text shimmer */
@@ -75,7 +116,7 @@ body {
     90deg,
     #ffffff 0%,
     #ffffff 40%,
-    #c6f135 60%,
+    #B4F000 60%,
     #ffffff 80%,
     #ffffff 100%
   );
@@ -90,4 +131,14 @@ body {
   to {
     background-position: 200% center;
   }
+}
+
+/* Pulsing radar dot */
+@keyframes radar-ping {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.radar-ping {
+  animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
