@@ -15,10 +15,10 @@ interface BotState {
 }
 
 const BOT_MESSAGES = [
-  "Beep boop! Delivering IoT packets to Tongi Lab! 📦",
+  "Beep boop! Delivering IoT packets to Tongi Workspace! 📦",
   "Hardware + Software + Aesthetics = Perfection ✨",
   "ESP32 firmware compiling... Status: 100% OK ⚡",
-  "Join our Engineering Fellowship! Apply now 🚀",
+  "Join our 3-4 Month Internship! Apply now 🚀",
   "Patrolling Akon Villa Ground Floor circuits 🔍",
   "Real-time NatSep audio pipeline operational 🎧",
   "Transit & Ubus tracking node online 🛰️",

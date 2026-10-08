@@ -53,7 +53,7 @@ export default function HeroSection() {
         {/* Clean Corporate Location & Status Pill */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono text-slate-300 mb-6 backdrop-blur-md">
           <span className="w-2 h-2 rounded-full bg-[#B4F000] animate-pulse" />
-          <span>Technology &amp; Prototyping Studio</span>
+          <span>Software &amp; IoT Solutions Company</span>
           <span className="text-white/20">•</span>
           <Link
             href="/about"
@@ -71,7 +71,7 @@ export default function HeroSection() {
 
         {/* Refined Subtitle */}
         <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed font-normal mb-8">
-          A production-grade technology studio building intelligent IoT ecosystems, customized enterprise software, and high-performance digital products.
+          A dedicated software company building intelligent IoT ecosystems, customized enterprise software, and high-performance digital products.
         </p>
 
         {/* Dual Call To Actions */}
@@ -181,10 +181,10 @@ export default function HeroSection() {
 
           <div className="glass-panel p-4 rounded-xl text-left border border-white/5">
             <span className="text-xl sm:text-2xl font-bold font-mono text-[#B4F000]">
-              Physical Lab
+              Physical Workspace
             </span>
             <p className="text-xs text-slate-300 mt-0.5">
-              College Gate Prototyping
+              College Gate Headquarters
             </p>
           </div>
 
@@ -193,7 +193,7 @@ export default function HeroSection() {
               Global Standards
             </span>
             <p className="text-xs text-slate-300 mt-0.5">
-              Production Code &amp; Security
+              High Reliability &amp; Security
             </p>
           </div>
         </div>

@@ -17,7 +17,7 @@ import {
 
 export default function LabSection() {
   const [commandHistory, setCommandHistory] = useState<string[]>([
-    "incode-cli --connect-lab --target=tongi-node-01",
+    "incode-cli --connect-workspace --target=tongi-node-01",
     "[HANDSHAKE]: Connected to Incode BD Physical Hardware Node at Akon Villa, Tongi.",
     "[STATUS]: ESP32-S3 Dual-Core 240MHz • Free Heap: 284KB • Signal: -42dBm (Strong)",
     "[SENSORS]: Temp: 26.2°C • Humidity: 54% • GPS: 23.9012° N, 90.3984° E (College Gate)",
@@ -38,7 +38,7 @@ export default function LabSection() {
         response = "[TELEMETRY]: All microservices and physical test benches operating at 99.99% uptime.";
         break;
       case "ping":
-        response = "[PONG]: Cloud gateway latency to Tongi Lab bench = 14ms.";
+        response = "[PONG]: Cloud gateway latency to Tongi workspace bench = 14ms.";
         break;
       case "sensors":
         response = "[READINGS]: Accelerometer: Active • GPS Lock: 8 Satellites • Battery: 4.12V LiPo.";
@@ -69,7 +69,7 @@ export default function LabSection() {
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B4F000]/10 border border-[#B4F000]/30 text-[#B4F000] text-xs font-mono mb-4">
             <Cpu className="w-3.5 h-3.5" />
-            <span>THE PHYSICAL ENGINEERING LAB</span>
+            <span>THE PHYSICAL WORKSPACE &amp; ENGINEERING HUB</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-6">
@@ -77,7 +77,7 @@ export default function LabSection() {
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            Most students and junior developers spend years trapped in mock tutorials. At our dedicated physical engineering lab in College Gate, Tongi, we solder real microcontrollers, deploy live telematics systems, and manage high-traffic cloud infrastructure.
+            Most students and junior developers spend years trapped in mock tutorials. At our dedicated physical workspace in College Gate, Tongi, we build real hardware prototypes, deploy live telematics systems, and manage high-traffic cloud infrastructure.
           </p>
         </div>
 

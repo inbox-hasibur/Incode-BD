@@ -13,8 +13,7 @@ import {
 } from "lucide-react";
 
 export default function LocationMapSection() {
-  const googleMapSearchUrl =
-    "https://maps.google.com/?q=Incode+BD+College+Gate+Tongi+Dhaka";
+  const googleMapSearchUrl = "https://maps.app.goo.gl/jeDY2fVmKujYxibK8";
   const embedMapUrl =
     "https://maps.google.com/maps?q=College+Gate+Tongi+Gazipur&t=&z=15&ie=UTF8&iwloc=&output=embed";
 
@@ -26,7 +25,7 @@ export default function LocationMapSection() {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[#B4F000] text-xs font-mono mb-3">
             <Compass className="w-3.5 h-3.5" />
-            <span>HEADQUARTERS &amp; PROTOTYPING FACILITY</span>
+            <span>HEADQUARTERS &amp; PHYSICAL WORKSPACE</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
@@ -50,10 +49,10 @@ export default function LocationMapSection() {
               </div>
 
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-1.5">
-                Incode BD Engineering Studio
+                Incode BD Software &amp; Hardware Workspace
               </h3>
               <p className="text-xs font-mono text-slate-400 mb-6">
-                Search Query: Incode BD, College Gate, Tongi
+                College Gate, Tongi, Gazipur-1711, Dhaka
               </p>
 
               {/* Address details */}
@@ -97,7 +96,7 @@ export default function LocationMapSection() {
                 <div className="flex items-center gap-3">
                   <Clock className="w-4 h-4 text-[#B4F000] flex-shrink-0" />
                   <div>
-                    <strong className="text-white block mb-0.5">Visiting &amp; Core Lab Hours:</strong>
+                    <strong className="text-white block mb-0.5">Visiting &amp; Core Workspace Hours:</strong>
                     <span>Saturday – Thursday: 10:00 AM – 6:00 PM BST</span>
                   </div>
                 </div>
@@ -113,7 +112,7 @@ export default function LocationMapSection() {
                 className="btn-neon flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold"
               >
                 <Search className="w-4 h-4" />
-                <span>Search Incode BD</span>
+                <span>Open Google Maps</span>
               </a>
 
               <a

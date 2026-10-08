@@ -46,7 +46,7 @@ export default function Footer() {
                   Incode <span className="text-[#B4F000]">BD</span>
                 </span>
                 <span className="text-[10px] font-mono tracking-widest text-slate-400 uppercase">
-                  Technology Studio
+                  Software Company
                 </span>
               </div>
             </Link>
@@ -85,7 +85,7 @@ export default function Footer() {
                 <Github className="w-4 h-4" />
               </a>
               <a
-                href="https://maps.google.com/?q=W95W%2BG8Q+Tongi"
+                href="https://maps.app.goo.gl/jeDY2fVmKujYxibK8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#B4F000] hover:border-[#B4F000]/40 transition"
@@ -114,7 +114,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/#lab" className="hover:text-[#B4F000] transition">
-                  The Physical Lab
+                  Physical Workspace
                 </Link>
               </li>
               <li>

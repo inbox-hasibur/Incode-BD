@@ -23,7 +23,11 @@ import {
   Briefcase,
   DollarSign,
   Coffee,
-  GraduationCap
+  GraduationCap,
+  Copy,
+  Check,
+  AlertTriangle,
+  X
 } from "lucide-react";
 
 const POSITIONS: JobPosition[] = [
@@ -31,20 +35,20 @@ const POSITIONS: JobPosition[] = [
     id: "swe-intern",
     title: "Software Engineering Intern",
     track: "Core Engineering",
-    badges: ["Full-Stack", "Next.js", "Production Code"],
-    slots: "3 Seats Available",
+    badges: ["Full-Stack", "Flexible Tech Stack", "Real Client Work"],
+    duration: "3-4 Month Internship",
     description:
-      "Work directly on production Next.js architectures, Supabase/PostgreSQL backends, real-time IoT websockets, and mission-critical client projects.",
+      "We believe strong fundamentals transcend any single framework. Whether you code in React, Node.js, Python, PHP/Laravel, Flutter, Go, or Java — we welcome developers across all stacks to work on real client projects and scalable software architectures.",
     responsibilities: [
-      "Author clean, maintainable TypeScript and Next.js App Router components.",
-      "Build optimized REST and WebSocket endpoints connecting IoT telemetry with cloud dashboards.",
-      "Participate in weekly architectural reviews, sprint planning, and staging QA deployments.",
-      "Receive complete mentorship for your university final project / capstone defense.",
+      "Develop clean, maintainable software components and REST/WebSocket APIs in your project's chosen stack.",
+      "Integrate web and mobile client applications with databases (PostgreSQL, MySQL, MongoDB) and IoT telemetry feeds.",
+      "Participate in weekly sprint syncs, architectural discussions, and staging QA deployments.",
+      "Receive complete practicum and capstone project support throughout, concluding with a comprehensive mock defense.",
     ],
     requirements: [
-      "Basic grasp of JavaScript/TypeScript, React fundamentals, and Git.",
-      "Familiarity with SQL or MongoDB databases.",
-      "Enthusiasm for real-world software shipping and collaborative problem solving.",
+      "Solid understanding of programming fundamentals, data structures, and Git version control.",
+      "Hands-on experience in any modern stack (React, Node, Python, Laravel, Flutter, or similar).",
+      "Problem-solving mindset and eagerness to build real-world software collaboratively.",
       "Open to university students and recent graduates in CSE / SE / EEE.",
     ],
   },
@@ -53,11 +57,11 @@ const POSITIONS: JobPosition[] = [
     title: "Associate Product Manager (APM)",
     track: "Management & Delivery",
     badges: ["Agile Sprints", "Client Liaison", "Roadmapping"],
-    slots: "2 Seats Available",
+    duration: "3-4 Month Internship",
     description:
       "Coordinate sprint cycles, interface between software/hardware engineers and client deliverables, track milestones, and ensure zero-delay project delivery.",
     responsibilities: [
-      "Organize daily standups, backlog refinement, and milestone tracking in Jira/Trello.",
+      "Organize sprint cycles, backlog refinement, and milestone tracking in Jira/Trello.",
       "Document client requirements into clear technical specifications and user stories.",
       "Collaborate closely with technical leads on resource allocation and release timelines.",
       "Facilitate seamless communication across engineering, marketing, and design tracks.",
@@ -74,7 +78,7 @@ const POSITIONS: JobPosition[] = [
     title: "Marketing & Growth Intern",
     track: "Brand & Outreach",
     badges: ["Campus Outreach", "B2B Deals", "Social Growth"],
-    slots: "2 Seats Available",
+    duration: "3-4 Month Internship",
     description:
       "Drive Incode BD brand visibility, manage university campus partnerships across IUT, DUET, AIUB, and leading universities, and execute digital marketing campaigns.",
     responsibilities: [
@@ -95,7 +99,7 @@ const POSITIONS: JobPosition[] = [
     title: "Creative & UI/UX Design Intern",
     track: "Creative Dev",
     badges: ["Figma", "Tailwind CSS", "Visual Craft"],
-    slots: "2 Seats Available",
+    duration: "3-4 Month Internship",
     description:
       "Design high-conversion dark-mode interfaces, author interactive design tokens in Figma, and build kinetic web layouts that leave lasting impressions.",
     responsibilities: [
@@ -116,9 +120,9 @@ const POSITIONS: JobPosition[] = [
     title: "IoT & Embedded Systems Intern",
     track: "Hardware Lab",
     badges: ["ESP32", "PCB Design", "Sensors"],
-    slots: "2 Seats Available",
+    duration: "3-4 Month Internship",
     description:
-      "Prototype connected GPS tracking collars, touch-sensor smart switches, flash ESP32 firmware, and work with physical lab oscilloscopes at our Tongi workspace.",
+      "Prototype connected GPS tracking collars, touch-sensor smart switches, flash ESP32 firmware, and work with physical workspace oscilloscopes and multimeters at College Gate.",
     responsibilities: [
       "Write and test C++ / MicroPython firmware for ESP32 and STM32 microcontrollers.",
       "Assemble and test physical breadboards, sensor modules (GPS, smoke, optical, touch).",
@@ -139,8 +143,25 @@ export default function CareersPage() {
     process.env.NEXT_PUBLIC_INTERNSHIP_FORM_URL ||
     "https://forms.gle/dE1ivECwFbrzrLHf6";
 
+  const [selectedJob, setSelectedJob] = useState<JobPosition | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
   const handleApplyClick = (job?: JobPosition) => {
-    window.open(formUrl, "_blank", "noopener,noreferrer");
+    if (job) {
+      setSelectedJob(job);
+    } else {
+      setSelectedJob(POSITIONS[0]);
+    }
+    setIsModalOpen(true);
+  };
+
+  const handleCopyEmail = () => {
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText("career@incodebd.com");
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2500);
+    }
   };
 
   return (
@@ -157,7 +178,7 @@ export default function CareersPage() {
         <div className="text-center max-w-4xl mx-auto pt-6 pb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-[#B4F000] text-xs font-mono mb-6 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-[#B4F000] animate-pulse" />
-            <span>INCODE BD FELLOWSHIP &amp; TALENT PROGRAM // ACTIVE RECRUITMENT</span>
+            <span>INCODE BD // 3-4 MONTH INTERNSHIP PROGRAM</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-5 leading-tight">
@@ -168,40 +189,40 @@ export default function CareersPage() {
           </h1>
 
           <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-normal mb-8">
-            Escape generic classroom theory. Join an active engineering studio where you work on real client deployments, physical IoT hardware, and scalable cloud architectures.
+            Escape generic classroom theory. Join an active engineering team where you work on real client deployments, IoT hardware, and scalable architectures across flexible modern tech stacks.
           </p>
 
           {/* Core Candidate Value Proposition Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 text-left">
             <div className="glass-panel p-4 rounded-xl border border-white/5">
               <GraduationCap className="w-4 h-4 text-[#B4F000] mb-2" />
-              <strong className="text-xs text-white block">Mock Defense Support</strong>
+              <strong className="text-xs text-white block">Practicum &amp; Capstone</strong>
               <span className="text-[11px] text-slate-300 leading-tight block mt-0.5">
-                Complete guidance for university project, thesis &amp; defense
+                Full practicum project support &amp; comprehensive mock defense at the end
               </span>
             </div>
 
             <div className="glass-panel p-4 rounded-xl border border-white/5">
               <DollarSign className="w-4 h-4 text-[#B4F000] mb-2" />
-              <strong className="text-xs text-white block">Client Earning Share</strong>
+              <strong className="text-xs text-white block">2K Monthly Installment</strong>
               <span className="text-[11px] text-slate-300 leading-tight block mt-0.5">
-                Paid revenue-share opportunities on live commercial projects
+                Transparent 2,000 BDT/month installment covering desk, kits &amp; cloud servers
               </span>
             </div>
 
             <div className="glass-panel p-4 rounded-xl border border-white/5">
-              <Coffee className="w-4 h-4 text-[#B4F000] mb-2" />
-              <strong className="text-xs text-white block">Chill &amp; Flexible Culture</strong>
+              <Layers className="w-4 h-4 text-[#B4F000] mb-2" />
+              <strong className="text-xs text-white block">Tech-Stack Flexible</strong>
               <span className="text-[11px] text-slate-300 leading-tight block mt-0.5">
-                Flexible hybrid hours (10 AM - 1 PM core days)
+                React, Node, Python, Laravel, Flutter + hybrid flexible hours
               </span>
             </div>
 
             <div className="glass-panel p-4 rounded-xl border border-white/5">
               <Award className="w-4 h-4 text-[#B4F000] mb-2" />
-              <strong className="text-xs text-white block">Certified Credentials</strong>
+              <strong className="text-xs text-white block">Client Projects &amp; Perks</strong>
               <span className="text-[11px] text-slate-300 leading-tight block mt-0.5">
-                Official recommendation letter &amp; verified work credentials
+                Official completion certificate &amp; client project revenue-share opportunities
               </span>
             </div>
           </div>
@@ -216,12 +237,12 @@ export default function CareersPage() {
             <div className="lg:col-span-6 relative aspect-[16/10] rounded-xl overflow-hidden border border-white/10 shadow-xl">
               <Image
                 src="/office-interior.jpg"
-                alt="Incode BD Engineering Lab Workspace at College Gate"
+                alt="Incode BD Physical Engineering Workspace at College Gate"
                 fill
                 className="object-cover"
               />
               <div className="absolute bottom-3 left-3 px-3 py-1 rounded bg-[#0A0D14]/90 border border-white/10 text-xs font-mono text-slate-200">
-                Akon Villa Ground Floor Prototyping Lab
+                Akon Villa Ground Floor Engineering Workspace
               </div>
             </div>
 
@@ -230,20 +251,23 @@ export default function CareersPage() {
                 Workspace &amp; Facilities
               </span>
               <h2 className="text-2xl font-bold text-white">
-                A Dedicated Air-Conditioned Studio Built for Makers
+                A Real, Dedicated Physical Workspace Built for Makers
               </h2>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                You won&apos;t be trapped in isolated Zoom calls all day. When you visit our College Gate facility, you get a clean personal workstation, high-speed optical fiber, electronic prototyping components, and a comfortable collaborative environment.
+                No corporate fluff or artificial claims — just an authentic, fan-cooled collaborative environment equipped with dedicated desks, high-speed fiber internet, hardware testing tools, and teammates who genuinely care about building software and hardware that works.
               </p>
               <div className="flex flex-wrap gap-2 text-xs font-mono text-slate-300 pt-1">
                 <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10">
                   📍 College Gate, Tongi
                 </span>
                 <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10">
-                  ⚡ 24/7 Power Backup
+                  🌀 Dedicated Desks &amp; Fans
                 </span>
                 <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10">
-                  ☕ Collaborative Lounge
+                  ⚡ High-Speed Fiber Internet
+                </span>
+                <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10">
+                  ☕ Collaborative Meeting Table
                 </span>
               </div>
             </div>
@@ -254,88 +278,120 @@ export default function CareersPage() {
         {/* ========================================================= */}
         {/* The 2-Step Transparent Application Protocol               */}
         {/* ========================================================= */}
-        <div className="mb-20 rounded-2xl p-6 sm:p-8 bg-gradient-to-r from-[#0F1420] via-[#121927] to-[#0F1420] border border-[#B4F000]/30 shadow-2xl">
+        <div id="application-protocol" className="mb-20 rounded-2xl p-6 sm:p-10 bg-gradient-to-r from-[#0F1420] via-[#121927] to-[#0F1420] border-2 border-[#B4F000]/40 shadow-2xl">
           
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
             <div>
-              <span className="text-xs font-mono font-bold tracking-widest text-[#B4F000] uppercase mb-1 block">
-                Direct Application Protocol
-              </span>
-              <h2 className="text-2xl font-extrabold text-white">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B4F000]/10 border border-[#B4F000]/30 text-[#B4F000] text-xs font-mono font-bold uppercase mb-2">
+                <span>Both Steps are 100% Mandatory</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-black text-white">
                 How to Apply in 2 Simple Steps
               </h2>
             </div>
 
-            <div className="flex items-center gap-2 text-xs font-mono text-slate-300 bg-white/5 px-3 py-1.5 rounded-xl border border-white/10 w-fit">
-              <MapPin className="w-3.5 h-3.5 text-[#B4F000]" />
+            <div className="flex items-center gap-2 text-xs font-mono text-slate-300 bg-white/5 px-3.5 py-2 rounded-xl border border-white/10 w-fit">
+              <MapPin className="w-4 h-4 text-[#B4F000]" />
               <span>Akon Villa, College Gate, Tongi</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+          {/* Big Critical Notice: BOTH STEPS MANDATORY */}
+          <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-amber-500/10 border-2 border-amber-400/50 flex items-start gap-4">
+            <AlertTriangle className="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" />
+            <div className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+              <strong className="text-amber-300 text-sm sm:text-base block font-bold mb-1 uppercase tracking-wide">
+                ⚠️ ATTENTION CANDIDATES: BOTH STEPS ARE STRICTLY MANDATORY!
+              </strong>
+              <span>
+                You <strong>MUST</strong> complete <strong>BOTH</strong> steps below. Do <strong>NOT</strong> only submit the form or only send an email. The Google Form is solely for <strong>contact details and questionnaires</strong> (class schedule &amp; background), while your formal application is reviewed from your <strong>emailed CV</strong>. Missing either step will result in an incomplete application!
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {/* Step 1 */}
-            <div className="bg-white/[0.02] p-5 rounded-xl border border-white/10 flex items-start gap-4">
-              <div className="w-9 h-9 rounded-xl bg-[#B4F000]/10 border border-[#B4F000]/30 text-[#B4F000] font-black font-mono text-base flex items-center justify-center flex-shrink-0">
-                01
-              </div>
-              <div className="space-y-1.5">
-                <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                  <span>Send Your Updated CV via Email</span>
+            <div className="bg-white/[0.03] p-6 rounded-2xl border-2 border-white/10 hover:border-[#B4F000]/40 transition flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#B4F000]/10 border border-[#B4F000]/30 text-[#B4F000] font-black font-mono text-lg flex items-center justify-center">
+                    01
+                  </div>
+                  <span className="text-xs px-2.5 py-1 rounded-full bg-[#B4F000]/15 text-[#B4F000] font-mono font-bold uppercase">
+                    Mandatory Step
+                  </span>
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-white mb-2 flex items-center gap-2">
+                  <span>Email Your Updated CV</span>
                   <Mail className="w-4 h-4 text-[#B4F000]" />
                 </h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  Email your CV or GitHub link to{" "}
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                  Send your updated CV, GitHub profile, or portfolio directly to:
+                </p>
+                <div className="flex items-center gap-2 flex-wrap mb-3">
                   <a
                     href="mailto:career@incodebd.com"
-                    className="text-[#B4F000] font-mono underline font-medium"
+                    className="text-[#B4F000] font-mono underline font-bold text-sm"
                   >
                     career@incodebd.com
                   </a>
-                </p>
-                <p className="text-[11px] font-mono text-slate-400 bg-black/40 px-2 py-0.5 rounded w-fit mt-1">
-                  Subject: [Role Name] - [Your University Name]
-                </p>
+                  <button
+                    onClick={handleCopyEmail}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-200 transition"
+                  >
+                    {copiedEmail ? <Check className="w-3.5 h-3.5 text-[#B4F000]" /> : <Copy className="w-3.5 h-3.5 text-[#B4F000]" />}
+                    <span>{copiedEmail ? "Copied Email!" : "Copy Email"}</span>
+                  </button>
+                </div>
               </div>
+              <p className="text-xs font-mono text-slate-400 bg-black/50 px-3 py-1.5 rounded-lg border border-white/5">
+                Subject format: [Role Name] - [Your University Name]
+              </p>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-white/[0.02] p-5 rounded-xl border border-white/10 flex items-start gap-4">
-              <div className="w-9 h-9 rounded-xl bg-[#B4F000]/10 border border-[#B4F000]/30 text-[#B4F000] font-black font-mono text-base flex items-center justify-center flex-shrink-0">
-                02
-              </div>
-              <div className="space-y-1.5 flex-1">
-                <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                  <span>Submit the Candidate Questionnaire</span>
+            <div className="bg-white/[0.03] p-6 rounded-2xl border-2 border-white/10 hover:border-[#B4F000]/40 transition flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#B4F000]/10 border border-[#B4F000]/30 text-[#B4F000] font-black font-mono text-lg flex items-center justify-center">
+                    02
+                  </div>
+                  <span className="text-xs px-2.5 py-1 rounded-full bg-[#B4F000]/15 text-[#B4F000] font-mono font-bold uppercase">
+                    Mandatory Step
+                  </span>
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-white mb-2 flex items-center gap-2">
+                  <span>Submit Contact Details &amp; Questionnaire</span>
                   <ExternalLink className="w-4 h-4 text-[#B4F000]" />
                 </h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  Fill in your academic schedule, preferred track, and technical stack via our candidate portal form.
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                  The Google form is for <strong>contact details and questionnaires</strong> — recording your academic class schedule, weekly shift availability, and preferred track.
                 </p>
-                <div className="pt-2">
-                  <a
-                    href={formUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-neon inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold"
-                  >
-                    <span>Open Screening Form</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
-                  </a>
-                </div>
+              </div>
+              <div className="pt-2">
+                <a
+                  href={formUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-neon w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold"
+                >
+                  <span>Open Contact Details &amp; Questionnaire Form</span>
+                  <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+                </a>
               </div>
             </div>
           </div>
 
           {/* Transparent Fellowship Subsidy Note */}
-          <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-300 font-mono">
+          <div className="pt-5 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm text-slate-300 font-mono">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-[#B4F000] flex-shrink-0" />
               <span>
-                Transparent Fellowship Option: Flexible 2K/month installment covering physical lab desk, hardware sensor kits &amp; cloud servers.
+                3-4 Month Internship: Flexible 2K/month installment covering physical workspace desk, hardware sensor kits, final mock defense &amp; practicum guidance.
               </span>
             </div>
             <span className="text-[#B4F000] font-semibold whitespace-nowrap">
-              Rolling Batch Admissions
+              Rolling Admissions Active
             </span>
           </div>
 
@@ -371,6 +427,131 @@ export default function CareersPage() {
         </div>
 
       </main>
+
+      {/* ========================================================= */}
+      {/* Interactive Application Modal Popup                      */}
+      {/* ========================================================= */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="max-w-2xl w-full bg-[#0D121D] border-2 border-[#B4F000] rounded-3xl p-6 sm:p-9 shadow-[0_0_80px_rgba(180,240,0,0.3)] text-left relative overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-5 right-5 p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Header */}
+            <div className="mb-4 pr-10">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B4F000]/15 border border-[#B4F000]/30 text-[#B4F000] text-xs font-mono font-bold uppercase mb-2">
+                <span>Both Steps are Strictly Mandatory</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black text-white">
+                Applying for {selectedJob?.title || "3-4 Month Internship"}
+              </h3>
+            </div>
+
+            {/* Big Alert Notice */}
+            <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-amber-500/10 border-2 border-amber-400/50 flex items-start gap-3.5">
+              <AlertTriangle className="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" />
+              <div className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                <strong className="text-amber-300 block font-bold mb-1 uppercase tracking-wide">
+                  ⚠️ BOTH STEPS ARE REQUIRED TO COMPLETE APPLICATION!
+                </strong>
+                <span>
+                  Please do <strong>NOT</strong> only submit the form or only send an email. You must email your CV for evaluation <strong>AND</strong> submit the form for your contact details and questionnaire.
+                </span>
+              </div>
+            </div>
+
+            {/* The 2 Steps */}
+            <div className="space-y-4 mb-6">
+              {/* Step 1 */}
+              <div className="p-5 rounded-2xl bg-white/[0.03] border-2 border-white/10">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs sm:text-sm font-mono font-bold text-[#B4F000] uppercase">
+                    Step 01 (Mandatory): Email Your Updated CV
+                  </span>
+                  <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-[#B4F000]/20 text-[#B4F000] font-mono font-bold">
+                    Required
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-300 mb-2">
+                  Email your CV, GitHub, or portfolio directly to{" "}
+                  <span className="text-[#B4F000] font-mono font-bold">career@incodebd.com</span>
+                </p>
+                <p className="text-xs font-mono text-slate-400 bg-black/60 px-3 py-1 rounded border border-white/5 mb-3">
+                  Subject: [{selectedJob?.title || "Role"}] - [Your University Name]
+                </p>
+                <div className="flex flex-wrap gap-2.5">
+                  <a
+                    href={`mailto:career@incodebd.com?subject=${encodeURIComponent(
+                      `${selectedJob?.title || "Internship"} Application - [Your University Name]`
+                    )}`}
+                    className="btn-neon inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span>Compose Email Now</span>
+                  </a>
+                  <button
+                    onClick={handleCopyEmail}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-200 transition"
+                  >
+                    {copiedEmail ? <Check className="w-3.5 h-3.5 text-[#B4F000]" /> : <Copy className="w-3.5 h-3.5 text-[#B4F000]" />}
+                    <span>{copiedEmail ? "Copied career@incodebd.com" : "Copy Email Address"}</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Step 2 */}
+              <div className="p-5 rounded-2xl bg-white/[0.03] border-2 border-white/10">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs sm:text-sm font-mono font-bold text-slate-200 uppercase">
+                    Step 02 (Mandatory): Submit Contact Details &amp; Questionnaire
+                  </span>
+                  <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-white/15 text-slate-200 font-mono font-bold">
+                    Required
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-300 mb-3">
+                  This form is strictly for your <strong>contact details and questionnaires</strong> (recording class schedule, shift timings, and tech preferences).
+                </p>
+                <a
+                  href={formUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-neon inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold"
+                >
+                  <span>Open Contact Details &amp; Questionnaire Form</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            {/* Footer action */}
+            <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-400">
+                Tongi Physical Workspace • 3-4 Month Program
+              </span>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="px-5 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-xs font-semibold text-white transition"
+              >
+                I Understand &amp; Will Complete Both
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>

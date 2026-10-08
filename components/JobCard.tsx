@@ -21,7 +21,8 @@ export interface JobPosition {
   description: string;
   responsibilities: string[];
   requirements: string[];
-  slots: string;
+  slots?: string;
+  duration?: string;
 }
 
 export default function JobCard({
@@ -62,15 +63,15 @@ export default function JobCard({
         </p>
 
         {/* Quick Specs metadata */}
-        <div className="flex items-center gap-4 text-xs font-mono text-slate-400 mb-5 pb-5 border-b border-white/5">
+        <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400 mb-5 pb-5 border-b border-white/5">
           <span className="flex items-center gap-1.5">
-            <MapPin className="w-3.5 h-3.5 text-[#B4F000]" /> Tongi Physical Lab
+            <MapPin className="w-3.5 h-3.5 text-[#B4F000]" /> Tongi Physical Workspace
           </span>
           <span className="flex items-center gap-1.5">
             <Clock className="w-3.5 h-3.5 text-[#B4F000]" /> 10 AM - 1 PM Hybrid
           </span>
           <span className="flex items-center gap-1.5 text-slate-300">
-            <Briefcase className="w-3.5 h-3.5 text-[#B4F000]" /> {job.slots}
+            <Briefcase className="w-3.5 h-3.5 text-[#B4F000]" /> {job.duration || "3-4 Month Internship"}
           </span>
         </div>
 

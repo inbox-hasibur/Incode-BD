@@ -160,7 +160,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto rounded-2xl p-8 sm:p-12 glass-panel border border-[#B4F000]/30 text-center relative overflow-hidden shadow-2xl">
             
             <span className="text-xs font-mono uppercase text-[#B4F000] tracking-wider block mb-2">
-              Incode BD Prototyping Studio
+              Incode BD Engineering Workspace
             </span>
 
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
@@ -168,7 +168,7 @@ export default function Home() {
             </h2>
 
             <p className="text-xs sm:text-base text-slate-300 max-w-xl mx-auto mb-8 font-normal leading-relaxed">
-              Explore our Fellowship programs for aspiring engineers, or partner with our studio to engineer your company&apos;s custom software and IoT hardware.
+              Explore our 3-4 Month Internship for aspiring engineers, or partner with our software company to engineer your company&apos;s custom software and IoT hardware.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">

@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 export default function AboutPage() {
-  const googleMapUrl = "https://maps.google.com/?q=Incode+BD+College+Gate+Tongi";
+  const googleMapUrl = "https://maps.app.goo.gl/jeDY2fVmKujYxibK8";
   const embedMapUrl =
     "https://maps.google.com/maps?q=College+Gate+Tongi+Gazipur&t=&z=15&ie=UTF8&iwloc=&output=embed";
 
@@ -40,7 +40,7 @@ export default function AboutPage() {
         <div className="text-center max-w-3xl mx-auto pt-6 pb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono text-[#B4F000] mb-4">
             <Building2 className="w-3.5 h-3.5" />
-            <span>ABOUT INCODE BD // TECHNOLOGY STUDIO</span>
+            <span>ABOUT INCODE BD // SOFTWARE COMPANY</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
@@ -48,7 +48,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="text-base sm:text-lg text-slate-300">
-            Headquartered at College Gate, Tongi, Dhaka — we are an independent technology studio dedicated to high-performance IoT hardware, custom enterprise systems, and award-grade digital products.
+            Headquartered at College Gate, Tongi, Dhaka — we are an independent Software Company (Software &amp; IoT Solutions) dedicated to high-performance IoT hardware, custom enterprise systems, and award-grade digital products.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function AboutPage() {
               <div className="lg:col-span-7 relative aspect-[4/3] rounded-xl overflow-hidden border border-white/10 shadow-2xl group">
                 <Image
                   src="/office-interior.jpg"
-                  alt="Incode BD Physical Engineering Studio & Meeting Room"
+                  alt="Incode BD Physical Engineering Workspace & Meeting Room"
                   fill
                   priority
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -73,7 +73,7 @@ export default function AboutPage() {
                 
                 <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0A0D14]/90 border border-white/10 backdrop-blur-md text-xs font-mono text-slate-200">
                   <span className="w-2 h-2 rounded-full bg-[#B4F000]" />
-                  <span>Akon Villa Ground Floor Prototyping Space</span>
+                  <span>Akon Villa Ground Floor Engineering Workspace</span>
                 </div>
               </div>
 
@@ -84,11 +84,11 @@ export default function AboutPage() {
                 </span>
 
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-                  A Focused, Collaborative Engineering Haven
+                  A Focused, Collaborative Engineering Workspace
                 </h2>
 
                 <p className="text-sm text-slate-300 leading-relaxed">
-                  Our ground-floor facility at Akon Villa is built for deep work and hands-on invention. Equipped with dedicated laptop workstations, hardware soldering benches, testing peripherals, and a comfortable brainstorm lounge.
+                  Our ground-floor facility at Akon Villa is built for deep work and hands-on invention. Equipped with dedicated workstations, hardware testing modules, fans, and a collaborative discussion table.
                 </p>
 
                 <div className="space-y-3 text-xs text-slate-300 pt-2">
@@ -98,11 +98,11 @@ export default function AboutPage() {
                   </div>
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#B4F000] flex-shrink-0" />
-                    <span>Dedicated testing hardware, oscilloscopes, and IoT benches</span>
+                    <span>Dedicated testing hardware, electronic modules, and IoT tools</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#B4F000] flex-shrink-0" />
-                    <span>High-speed optical fiber network with 24/7 power backup</span>
+                    <span>High-speed optical fiber connection with clean, focused setup</span>
                   </div>
                 </div>
 
@@ -195,7 +195,7 @@ export default function AboutPage() {
                   rel="noopener noreferrer"
                   className="btn-neon inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold"
                 >
-                  <span>Search for Incode BD on Google Maps</span>
+                  <span>Open Incode BD on Google Maps</span>
                   <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
                 </a>
               </div>

@@ -90,7 +90,7 @@ export default function ServicesPage() {
       badge: "Physical Silicon & Firmware",
       title: "Custom IoT & PCB Engineering",
       summary:
-        "End-to-end electronic product design: from schematic capture and 2-layer PCB layout to firmware flashing and physical enclosure prototyping at our Dhaka Lab.",
+        "End-to-end electronic product design: from schematic capture and 2-layer PCB layout to firmware flashing and physical enclosure prototyping at our Dhaka Workspace.",
       offerings: [
         "Custom schematic design in EasyEDA / KiCad for ESP32, STM32, and Nordic chips",
         "Prototype PCB assembly, surface-mount soldering, and benchtop testing",
