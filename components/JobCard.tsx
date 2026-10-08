@@ -23,6 +23,7 @@ export interface JobPosition {
   requirements: string[];
   slots?: string;
   duration?: string;
+  schedule?: string;
 }
 
 export default function JobCard({
@@ -68,7 +69,7 @@ export default function JobCard({
             <MapPin className="w-3.5 h-3.5 text-[#B4F000]" /> Tongi Physical Workspace
           </span>
           <span className="flex items-center gap-1.5">
-            <Clock className="w-3.5 h-3.5 text-[#B4F000]" /> 10 AM - 1 PM Hybrid
+            <Clock className="w-3.5 h-3.5 text-[#B4F000]" /> {job.schedule || "10 AM - 1 PM Hybrid"}
           </span>
           <span className="flex items-center gap-1.5 text-slate-300">
             <Briefcase className="w-3.5 h-3.5 text-[#B4F000]" /> {job.duration || "3-4 Month Internship"}

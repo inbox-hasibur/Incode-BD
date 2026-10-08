@@ -37,6 +37,7 @@ const POSITIONS: JobPosition[] = [
     track: "Core Engineering",
     badges: ["Full-Stack", "Flexible Tech Stack", "Real Client Work"],
     duration: "3-4 Month Internship",
+    schedule: "10 AM - 1 PM Hybrid",
     description:
       "We believe strong fundamentals transcend any single framework. Whether you code in React, Node.js, Python, PHP/Laravel, Flutter, Go, or Java — we welcome developers across all stacks to work on real client projects and scalable software architectures.",
     responsibilities: [
@@ -53,23 +54,24 @@ const POSITIONS: JobPosition[] = [
     ],
   },
   {
-    id: "pm-intern",
-    title: "Associate Product Manager (APM)",
-    track: "Management & Delivery",
-    badges: ["Agile Sprints", "Client Liaison", "Roadmapping"],
-    duration: "3-4 Month Internship",
+    id: "project-manager",
+    title: "Project Manager",
+    track: "Project Management",
+    badges: ["Full-Time / Regular", "Agile Sprints", "Client Delivery"],
+    duration: "Full-Time / Regular",
+    schedule: "Full-Time Schedule",
     description:
-      "Coordinate sprint cycles, interface between software/hardware engineers and client deliverables, track milestones, and ensure zero-delay project delivery.",
+      "Lead technical project delivery, coordinate agile sprint cycles between corporate clients and engineering teams, manage scopes, milestones, and deliverables for web, cloud, and IoT client contracts.",
     responsibilities: [
-      "Organize sprint cycles, backlog refinement, and milestone tracking in Jira/Trello.",
-      "Document client requirements into clear technical specifications and user stories.",
-      "Collaborate closely with technical leads on resource allocation and release timelines.",
-      "Facilitate seamless communication across engineering, marketing, and design tracks.",
+      "Manage end-to-end client software and hardware project lifecycle from scope to production handover.",
+      "Lead sprint planning, daily standups, backlog prioritization, and milestone reviews in Jira/Trello.",
+      "Serve as the direct liaison between corporate clients and the development team to clarify requirements.",
+      "Ensure quality assurance, zero-delay release timelines, and transparent stakeholder progress updates.",
     ],
     requirements: [
-      "Exceptional organizational and written communication skills in English and Bengali.",
-      "Familiarity with Agile, Scrum, or modern project management frameworks.",
-      "Background in CSE, MIS, BBA, or Engineering Management.",
+      "Demonstrated experience in technical project management, Agile/Scrum delivery, or software team coordination.",
+      "Exceptional organizational and written/verbal communication skills in English and Bengali.",
+      "Background in CSE, SE, MIS, BBA, or Engineering Management.",
       "Proactive leadership and problem-resolution mindset.",
     ],
   },
@@ -79,6 +81,7 @@ const POSITIONS: JobPosition[] = [
     track: "Brand & Outreach",
     badges: ["Campus Outreach", "B2B Deals", "Social Growth"],
     duration: "3-4 Month Internship",
+    schedule: "10 AM - 1 PM Hybrid",
     description:
       "Drive Incode BD brand visibility, manage university campus partnerships across IUT, DUET, AIUB, and leading universities, and execute digital marketing campaigns.",
     responsibilities: [
@@ -100,6 +103,7 @@ const POSITIONS: JobPosition[] = [
     track: "Creative Dev",
     badges: ["Figma", "Tailwind CSS", "Visual Craft"],
     duration: "3-4 Month Internship",
+    schedule: "10 AM - 1 PM Hybrid",
     description:
       "Design high-conversion dark-mode interfaces, author interactive design tokens in Figma, and build kinetic web layouts that leave lasting impressions.",
     responsibilities: [
@@ -121,6 +125,7 @@ const POSITIONS: JobPosition[] = [
     track: "Hardware Lab",
     badges: ["ESP32", "PCB Design", "Sensors"],
     duration: "3-4 Month Internship",
+    schedule: "10 AM - 1 PM Hybrid",
     description:
       "Prototype connected GPS tracking collars, touch-sensor smart switches, flash ESP32 firmware, and work with physical workspace oscilloscopes and multimeters at College Gate.",
     responsibilities: [
@@ -178,7 +183,7 @@ export default function CareersPage() {
         <div className="text-center max-w-4xl mx-auto pt-6 pb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-[#B4F000] text-xs font-mono mb-6 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-[#FF6B00] dark:bg-[#B4F000] animate-pulse" />
-            <span>INCODE BD // 3-4 MONTH INTERNSHIP PROGRAM</span>
+            <span>INCODE BD // CAREERS &amp; INTERNSHIP FELLOWSHIP</span>
           </div>
 
           <h1 className="font-tagline text-2xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4 leading-tight">
@@ -385,7 +390,7 @@ export default function CareersPage() {
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-[#B4F000] flex-shrink-0" />
               <span>
-                3-4 Month Internship: Flexible 2K/month installment covering physical workspace desk, hardware sensor kits, final mock defense &amp; practicum guidance.
+                For 3-4 Month Internship Fellows: Flexible 2K/month installment covering physical workspace desk, hardware sensor kits, final mock defense &amp; practicum guidance. (Project Manager is a regular full-time position).
               </span>
             </div>
             <span className="text-[#B4F000] font-semibold whitespace-nowrap">
@@ -453,7 +458,7 @@ export default function CareersPage() {
                 <span>Both Steps are Strictly Mandatory</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-black text-white">
-                Applying for {selectedJob?.title || "3-4 Month Internship"}
+                Applying for {selectedJob?.title || "Position"}
               </h3>
             </div>
 
@@ -487,12 +492,12 @@ export default function CareersPage() {
                   <span className="text-[#B4F000] font-mono font-bold">career@incodebd.com</span>
                 </p>
                 <p className="text-xs font-mono text-slate-400 bg-black/60 px-3 py-1 rounded border border-white/5 mb-3">
-                  Subject: [{selectedJob?.title || "Role"}] - [Your University Name]
+                  Subject: [{selectedJob?.title || "Role"}] - [Your Name]
                 </p>
                 <div className="flex flex-wrap gap-2.5">
                   <a
                     href={`mailto:career@incodebd.com?subject=${encodeURIComponent(
-                      `${selectedJob?.title || "Internship"} Application - [Your University Name]`
+                      `${selectedJob?.title || "Role"} Application - [Your Name]`
                     )}`}
                     className="btn-neon inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold"
                   >
@@ -520,7 +525,15 @@ export default function CareersPage() {
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-300 mb-3">
-                  This form is strictly for your <strong>contact details and questionnaires</strong> (recording class schedule, shift timings, and tech preferences).
+                  {selectedJob?.id === "project-manager" ? (
+                    <span>
+                      This form is strictly for your <strong>contact details and questionnaire</strong> (recording your contact info, project management experience, and joining availability).
+                    </span>
+                  ) : (
+                    <span>
+                      This form is strictly for your <strong>contact details and questionnaires</strong> (recording class schedule, shift timings, and tech preferences).
+                    </span>
+                  )}
                 </p>
                 <a
                   href={formUrl}
@@ -537,7 +550,7 @@ export default function CareersPage() {
             {/* Footer action */}
             <div className="pt-4 border-t border-white/10 flex items-center justify-between">
               <span className="text-xs font-mono text-slate-400">
-                Tongi Physical Workspace • 3-4 Month Program
+                Tongi Physical Workspace • {selectedJob?.duration || "Full-Time / Regular"}
               </span>
               <button
                 onClick={() => setIsModalOpen(false)}

@@ -72,10 +72,10 @@ export default function LocationMapSection() {
                   <div>
                     <strong className="text-white block mb-0.5">Direct Line:</strong>
                     <a
-                      href="tel:+8801882082502"
+                      href="tel:+8801581495140"
                       className="hover:text-[#B4F000] transition font-mono text-xs sm:text-sm"
                     >
-                      +880 1882-082502
+                      +880 1581-495140
                     </a>
                   </div>
                 </div>
