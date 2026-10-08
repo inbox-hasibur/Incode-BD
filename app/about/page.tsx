@@ -43,7 +43,7 @@ export default function AboutPage() {
             <span>ABOUT INCODE BD // SOFTWARE COMPANY</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+          <h1 className="font-tagline text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
             Solving Business Problems with Hardware, Software, and Aesthetics.
           </h1>
 

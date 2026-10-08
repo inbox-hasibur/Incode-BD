@@ -65,7 +65,7 @@ export default function HeroSection() {
         </div>
 
         {/* Scaled-down Elegant Headline */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.15] mb-5">
+        <h1 className="font-tagline text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.15] mb-5">
           <span className="text-[#B4F000]">Solving Business Problems with</span> Hardware, Software, and Aesthetics.
         </h1>
 

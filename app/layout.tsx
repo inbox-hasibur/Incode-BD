@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Raleway } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -8,6 +8,15 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  fallback: ["system-ui", "-apple-system", "sans-serif"],
+});
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--font-raleway",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  fallback: ["Inter", "system-ui", "-apple-system", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -73,6 +82,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
+        {/* Preconnect & Direct Google Fonts for Bagel Fat One & Raleway with Inter fallback */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Raleway:ital,wght@0,100..900;1,100..900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -92,7 +108,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} font-sans antialiased transition-colors duration-300`}>
+      <body className={`${raleway.variable} ${inter.variable} font-sans antialiased transition-colors duration-300`}>
         <ThemeProvider>
           {children}
         </ThemeProvider>

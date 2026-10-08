@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Raleway:ital,wght@0,100..900;1,100..900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,15 +16,26 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: var(--font-raleway, 'Raleway'), 'Raleway', var(--font-inter, 'Inter'), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: #0A0D14;
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-raleway, 'Raleway'), 'Raleway', var(--font-inter, 'Inter'), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+}
+
+/* Logo Fancy Font: "Bagel Fat One" with fallback "Inter", sans-serif */
+.font-logo {
+  font-family: 'Bagel Fat One', var(--font-inter, 'Inter'), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Regular Tagline & Heading Font: "Raleway" with fallback "Inter", sans-serif */
+.font-tagline {
+  font-family: var(--font-raleway, 'Raleway'), 'Raleway', var(--font-inter, 'Inter'), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 /* Custom sleek scrollbar */

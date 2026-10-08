@@ -48,7 +48,7 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-extrabold text-white tracking-tight">
+                <span className="font-logo text-2xl tracking-normal text-white select-none">
                   Incode <span className={isLight ? "text-[#FF6B00]" : "text-[#B4F000]"}>BD</span>
                 </span>
                 <span className="text-[10px] font-mono tracking-widest text-slate-400 uppercase">
@@ -57,7 +57,7 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
+            <p className="font-tagline text-sm text-slate-400 max-w-sm leading-relaxed">
               &ldquo;Solving Business Problems with Hardware, Software, and Aesthetics.&rdquo; Building production-grade IoT telemetry, intelligent cloud stacks, and digital products.
             </p>
 
