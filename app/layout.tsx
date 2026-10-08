@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   keywords: [
     "Incode BD",
     "Incode",
+    "incode bd",
+    "incodebd",
+    "Incode BD Software Company",
+    "Incode Dhaka",
+    "Incode BD Tongi",
+    "Incode BD Gazipur",
+    "Software Company Dhaka",
+    "IoT Solutions Bangladesh",
     "Software Company",
     "Hardware",
     "Dhaka",
@@ -37,6 +45,20 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Incode BD", url: "https://incodebd.com" }],
   metadataBase: new URL("https://incodebd.com"),
+  alternates: {
+    canonical: "https://incodebd.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "Incode BD — Hardware, Software, & Aesthetics",
     description:
@@ -74,6 +96,52 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://incodebd.com/#organization",
+      name: "Incode BD",
+      alternateName: ["Incode", "IncodeBD", "Incode BD Software Company"],
+      url: "https://incodebd.com",
+      logo: "https://incodebd.com/logo.png",
+      image: "https://incodebd.com/banner.png",
+      description:
+        "Solving Business Problems with Hardware, Software, and Aesthetics. Independent Software Company and IoT Solutions Hub in Dhaka, Bangladesh.",
+      telephone: "+8801581495140",
+      email: "contact@incodebd.com",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Akon Villa, Ground Floor, College Gate",
+        addressLocality: "Tongi, Gazipur",
+        postalCode: "1711",
+        addressRegion: "Dhaka",
+        addressCountry: "BD",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 23.8966,
+        longitude: 90.3986,
+      },
+      sameAs: [
+        "https://facebook.com/incodebd",
+        "https://github.com/inbox-hasibur/Incode-BD",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://incodebd.com/#website",
+      url: "https://incodebd.com",
+      name: "Incode BD",
+      description: "Solving Business Problems with Hardware, Software, and Aesthetics.",
+      publisher: {
+        "@id": "https://incodebd.com/#organization",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -82,7 +150,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* Preconnect & Direct Google Fonts for Bagel Fat One & Raleway with Inter fallback */}
+        {/* Schema.org Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {/* Preconnect & Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
