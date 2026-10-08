@@ -42,17 +42,17 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[85vh] flex flex-col justify-center items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       
-      {/* Subtle Ambient Radial Lighting */}
+      {/* Subtle Ambient Radial Lighting - Lightweight GPU friendly */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[340px] sm:w-[600px] md:w-[850px] h-[340px] sm:h-[600px] md:h-[850px] rounded-full bg-gradient-to-b from-[#B4F000]/10 via-[#8BC200]/05 to-transparent blur-[140px] -z-10" 
+        className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[300px] sm:w-[500px] md:w-[700px] h-[300px] sm:h-[500px] rounded-full bg-[radial-gradient(circle_at_center,rgba(180,240,0,0.08)_0%,transparent_70%)] -z-10" 
       />
 
       <div className="w-full max-w-5xl mx-auto flex flex-col items-center text-center z-10">
         
         {/* Clean Corporate Location & Status Pill */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono text-slate-300 mb-6 backdrop-blur-md">
-          <span className="w-2 h-2 rounded-full bg-[#B4F000] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#FF6B00] dark:bg-[#B4F000] animate-pulse" />
           <span>Software &amp; IoT Solutions Company</span>
           <span className="text-white/20">•</span>
           <Link
@@ -65,8 +65,8 @@ export default function HeroSection() {
         </div>
 
         {/* Scaled-down Elegant Headline */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.12] mb-5">
-          Engineering Hardware, Software, and Digital Aesthetics.
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.15] mb-5">
+          <span className="text-[#B4F000]">Solving Business Problems with</span> Hardware, Software, and Aesthetics.
         </h1>
 
         {/* Refined Subtitle */}
@@ -94,10 +94,8 @@ export default function HeroSection() {
           </Link>
         </div>
 
-        {/* ========================================================= */}
-        {/* Sleek Hardware & Systems Showcase Video Container         */}
-        {/* ========================================================= */}
-        <div className="relative w-full max-w-4xl mx-auto rounded-2xl p-1 bg-gradient-to-b from-white/10 via-white/5 to-transparent border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
+        {/* Sleek Hardware & Systems Showcase Video Container */}
+        <div className="relative w-full max-w-4xl mx-auto rounded-2xl p-1 bg-white/[0.04] border border-white/10">
           
           <div className="relative w-full aspect-video sm:aspect-[16/9] md:aspect-[21/9] bg-[#07090E] rounded-xl overflow-hidden group border border-white/[0.06]">
             

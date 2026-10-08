@@ -207,7 +207,7 @@ export default function LabSection() {
               />
               <button
                 type="submit"
-                className="px-3 py-1 rounded bg-[#B4F000] text-[#0A0D14] text-xs font-bold font-mono hover:bg-[#C2F826] transition flex items-center gap-1"
+                className="btn-neon px-3 py-1 rounded text-xs font-bold font-mono transition flex items-center gap-1"
               >
                 Send <Play className="w-2.5 h-2.5 fill-current" />
               </button>

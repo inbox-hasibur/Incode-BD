@@ -16,14 +16,18 @@ import {
   Cpu,
   Layers
 } from "lucide-react";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function Footer() {
+  const { theme } = useTheme();
+  const isLight = theme === "light";
+
   return (
     <footer className="relative bg-[#07090E] border-t border-white/10 text-slate-300 pt-16 pb-12 overflow-hidden z-10">
       {/* Background ambient lighting */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#B4F000]/5 blur-[140px] -z-10" 
+        className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-[radial-gradient(circle_at_center,rgba(180,240,0,0.04)_0%,transparent_70%)] -z-10" 
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,18 +36,20 @@ export default function Footer() {
           {/* Column 1 & 2: Brand & Vision */}
           <div className="lg:col-span-2 space-y-5">
             <Link href="/" className="inline-flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-[#0F1420] border border-white/10 p-2 flex items-center justify-center group-hover:border-[#B4F000]/50 transition shadow-lg">
+              <div className="w-10 h-10 rounded-xl bg-[#0F1420] border border-white/10 p-1.5 flex items-center justify-center transition">
                 <Image
-                  src="/logo.png"
+                  src={isLight ? "/logo-orange.png" : "/logo.png"}
                   alt="Incode BD"
-                  width={32}
-                  height={32}
-                  className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(180,240,0,0.5)]"
+                  width={34}
+                  height={34}
+                  className={`w-full h-full object-contain filter ${
+                    isLight ? "" : "drop-shadow-[0_0_8px_rgba(180,240,0,0.5)]"
+                  }`}
                 />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-extrabold text-white tracking-tight">
-                  Incode <span className="text-[#B4F000]">BD</span>
+                  Incode <span className={isLight ? "text-[#FF6B00]" : "text-[#B4F000]"}>BD</span>
                 </span>
                 <span className="text-[10px] font-mono tracking-widest text-slate-400 uppercase">
                   Software Company
@@ -202,7 +208,7 @@ export default function Footer() {
           <p>© 2026 Incode BD. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 text-slate-400">
-              <span className="w-2 h-2 rounded-full bg-[#B4F000] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#FF6B00] dark:bg-[#B4F000] animate-pulse" />
               Production Core: Live in Dhaka
             </span>
             <a

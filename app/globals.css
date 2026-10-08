@@ -25,9 +25,9 @@ body {
   padding: 0;
 }
 
-/* Custom sleek dark scrollbar */
+/* Custom sleek scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
   background: #0A0D14;
@@ -40,56 +40,56 @@ body {
   background: #B4F000;
 }
 
-/* Cyber ambient grid */
+/* Ambient grids */
 .cyber-grid {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(180, 240, 0, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(180, 240, 0, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(180, 240, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(180, 240, 0, 0.03) 1px, transparent 1px);
 }
 
 .circuit-grid {
   background-size: 60px 60px;
   background-image:
-    radial-gradient(circle at 10px 10px, rgba(180, 240, 0, 0.12) 1.5px, transparent 0),
+    radial-gradient(circle at 10px 10px, rgba(180, 240, 0, 0.1) 1.5px, transparent 0),
     linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
-/* Subtle radial glow */
+/* Subtle ambient glow */
 .ambient-glow {
   background: radial-gradient(
-    circle at 50% 30%,
-    rgba(180, 240, 0, 0.14) 0%,
-    rgba(180, 240, 0, 0.04) 40%,
-    rgba(10, 13, 20, 0) 75%
+    circle at 50% 25%,
+    rgba(180, 240, 0, 0.08) 0%,
+    rgba(10, 13, 20, 0) 65%
   );
 }
 
-/* Neon glow button */
+/* Buttons - Clean, crisp, NO heavy dark shadow blobs */
 .btn-neon {
   background-color: #B4F000;
   color: #0A0D14;
-  box-shadow: 0 0 20px rgba(180, 240, 0, 0.4), 0 0 45px rgba(180, 240, 0, 0.15);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-neon:hover {
   background-color: #C2F826;
-  box-shadow: 0 0 30px rgba(180, 240, 0, 0.7), 0 0 65px rgba(180, 240, 0, 0.3);
-  transform: translateY(-2px) scale(1.02);
+  box-shadow: none;
+  transform: translateY(-1px);
 }
 
 .btn-neon:active {
-  transform: translateY(0) scale(0.99);
+  transform: translateY(0);
 }
 
-/* Glass card styling */
+/* Glass Panels & Cards - Clean hairline borders, zero muddy drop shadows */
 .glass-panel {
   background: rgba(15, 20, 32, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
 
 .glass-panel:hover {
@@ -98,47 +98,215 @@ body {
 
 .glass-card-interactive {
   background: rgba(15, 20, 32, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card-interactive:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   border-color: rgba(180, 240, 0, 0.4);
-  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.6), 0 0 24px -4px rgba(180, 240, 0, 0.15);
+  box-shadow: none;
 }
 
-/* Text shimmer */
-.text-shimmer {
-  background: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    #ffffff 40%,
-    #B4F000 60%,
-    #ffffff 80%,
-    #ffffff 100%
-  );
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: shimmer 8s linear infinite;
+/* Global shadow removal as requested */
+.shadow-2xl,
+.shadow-xl,
+.shadow-lg,
+.shadow-md {
+  box-shadow: none !important;
 }
 
-@keyframes shimmer {
-  to {
-    background-position: 200% center;
-  }
+/* Dark mode map: inverted cyber look */
+html.dark iframe {
+  filter: invert(90%) hue-rotate(180deg) contrast(110%);
+  opacity: 0.9;
 }
 
-/* Pulsing radar dot */
-@keyframes radar-ping {
-  0% { transform: scale(0.8); opacity: 0.8; }
-  100% { transform: scale(2.4); opacity: 0; }
+/* ========================================================= */
+/* INCODE BD // LIGHT MODE THEME                            */
+/* Clean, modern light SaaS background (#F8F9FA)             */
+/* White cards, crisp hairline borders, orange brand accents */
+/* ========================================================= */
+html.light {
+  color-scheme: light;
 }
 
-.radar-ping {
-  animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+html.light,
+html.light body,
+html.light main,
+html.light .min-h-screen {
+  background-color: #F8F9FA !important;
+  color: #12141A !important;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background-color: #F8F9FA;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background-color: #D1D5DB;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background-color: #FF6B00;
+}
+
+/* Light mode map: Native clean bright Google Maps! */
+html.light iframe {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Grids in Light Mode */
+html.light .cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+html.light .circuit-grid {
+  background-image:
+    radial-gradient(circle at 10px 10px, rgba(0, 0, 0, 0.08) 1.5px, transparent 0),
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+/* Neutralize glow in light mode to keep clean light background */
+html.light .ambient-glow {
+  background: none !important;
+}
+
+/* Button in Light Mode: Crisp Vibrant Brand Orange (no shadow) */
+html.light .btn-neon {
+  background-color: #FF6B00 !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+html.light .btn-neon:hover {
+  background-color: #E85D00 !important;
+  box-shadow: none !important;
+  color: #FFFFFF !important;
+}
+
+/* Dark section backgrounds mapped to clean light background */
+html.light [class*="bg-[#0A0D14]"],
+html.light [class*="bg-[#07090E]"],
+html.light [class*="bg-[#080B11]"],
+html.light [class*="bg-[#090C12]"],
+html.light [class*="bg-[#0D121D]"],
+html.light [class*="bg-black"] {
+  background-color: #F8F9FA !important;
+  background-image: none !important;
+}
+
+/* Card surfaces mapped to pure White in Light Mode */
+html.light .glass-panel,
+html.light .glass-card-interactive,
+html.light [class*="bg-[#0F1420]"],
+html.light [class*="bg-[#121927]"],
+html.light [class*="bg-[#0B0F17]"],
+html.light [class*="bg-[#0E1218]"],
+html.light [class*="bg-[#121826]"] {
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+  border-color: #E5E7EB !important;
+  box-shadow: none !important;
+}
+
+/* Translucent pills / badges in Light Mode */
+html.light [class*="bg-white/[0.0"] {
+  background-color: #F1F3F5 !important;
+  border-color: #E5E7EB !important;
+}
+
+/* Borders in Light Mode */
+html.light [class*="border-white/"],
+html.light [class*="border-white\\["] {
+  border-color: #E5E7EB !important;
+}
+
+html.light .border-2 {
+  border-color: #E5E7EB !important;
+}
+
+/* Typography Hierarchy in Light Mode */
+html.light .text-white {
+  color: #12141A !important;
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200 {
+  color: #1E293B !important;
+}
+
+html.light .text-slate-300 {
+  color: #475569 !important;
+}
+
+html.light .text-slate-400 {
+  color: #64748B !important;
+}
+
+/* Brand Accent Text: Neon Lime (#B4F000) -> Warm Brand Orange (#FF6B00) */
+html.light .text-\[\#B4F000\],
+html.light [class*="text-[#B4F000]"] {
+  color: #FF6B00 !important;
+}
+
+/* Exact lime dots, bullets & active buttons -> Warm Brand Orange */
+html.light .bg-\[\#B4F000\] {
+  background-color: #FF6B00 !important;
+}
+
+html.light button.bg-\[\#B4F000\],
+html.light a.bg-\[\#B4F000\] {
+  color: #FFFFFF !important;
+}
+
+/* Lime accent tags/badges -> Clean transparent background with crisp orange text */
+html.light .bg-\[\#B4F000\]\/10,
+html.light .bg-\[\#B4F000\]\/15,
+html.light .bg-\[\#B4F000\]\/20,
+html.light [class*="bg-[#B4F000]/"] {
+  background-color: transparent !important;
+  color: #FF6B00 !important;
+}
+
+html.light [class*="border-[#B4F000]"] {
+  border-color: rgba(255, 107, 0, 0.4) !important;
+}
+
+/* Selection highlight */
+html.light *::selection {
+  background-color: #FF6B00 !important;
+  color: #FFFFFF !important;
+}
+
+/* Navbar in Light Mode - Crisp white/offwhite, no shadow */
+html.light nav {
+  background-color: rgba(248, 249, 250, 0.95) !important;
+  border-bottom: 1px solid #E5E7EB !important;
+  box-shadow: none !important;
+}
+
+/* Footer in Light Mode */
+html.light footer {
+  background-color: #F1F3F5 !important;
+  border-top: 1px solid #E5E7EB !important;
+}
+
+html.light footer p,
+html.light footer span,
+html.light footer a {
+  color: #475569;
+}
+
+html.light footer strong,
+html.light footer h4,
+html.light footer .text-white {
+  color: #12141A !important;
 }

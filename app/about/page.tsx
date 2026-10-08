@@ -72,7 +72,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D14]/80 via-transparent to-transparent opacity-60" />
                 
                 <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0A0D14]/90 border border-white/10 backdrop-blur-md text-xs font-mono text-slate-200">
-                  <span className="w-2 h-2 rounded-full bg-[#B4F000]" />
+                  <span className="w-2 h-2 rounded-full bg-[#FF6B00] dark:bg-[#B4F000]" />
                   <span>Akon Villa Ground Floor Engineering Workspace</span>
                 </div>
               </div>
@@ -206,7 +206,7 @@ export default function AboutPage() {
               <iframe
                 title="Incode BD Location Map"
                 src={embedMapUrl}
-                className="w-full h-full min-h-[300px] sm:min-h-[360px] border-0 filter invert-[90%] hue-rotate-180 contrast-[110%]"
+                className="w-full h-full min-h-[300px] sm:min-h-[360px] border-0 transition-opacity hover:opacity-100"
                 loading="lazy"
                 allowFullScreen
               />

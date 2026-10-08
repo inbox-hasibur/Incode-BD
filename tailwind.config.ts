@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -19,6 +20,9 @@ const config: Config = {
           "lime-dim": "#8BC200",
         },
         brand: {
+          orange: "#FF6B00",
+          "orange-hover": "#E85D00",
+          "orange-light": "#FFF3EB",
           lime: "#B4F000",
           "lime-glow": "#C2F826",
           "lime-light": "#E4FFA0",

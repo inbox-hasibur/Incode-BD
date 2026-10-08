@@ -179,7 +179,7 @@ export default function ServicesPage() {
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
                     {svc.offerings.map((item, iIdx) => (
-                      <div key={iIdx} className="flex items-start gap-2.5 bg-white/[0.01] p-2.5 rounded-lg border border-white/[0.03]">
+                      <div key={iIdx} className="flex items-start gap-2.5 p-2.5 rounded-lg border border-white/[0.06] bg-white/[0.02]">
                         <CheckCircle2 className="w-4 h-4 text-[#B4F000] flex-shrink-0 mt-0.5" />
                         <span className="leading-snug">{item}</span>
                       </div>

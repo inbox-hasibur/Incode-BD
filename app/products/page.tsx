@@ -176,10 +176,10 @@ export default function ProductsPage() {
               <button
                 key={f.id}
                 onClick={() => setSelectedFilter(f.id)}
-                className={`px-4 py-1.5 rounded-xl text-xs font-mono transition-colors ${
+                className={`px-4 py-1.5 rounded-xl text-xs font-mono transition-all ${
                   selectedFilter === f.id
-                    ? "bg-[#B4F000] text-[#0A0D14] font-bold"
-                    : "bg-white/[0.03] text-slate-300 hover:text-white border border-white/5"
+                    ? "btn-neon font-bold"
+                    : "bg-white/[0.03] text-slate-300 hover:text-white border border-white/10"
                 }`}
               >
                 {f.label}

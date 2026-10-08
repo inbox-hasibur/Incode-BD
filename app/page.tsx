@@ -156,8 +156,8 @@ export default function Home() {
         <LocationMapSection />
 
         {/* High-Conversion Footer CTA Banner */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-gradient-to-b from-[#0A0D14] via-[#0D121D] to-[#0A0D14]">
-          <div className="max-w-4xl mx-auto rounded-2xl p-8 sm:p-12 glass-panel border border-[#B4F000]/30 text-center relative overflow-hidden shadow-2xl">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5">
+          <div className="max-w-4xl mx-auto rounded-2xl p-8 sm:p-12 glass-panel border border-[#B4F000]/30 text-center relative overflow-hidden">
             
             <span className="text-xs font-mono uppercase text-[#B4F000] tracking-wider block mb-2">
               Incode BD Engineering Workspace

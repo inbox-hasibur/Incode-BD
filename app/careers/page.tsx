@@ -177,7 +177,7 @@ export default function CareersPage() {
         {/* ========================================================= */}
         <div className="text-center max-w-4xl mx-auto pt-6 pb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-[#B4F000] text-xs font-mono mb-6 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-[#B4F000] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#FF6B00] dark:bg-[#B4F000] animate-pulse" />
             <span>INCODE BD // 3-4 MONTH INTERNSHIP PROGRAM</span>
           </div>
 
@@ -275,10 +275,8 @@ export default function CareersPage() {
           </div>
         </div>
 
-        {/* ========================================================= */}
-        {/* The 2-Step Transparent Application Protocol               */}
-        {/* ========================================================= */}
-        <div id="application-protocol" className="mb-20 rounded-2xl p-6 sm:p-10 bg-gradient-to-r from-[#0F1420] via-[#121927] to-[#0F1420] border-2 border-[#B4F000]/40 shadow-2xl">
+        {/* The 2-Step Transparent Application Protocol */}
+        <div id="application-protocol" className="mb-20 rounded-2xl p-6 sm:p-10 glass-panel border-2 border-[#B4F000]/40">
           
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
             <div>

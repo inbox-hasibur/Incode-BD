@@ -44,7 +44,7 @@ export default function LocationMapSection() {
           <div className="lg:col-span-5 glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-white/10 shadow-xl">
             <div>
               <div className="flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#B4F000]/10 border border-[#B4F000]/20 text-[#B4F000] text-xs font-mono w-fit mb-5">
-                <span className="w-2 h-2 rounded-full bg-[#B4F000] animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-[#FF6B00] dark:bg-[#B4F000] animate-pulse" />
                 <span>Physical Headquarters</span>
               </div>
 
@@ -128,18 +128,18 @@ export default function LocationMapSection() {
           </div>
 
           {/* Right Bordered Interactive Google Map Container */}
-          <div className="lg:col-span-7 rounded-2xl overflow-hidden border-2 border-white/15 shadow-2xl relative min-h-[350px] sm:min-h-[420px] bg-[#0E1218] p-1">
+          <div className="lg:col-span-7 rounded-2xl overflow-hidden border border-white/10 relative min-h-[350px] sm:min-h-[420px] bg-[#0E1218] p-1">
             <div className="w-full h-full rounded-xl overflow-hidden relative border border-white/10">
               {/* Map watermark overlay */}
-              <div className="absolute top-3 left-3 z-20 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0A0D14]/90 border border-white/10 backdrop-blur-md text-xs font-mono text-slate-300">
-                <span className="w-2 h-2 rounded-full bg-[#B4F000]" />
+              <div className="absolute top-3 left-3 z-20 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0A0D14]/90 border border-white/10 text-xs font-mono text-slate-300">
+                <span className="w-2 h-2 rounded-full bg-[#FF6B00] dark:bg-[#B4F000]" />
                 <span>INCODE BD // COLLEGE GATE TONGI</span>
               </div>
 
               <iframe
                 title="Incode BD Google Map"
                 src={embedMapUrl}
-                className="w-full h-full min-h-[350px] sm:min-h-[420px] border-0 filter invert-[90%] hue-rotate-180 contrast-[110%] opacity-90 transition-opacity hover:opacity-100"
+                className="w-full h-full min-h-[350px] sm:min-h-[420px] border-0 transition-opacity hover:opacity-100"
                 loading="lazy"
                 allowFullScreen
               />

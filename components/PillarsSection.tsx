@@ -112,12 +112,9 @@ export default function PillarsSection() {
               className="glass-card-interactive relative rounded-2xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden group border border-white/10"
             >
               <div>
-                {/* Badge & Icon Header */}
-                <div className="flex items-center justify-between mb-5">
-                  <span className="text-[11px] font-mono tracking-wider uppercase text-[#B4F000] px-2.5 py-1 rounded-lg bg-[#B4F000]/10 border border-[#B4F000]/20">
-                    {pillar.badge}
-                  </span>
-                  <div className="w-10 h-10 rounded-xl bg-[#0F1420] border border-white/10 flex items-center justify-center text-[#B4F000] group-hover:scale-105 transition-transform shadow-md">
+                {/* Icon Header */}
+                <div className="mb-5">
+                  <div className="w-11 h-11 rounded-xl bg-[#0F1420] border border-white/10 flex items-center justify-center text-[#B4F000] group-hover:scale-105 transition-transform">
                     <IconComponent className="w-5 h-5" />
                   </div>
                 </div>
