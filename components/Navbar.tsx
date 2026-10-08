@@ -50,7 +50,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 rounded-xl bg-[#0F1420] border border-white/10 p-1.5 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
               <Image
-                src={isLight ? "/logo-orange.png" : "/logo.png"}
+                src={isLight ? "/logo-orange.png?v=2" : "/logo.png"}
                 alt="Incode BD"
                 width={36}
                 height={36}

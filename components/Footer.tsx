@@ -38,7 +38,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center gap-3 group">
               <div className="w-10 h-10 rounded-xl bg-[#0F1420] border border-white/10 p-1.5 flex items-center justify-center transition">
                 <Image
-                  src={isLight ? "/logo-orange.png" : "/logo.png"}
+                  src={isLight ? "/logo-orange.png?v=2" : "/logo.png"}
                   alt="Incode BD"
                   width={34}
                   height={34}
