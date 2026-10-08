@@ -93,7 +93,7 @@ export default function PillarsSection() {
           <span>CORE ENGINEERING CAPABILITIES</span>
         </div>
 
-        <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+        <h2 className="text-xl sm:text-3xl font-bold text-white tracking-tight mb-2.5">
           The Three Engineering Pillars
         </h2>
         <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">

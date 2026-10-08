@@ -52,7 +52,7 @@ export default function Home() {
                 <span className="text-xs font-mono uppercase text-[#B4F000] tracking-wider block mb-1">
                   Proprietary Tech
                 </span>
-                <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
+                <h2 className="text-xl sm:text-3xl font-bold text-white tracking-tight">
                   Featured Products &amp; IoT Platforms
                 </h2>
               </div>
@@ -163,7 +163,7 @@ export default function Home() {
               Incode BD Engineering Workspace
             </span>
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            <h2 className="text-xl sm:text-3xl font-bold text-white tracking-tight mb-3">
               Building Production Technology from Dhaka
             </h2>
 

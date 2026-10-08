@@ -181,14 +181,14 @@ export default function CareersPage() {
             <span>INCODE BD // 3-4 MONTH INTERNSHIP PROGRAM</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-5 leading-tight">
+          <h1 className="font-tagline text-2xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4 leading-tight">
             Build Real Systems. <br className="hidden sm:inline" />
             <span className="text-[#B4F000] drop-shadow-[0_0_25px_rgba(180,240,0,0.35)]">
               Launch Your Engineering Career.
             </span>
           </h1>
 
-          <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-normal mb-8">
+          <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal mb-8">
             Escape generic classroom theory. Join an active engineering team where you work on real client deployments, IoT hardware, and scalable architectures across flexible modern tech stacks.
           </p>
 
@@ -283,7 +283,7 @@ export default function CareersPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B4F000]/10 border border-[#B4F000]/30 text-[#B4F000] text-xs font-mono font-bold uppercase mb-2">
                 <span>Both Steps are 100% Mandatory</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-black text-white">
+              <h2 className="text-xl sm:text-3xl font-bold text-white tracking-tight">
                 How to Apply in 2 Simple Steps
               </h2>
             </div>

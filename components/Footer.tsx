@@ -48,7 +48,7 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-logo text-2xl tracking-normal text-white select-none">
+                <span className="font-logo text-xl sm:text-[1.35rem] tracking-tight text-white select-none">
                   Incode <span className={isLight ? "text-[#FF6B00]" : "text-[#B4F000]"}>BD</span>
                 </span>
                 <span className="text-[10px] font-mono tracking-widest text-slate-400 uppercase">

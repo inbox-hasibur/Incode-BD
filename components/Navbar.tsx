@@ -60,7 +60,7 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <span className="font-logo text-2xl tracking-normal text-white flex items-center gap-1.5 select-none">
+            <span className="font-logo text-xl sm:text-[1.35rem] tracking-tight text-white flex items-center gap-1.5 select-none">
               Incode <span className={isLight ? "text-[#FF6B00]" : "text-[#B4F000]"}>BD</span>
             </span>
           </Link>

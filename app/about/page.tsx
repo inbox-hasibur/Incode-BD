@@ -43,11 +43,11 @@ export default function AboutPage() {
             <span>ABOUT INCODE BD // SOFTWARE COMPANY</span>
           </div>
 
-          <h1 className="font-tagline text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+          <h1 className="font-tagline text-2xl sm:text-4xl font-bold text-white tracking-tight mb-4 leading-snug">
             Solving Business Problems with Hardware, Software, and Aesthetics.
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-300">
+          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto">
             Headquartered at College Gate, Tongi, Dhaka — we are an independent Software Company (Software &amp; IoT Solutions) dedicated to high-performance IoT hardware, custom enterprise systems, and award-grade digital products.
           </p>
         </div>

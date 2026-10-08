@@ -65,12 +65,12 @@ export default function HeroSection() {
         </div>
 
         {/* Scaled-down Elegant Headline */}
-        <h1 className="font-tagline text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.15] mb-5">
+        <h1 className="font-tagline text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white max-w-3xl leading-[1.2] mb-4">
           <span className="text-[#B4F000]">Solving Business Problems with</span> Hardware, Software, and Aesthetics.
         </h1>
 
         {/* Refined Subtitle */}
-        <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed font-normal mb-8">
+        <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-xl leading-relaxed font-normal mb-7">
           A dedicated software company building intelligent IoT ecosystems, customized enterprise software, and high-performance digital products.
         </p>
 
@@ -79,7 +79,7 @@ export default function HeroSection() {
           <Link
             href="/careers"
             id="hero-careers-cta"
-            className="btn-neon w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl text-sm sm:text-base font-bold tracking-wide"
+            className="btn-neon w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl text-sm sm:text-base font-bold tracking-wide"
           >
             <span>Explore Careers &amp; Team</span>
             <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
@@ -87,7 +87,7 @@ export default function HeroSection() {
 
           <Link
             href="/products"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm sm:text-base font-semibold text-slate-200 bg-white/[0.04] border border-white/10 hover:border-[#B4F000]/40 hover:bg-white/[0.08] transition-all backdrop-blur-md"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm sm:text-base font-semibold text-slate-200 bg-white/[0.04] border border-white/10 hover:border-[#B4F000]/40 hover:bg-white/[0.08] transition-all backdrop-blur-md"
           >
             <Layers className="w-4 h-4 text-[#B4F000]" />
             <span>Our Products &amp; IoT</span>

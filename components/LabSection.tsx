@@ -72,11 +72,11 @@ export default function LabSection() {
             <span>THE PHYSICAL WORKSPACE &amp; ENGINEERING HUB</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight mb-4 leading-snug">
             Where Academic Theory Meets Silicon &amp; Production Deployments.
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
             Most students and junior developers spend years trapped in mock tutorials. At our dedicated physical workspace in College Gate, Tongi, we build real hardware prototypes, deploy live telematics systems, and manage high-traffic cloud infrastructure.
           </p>
         </div>
