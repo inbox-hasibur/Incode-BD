@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Commercial products built by Incode BD: GPS vehicle & pet telematics, smart switchboards, autonomous news aggregators, and custom hardware systems.",
   alternates: {
-    canonical: "https://incodebd.com/products",
+    canonical: "https://www.incodebd.com/products",
   },
 };
 

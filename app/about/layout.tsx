@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Learn about Incode BD, our physical workspace in College Gate, Tongi, and our engineering mission to solve business problems with hardware, software, and aesthetics.",
   alternates: {
-    canonical: "https://incodebd.com/about",
+    canonical: "https://www.incodebd.com/about",
   },
 };
 

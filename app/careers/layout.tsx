@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Explore engineering careers and 3-4 month internship fellowships at Incode BD. Work on real IoT hardware, full-stack software, and client systems in Dhaka.",
   alternates: {
-    canonical: "https://incodebd.com/careers",
+    canonical: "https://www.incodebd.com/careers",
   },
 };
 

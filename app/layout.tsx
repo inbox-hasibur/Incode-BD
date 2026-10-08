@@ -43,10 +43,10 @@ export const metadata: Metadata = {
     "Aesthetics",
     "IoT",
   ],
-  authors: [{ name: "Incode BD", url: "https://incodebd.com" }],
-  metadataBase: new URL("https://incodebd.com"),
+  authors: [{ name: "Incode BD", url: "https://www.incodebd.com" }],
+  metadataBase: new URL("https://www.incodebd.com"),
   alternates: {
-    canonical: "https://incodebd.com",
+    canonical: "https://www.incodebd.com",
   },
   robots: {
     index: true,
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "Incode BD — Hardware, Software, & Aesthetics",
     description:
       "Solving Business Problems with Hardware, Software, and Aesthetics. Official Launching This October | Dhaka.",
-    url: "https://incodebd.com",
+    url: "https://www.incodebd.com",
     siteName: "Incode BD",
     images: [
       {
@@ -101,12 +101,12 @@ const jsonLd = {
   "@graph": [
     {
       "@type": ["Organization", "LocalBusiness"],
-      "@id": "https://incodebd.com/#organization",
+      "@id": "https://www.incodebd.com/#organization",
       name: "Incode BD",
       alternateName: ["Incode", "IncodeBD", "Incode BD Software Company"],
-      url: "https://incodebd.com",
-      logo: "https://incodebd.com/logo.png",
-      image: "https://incodebd.com/banner.png",
+      url: "https://www.incodebd.com",
+      logo: "https://www.incodebd.com/logo.png",
+      image: "https://www.incodebd.com/banner.png",
       description:
         "Solving Business Problems with Hardware, Software, and Aesthetics. Independent Software Company and IoT Solutions Hub in Dhaka, Bangladesh.",
       telephone: "+8801581495140",
@@ -131,12 +131,12 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://incodebd.com/#website",
-      url: "https://incodebd.com",
+      "@id": "https://www.incodebd.com/#website",
+      url: "https://www.incodebd.com",
       name: "Incode BD",
       description: "Solving Business Problems with Hardware, Software, and Aesthetics.",
       publisher: {
-        "@id": "https://incodebd.com/#organization",
+        "@id": "https://www.incodebd.com/#organization",
       },
     },
   ],

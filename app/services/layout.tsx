@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Commercial software and IoT engineering services from Incode BD: enterprise ERPs, billing systems, IoT telemetry, and high-performance digital products.",
   alternates: {
-    canonical: "https://incodebd.com/services",
+    canonical: "https://www.incodebd.com/services",
   },
 };
 
