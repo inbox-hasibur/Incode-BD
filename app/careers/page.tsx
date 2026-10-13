@@ -21,25 +21,35 @@ import {
   Award,
   Users,
   Briefcase,
-  DollarSign,
+  Sparkles,
   Coffee,
   GraduationCap,
   Copy,
   Check,
   AlertTriangle,
-  X
+  X,
+  Code2,
+  Terminal,
+  BrainCircuit,
+  Megaphone,
+  Headphones,
+  UserCheck
 } from "lucide-react";
 
 const POSITIONS: JobPosition[] = [
+  // ==========================================
+  // [Tech Tracks — CSE / SWE / IT / EEE]
+  // ==========================================
   {
     id: "swe-intern",
-    title: "Software Engineering Intern",
-    track: "Core Engineering",
-    badges: ["Full-Stack", "Flexible Tech Stack", "Real Client Work"],
+    title: "Software Engineering & Web Development Intern",
+    track: "Tech Tracks (CSE / SWE / IT / EEE)",
+    category: "Tech Tracks — CSE / SWE / IT / EEE",
+    badges: ["Flexible Tech Stack", "Full-Stack", "REST & WebSockets", "Databases"],
     duration: "3-4 Month Internship",
     schedule: "10 AM - 1 PM Hybrid",
     description:
-      "We believe strong fundamentals transcend any single framework. Whether you code in React, Node.js, Python, PHP/Laravel, Flutter, Go, or Java — we welcome developers across all stacks to work on real client projects and scalable software architectures.",
+      "We believe strong fundamentals transcend any single framework. Whether you code in React, Next.js, Node.js, Python, PHP/Laravel, Flutter, Go, or Java — we welcome developers across all stacks to work on real client projects and scalable software architectures.",
     responsibilities: [
       "Develop clean, maintainable software components and REST/WebSocket APIs in your project's chosen stack.",
       "Integrate web and mobile client applications with databases (PostgreSQL, MySQL, MongoDB) and IoT telemetry feeds.",
@@ -50,16 +60,91 @@ const POSITIONS: JobPosition[] = [
       "Solid understanding of programming fundamentals, data structures, and Git version control.",
       "Hands-on experience in any modern stack (React, Node, Python, Laravel, Flutter, or similar).",
       "Problem-solving mindset and eagerness to build real-world software collaboratively.",
-      "Open to university students and recent graduates in CSE / SE / EEE.",
+      "Open to university students and recent graduates in CSE / SWE / IT / EEE.",
     ],
   },
+  {
+    id: "creative-uiux-intern",
+    title: "Creative & UI/UX Design Intern",
+    track: "Tech Tracks (CSE / SWE / IT / EEE)",
+    category: "Tech Tracks — CSE / SWE / IT / EEE",
+    badges: ["Figma", "Tailwind CSS", "Visual Craft", "Design System"],
+    duration: "3-4 Month Internship",
+    schedule: "10 AM - 1 PM Hybrid",
+    description:
+      "Design high-conversion dark-mode interfaces, author interactive design tokens in Figma, and build kinetic web layouts with Tailwind CSS that leave lasting impressions.",
+    responsibilities: [
+      "Design responsive, dark-cyber UI mockups and interaction prototypes in Figma.",
+      "Collaborate with frontend developers on Tailwind CSS styling, design tokens, and micro-interactions.",
+      "Author high-converting social media creatives, infographics, and product brand assets.",
+      "Ensure pixel-perfect visual hierarchy across mobile, tablet, and widescreen monitors.",
+    ],
+    requirements: [
+      "Demonstrated portfolio or case studies in Figma, UI design, or graphic art.",
+      "Strong understanding of modern dark-mode palettes, typography, and spacing.",
+      "Basic knowledge of HTML/CSS is a plus (willingness to learn Tailwind CSS is celebrated).",
+      "Passionate about award-caliber aesthetics and digital craft.",
+    ],
+  },
+  {
+    id: "iot-embedded-intern",
+    title: "IoT & Embedded Systems Intern",
+    track: "Tech Tracks (CSE / SWE / IT / EEE)",
+    category: "Tech Tracks — CSE / SWE / IT / EEE",
+    badges: ["ESP32", "Hardware & Smart Sensors", "PCB Design", "MicroPython"],
+    duration: "3-4 Month Internship",
+    schedule: "10 AM - 1 PM Hybrid",
+    description:
+      "Prototype connected GPS tracking collars, water tank automation, touch-sensor smart switches, flash ESP32 firmware, and work with physical workspace test equipment at College Gate.",
+    responsibilities: [
+      "Write and test C++ / MicroPython firmware for ESP32 and STM32 microcontrollers.",
+      "Assemble and test physical breadboards, sensor modules (GPS, ultrasonic, touch, optical).",
+      "Assist in 2-layer PCB layout routing and surface-mount soldering at our physical benches.",
+      "Validate wireless telemetry latency over Wi-Fi, BLE, and LoRaWAN gateways.",
+    ],
+    requirements: [
+      "Hands-on experience with Arduino IDE, ESP-IDF, or microcontroller programming.",
+      "Basic electronic circuit debugging skills and familiarity with multimeters.",
+      "Enthusiasm for physical invention, robotics, and hardware fabrication.",
+      "Open to university students or graduates in CSE / SWE / IT / EEE / ETE / Applied Physics.",
+    ],
+  },
+  {
+    id: "ai-data-intern",
+    title: "AI & Data Engineering Intern",
+    track: "Tech Tracks (CSE / SWE / IT / EEE)",
+    category: "Tech Tracks — CSE / SWE / IT / EEE",
+    badges: ["Pipelines & AI/ML Models", "Python", "Data Engineering", "LLM Integration"],
+    duration: "3-4 Month Internship",
+    schedule: "10 AM - 1 PM Hybrid",
+    description:
+      "Build automated data scraping and ingestion pipelines, neural text-to-speech / NLP models, news aggregation engines (Khobor AI), and intelligent telemetry analytics for IoT sensors.",
+    responsibilities: [
+      "Design and optimize automated data ingestion, ETL pipelines, and API connectors in Python.",
+      "Implement and fine-tune machine learning and NLP workflows (LLM APIs, embeddings, news summarization).",
+      "Process and analyze telemetry sensor datasets for anomaly detection and pattern prediction.",
+      "Deploy lightweight inference endpoints and microservices with Docker.",
+    ],
+    requirements: [
+      "Proficiency in Python and fundamental data libraries (Pandas, NumPy, Scikit-Learn).",
+      "Familiarity with REST APIs, web scraping (BeautifulSoup/Playwright), or LLM integrations.",
+      "Curiosity for artificial intelligence, real-time streaming, and algorithmic efficiency.",
+      "Open to students or graduates in CSE / SWE / IT / Data Science / EEE.",
+    ],
+  },
+
+  // ==========================================
+  // [Non-Tech Tracks — BBA / Any Discipline]
+  // ==========================================
   {
     id: "project-manager",
     title: "Project Manager",
     track: "Project Management",
+    category: "Non-Tech Tracks — BBA / Any Discipline",
     badges: ["Full-Time / Regular", "Agile Sprints", "Client Delivery"],
     duration: "Full-Time / Regular",
     schedule: "Full-Time Schedule",
+    isFullTime: true,
     description:
       "Lead technical project delivery, coordinate agile sprint cycles between corporate clients and engineering teams, manage scopes, milestones, and deliverables for web, cloud, and IoT client contracts.",
     responsibilities: [
@@ -76,69 +161,72 @@ const POSITIONS: JobPosition[] = [
     ],
   },
   {
-    id: "marketing-intern",
+    id: "marketing-growth-intern",
     title: "Marketing & Growth Intern",
-    track: "Brand & Outreach",
-    badges: ["Campus Outreach", "B2B Deals", "Social Growth"],
+    track: "Non-Tech Tracks (BBA / Any Discipline)",
+    category: "Non-Tech Tracks — BBA / Any Discipline",
+    badges: ["B2B Deals", "Campus Outreach", "Growth Strategy", "Content & Media"],
     duration: "3-4 Month Internship",
     schedule: "10 AM - 1 PM Hybrid",
     description:
-      "Drive Incode BD brand visibility, manage university campus partnerships across IUT, DUET, AIUB, and leading universities, and execute digital marketing campaigns.",
+      "Drive Incode BD brand visibility, manage university campus partnerships across IUT, DUET, AIUB, and leading universities, and execute digital marketing campaigns and corporate outreach.",
     responsibilities: [
-      "Manage official Incode BD channels (Facebook, LinkedIn, GitHub showcases).",
+      "Manage official Incode BD channels (Facebook, LinkedIn, GitHub showcases, campus clubs).",
       "Organize campus tech talks, developer fellowship outreach, and student partnerships.",
       "Author compelling technical case studies showcasing our IoT and SaaS systems.",
-      "Assist leadership in commercial B2B client presentations and discovery calls.",
+      "Assist leadership in commercial B2B client presentations, proposals, and discovery calls.",
     ],
     requirements: [
       "Energetic communicator with natural campus network and community presence.",
       "Basic familiarity with content creation, social media growth, and copywriting.",
       "Comfortable speaking with students, faculty, and corporate stakeholders.",
-      "Studies in Marketing, BBA, English, Media, or CSE.",
+      "Open to students in BBA, Marketing, Communications, English, or any discipline.",
     ],
   },
   {
-    id: "creative-intern",
-    title: "Creative & UI/UX Design Intern",
-    track: "Creative Dev",
-    badges: ["Figma", "Tailwind CSS", "Visual Craft"],
-    duration: "3-4 Month Internship",
+    id: "client-relations-executive",
+    title: "Client Relations / Customer Support Executive",
+    track: "Non-Tech Tracks (BBA / Any Discipline)",
+    category: "Non-Tech Tracks — BBA / Any Discipline",
+    badges: ["Client Relations", "Customer Support", "CRM", "Communication"],
+    duration: "3-4 Month Internship / Fellowship",
     schedule: "10 AM - 1 PM Hybrid",
     description:
-      "Design high-conversion dark-mode interfaces, author interactive design tokens in Figma, and build kinetic web layouts that leave lasting impressions.",
+      "Serve as the direct bridge between Incode BD and enterprise software & IoT clients. Ensure seamless onboarding, prompt communication, professional client handling, and high satisfaction.",
     responsibilities: [
-      "Design responsive, dark-cyber UI mockups and interaction prototypes in Figma.",
-      "Collaborate with frontend developers on Tailwind CSS styling and Framer Motion micro-interactions.",
-      "Author high-converting social media creatives and product brand assets.",
-      "Ensure pixel-perfect visual hierarchy across mobile, tablet, and widescreen monitors.",
+      "Manage client inquiries, onboarding workflows, and post-delivery support via phone, email, and CRM.",
+      "Coordinate with technical engineering teams to communicate client feedback and bug reports.",
+      "Prepare meeting agendas, follow-up minutes, and project status documentation for corporate clients.",
+      "Foster long-term relationships and identify upselling or renewal opportunities.",
     ],
     requirements: [
-      "Demonstrated portfolio in Figma, UI design, or graphic art.",
-      "Strong understanding of modern dark-mode palettes, typography, and spacing.",
-      "Basic knowledge of HTML/CSS is a plus (willingness to learn Tailwind is celebrated).",
-      "Passionate about award-caliber aesthetics and digital craft.",
+      "Fluent spoken and written communication in Bengali and English.",
+      "Empathetic problem-solver with strong interpersonal and customer handling skills.",
+      "Familiarity with email communication, Google Docs/Sheets, and CRM tools.",
+      "Open to students or graduates in BBA, English, Economics, Social Sciences, or any discipline.",
     ],
   },
   {
-    id: "iot-intern",
-    title: "IoT & Embedded Systems Intern",
-    track: "Hardware Lab",
-    badges: ["ESP32", "PCB Design", "Sensors"],
+    id: "hr-talent-intern",
+    title: "HR & Talent Operations Intern",
+    track: "Non-Tech Tracks (BBA / Any Discipline)",
+    category: "Non-Tech Tracks — BBA / Any Discipline",
+    badges: ["People Ops", "Talent Acquisition", "Batch Coordination", "Office Ops"],
     duration: "3-4 Month Internship",
     schedule: "10 AM - 1 PM Hybrid",
     description:
-      "Prototype connected GPS tracking collars, touch-sensor smart switches, flash ESP32 firmware, and work with physical workspace oscilloscopes and multimeters at College Gate.",
+      "Coordinate talent recruitment, candidate evaluation, internship batch operations, and cultivate an inspiring collaborative engineering culture at our College Gate physical workspace.",
     responsibilities: [
-      "Write and test C++ / MicroPython firmware for ESP32 and STM32 microcontrollers.",
-      "Assemble and test physical breadboards, sensor modules (GPS, smoke, optical, touch).",
-      "Assist in 2-layer PCB layout routing and surface-mount soldering at our physical benches.",
-      "Validate wireless telemetry latency over Wi-Fi, BLE, and LoRaWAN gateways.",
+      "Screen incoming candidate applications, schedule interviews, and maintain applicant tracking sheets.",
+      "Coordinate onboarding logistics, attendance, and mock defense scheduling for internship fellows.",
+      "Assist leadership with internal HR policies, employee documentation, and official certificate issuance.",
+      "Organize team-building activities, workspace culture initiatives, and internal comms.",
     ],
     requirements: [
-      "Hands-on experience with Arduino IDE, ESP-IDF, or microcontrollers.",
-      "Basic electronic circuit debugging skills and familiarity with multimeters.",
-      "Enthusiasm for physical invention and hardware fabrication.",
-      "Student or graduate in EEE, ETE, CSE, or Applied Physics.",
+      "Strong organizational, interpersonal, and communication skills.",
+      "Passion for people operations, talent acquisition, and organizational development.",
+      "Proficiency in Google Workspace (Sheets, Docs) and professional correspondence.",
+      "Open to students or graduates in HRM, BBA, Public Administration, Psychology, or any discipline.",
     ],
   },
 ];
@@ -148,6 +236,7 @@ export default function CareersPage() {
     process.env.NEXT_PUBLIC_INTERNSHIP_FORM_URL ||
     "https://forms.gle/dE1ivECwFbrzrLHf6";
 
+  const [activeTab, setActiveTab] = useState<"all" | "tech" | "non-tech">("all");
   const [selectedJob, setSelectedJob] = useState<JobPosition | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -169,6 +258,16 @@ export default function CareersPage() {
     }
   };
 
+  const filteredPositions = POSITIONS.filter((pos) => {
+    if (activeTab === "tech") {
+      return pos.category === "Tech Tracks — CSE / SWE / IT / EEE";
+    }
+    if (activeTab === "non-tech") {
+      return pos.category === "Non-Tech Tracks — BBA / Any Discipline";
+    }
+    return true;
+  });
+
   return (
     <div className="relative min-h-screen bg-[#0A0D14] text-slate-100 flex flex-col justify-between selection:bg-[#B4F000] selection:text-black">
       <ThreeCanvas />
@@ -189,48 +288,13 @@ export default function CareersPage() {
           <h1 className="font-tagline text-2xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4 leading-tight">
             Build Real Systems. <br className="hidden sm:inline" />
             <span className="text-[#B4F000] drop-shadow-[0_0_25px_rgba(180,240,0,0.35)]">
-              Launch Your Engineering Career.
+              Launch Your Engineering &amp; Professional Career.
             </span>
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal mb-8">
-            Escape generic classroom theory. Join an active engineering team where you work on real client deployments, IoT hardware, and scalable architectures across flexible modern tech stacks.
+          <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
+            Escape generic classroom theory. Join an active engineering startup in Dhaka where you work on real client deployments, IoT hardware, and scalable architectures across flexible modern stacks.
           </p>
-
-          {/* Core Candidate Value Proposition Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 text-left">
-            <div className="glass-panel p-4 rounded-xl border border-white/5">
-              <GraduationCap className="w-4 h-4 text-[#B4F000] mb-2" />
-              <strong className="text-xs text-white block">Practicum &amp; Capstone</strong>
-              <span className="text-[11px] text-slate-300 leading-tight block mt-0.5">
-                Full practicum project support &amp; comprehensive mock defense at the end
-              </span>
-            </div>
-
-            <div className="glass-panel p-4 rounded-xl border border-white/5">
-              <DollarSign className="w-4 h-4 text-[#B4F000] mb-2" />
-              <strong className="text-xs text-white block">2K Monthly Installment</strong>
-              <span className="text-[11px] text-slate-300 leading-tight block mt-0.5">
-                Transparent 2,000 BDT/month installment covering desk, kits &amp; cloud servers
-              </span>
-            </div>
-
-            <div className="glass-panel p-4 rounded-xl border border-white/5">
-              <Layers className="w-4 h-4 text-[#B4F000] mb-2" />
-              <strong className="text-xs text-white block">Tech-Stack Flexible</strong>
-              <span className="text-[11px] text-slate-300 leading-tight block mt-0.5">
-                React, Node, Python, Laravel, Flutter + hybrid flexible hours
-              </span>
-            </div>
-
-            <div className="glass-panel p-4 rounded-xl border border-white/5">
-              <Award className="w-4 h-4 text-[#B4F000] mb-2" />
-              <strong className="text-xs text-white block">Client Projects &amp; Perks</strong>
-              <span className="text-[11px] text-slate-300 leading-tight block mt-0.5">
-                Official completion certificate &amp; client project revenue-share opportunities
-              </span>
-            </div>
-          </div>
         </div>
 
         {/* ========================================================= */}
@@ -259,14 +323,14 @@ export default function CareersPage() {
                 A Real, Dedicated Physical Workspace Built for Makers
               </h2>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                No corporate fluff or artificial claims — just an authentic, fan-cooled collaborative environment equipped with dedicated desks, high-speed fiber internet, hardware testing tools, and teammates who genuinely care about building software and hardware that works.
+                No corporate fluff or artificial claims — just an authentic, collaborative environment equipped with dedicated desks, high-speed fiber internet, hardware testing tools, and teammates who genuinely care about building software and hardware that works.
               </p>
               <div className="flex flex-wrap gap-2 text-xs font-mono text-slate-300 pt-1">
                 <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10">
                   📍 College Gate, Tongi
                 </span>
                 <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10">
-                  🌀 Dedicated Desks &amp; Fans
+                  🌀 Dedicated Desks &amp; Physical Space
                 </span>
                 <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10">
                   ⚡ High-Speed Fiber Internet
@@ -280,7 +344,9 @@ export default function CareersPage() {
           </div>
         </div>
 
-        {/* The 2-Step Transparent Application Protocol */}
+        {/* ========================================================= */}
+        {/* The 2-Step Transparent Application Protocol               */}
+        {/* ========================================================= */}
         <div id="application-protocol" className="mb-20 rounded-2xl p-6 sm:p-10 glass-panel border-2 border-[#B4F000]/40">
           
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
@@ -348,7 +414,7 @@ export default function CareersPage() {
                 </div>
               </div>
               <p className="text-xs font-mono text-slate-400 bg-black/50 px-3 py-1.5 rounded-lg border border-white/5">
-                Subject format: [Role Name] - [Your University Name]
+                Subject format: [Role Name] - [Your University Name / Name]
               </p>
             </div>
 
@@ -385,12 +451,12 @@ export default function CareersPage() {
             </div>
           </div>
 
-          {/* Transparent Fellowship Subsidy Note */}
+          {/* Admission Info Note */}
           <div className="pt-5 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm text-slate-300 font-mono">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-[#B4F000] flex-shrink-0" />
               <span>
-                For 3-4 Month Internship Fellows: Flexible 2K/month installment covering physical workspace desk, hardware sensor kits, final mock defense &amp; practicum guidance. (Project Manager is a regular full-time position).
+                Track curricula, responsibilities, and fellowship facilities are detailed inside each role card below.
               </span>
             </div>
             <span className="text-[#B4F000] font-semibold whitespace-nowrap">
@@ -401,38 +467,113 @@ export default function CareersPage() {
         </div>
 
         {/* ========================================================= */}
-        {/* Open Positions Grid                                       */}
+        {/* Open Positions Grid & Category Navigation                 */}
         {/* ========================================================= */}
         <div className="mb-14">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <span className="text-xs font-mono uppercase text-[#B4F000] tracking-wider block mb-1">
-                Open Tracks
+                📌 Open Tracks
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
                 Select Your Role &amp; Apply
               </h2>
             </div>
-            <span className="text-xs font-mono text-slate-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/10 hidden sm:inline-block">
-              {POSITIONS.length} Active Tracks
-            </span>
+
+            {/* Filter Tabs */}
+            <div className="inline-flex items-center p-1 rounded-xl bg-white/5 border border-white/10 gap-1">
+              <button
+                onClick={() => setActiveTab("all")}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium transition ${
+                  activeTab === "all"
+                    ? "bg-[#B4F000] text-black font-bold"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                All Tracks ({POSITIONS.length})
+              </button>
+              <button
+                onClick={() => setActiveTab("tech")}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium transition ${
+                  activeTab === "tech"
+                    ? "bg-[#B4F000] text-black font-bold"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                Tech Tracks (4)
+              </button>
+              <button
+                onClick={() => setActiveTab("non-tech")}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium transition ${
+                  activeTab === "non-tech"
+                    ? "bg-[#B4F000] text-black font-bold"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                Non-Tech Tracks (4)
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {POSITIONS.map((job) => (
-              <JobCard
-                key={job.id}
-                job={job}
-                onApply={() => handleApplyClick(job)}
-              />
-            ))}
-          </div>
+          {/* Group 1: Tech Tracks */}
+          {(activeTab === "all" || activeTab === "tech") && (
+            <div className="mb-12">
+              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-white/10">
+                <Code2 className="w-5 h-5 text-[#B4F000]" />
+                <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+                  [Tech Tracks — CSE / SWE / IT / EEE]
+                </h3>
+                <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-[#B4F000]/10 text-[#B4F000] border border-[#B4F000]/25">
+                  4 Active Tracks
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {POSITIONS.filter((j) => j.category === "Tech Tracks — CSE / SWE / IT / EEE").map(
+                  (job) => (
+                    <JobCard
+                      key={job.id}
+                      job={job}
+                      onApply={() => handleApplyClick(job)}
+                    />
+                  )
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Group 2: Non-Tech Tracks */}
+          {(activeTab === "all" || activeTab === "non-tech") && (
+            <div>
+              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-white/10">
+                <Users className="w-5 h-5 text-[#B4F000]" />
+                <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+                  [Non-Tech Tracks — BBA / Any Discipline]
+                </h3>
+                <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-white/10 text-slate-300 border border-white/15">
+                  4 Active Tracks
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {POSITIONS.filter((j) => j.category === "Non-Tech Tracks — BBA / Any Discipline").map(
+                  (job) => (
+                    <JobCard
+                      key={job.id}
+                      job={job}
+                      onApply={() => handleApplyClick(job)}
+                    />
+                  )
+                )}
+              </div>
+            </div>
+          )}
         </div>
 
       </main>
 
       {/* ========================================================= */}
-      {/* Interactive Application Modal Popup                      */}
+      {/* Interactive Application Modal Popup                       */}
       {/* ========================================================= */}
       {isModalOpen && (
         <div
@@ -440,7 +581,7 @@ export default function CareersPage() {
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="max-w-2xl w-full bg-[#0D121D] border-2 border-[#B4F000] rounded-3xl p-6 sm:p-9 shadow-[0_0_80px_rgba(180,240,0,0.3)] text-left relative overflow-hidden"
+            className="max-w-2xl w-full bg-[#0D121D] border-2 border-[#B4F000] rounded-3xl p-6 sm:p-9 shadow-[0_0_80px_rgba(180,240,0,0.3)] text-left relative overflow-hidden max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -460,7 +601,22 @@ export default function CareersPage() {
               <h3 className="text-2xl sm:text-3xl font-black text-white">
                 Applying for {selectedJob?.title || "Position"}
               </h3>
+              <p className="text-xs font-mono text-slate-400 mt-1">
+                Track: {selectedJob?.track}
+              </p>
             </div>
+
+            {/* Fellowship Notice in Modal (ONLY for internship roles) */}
+            {!selectedJob?.isFullTime && (
+              <div className="mb-5 p-4 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-slate-300">
+                <strong className="text-slate-200 block mb-1 font-semibold font-mono">
+                  Fellowship Notice:
+                </strong>
+                <span>
+                  As an early-stage startup, we currently onboard self-paid interns with a nominal 2,000 BDT monthly workspace management fee (covering official certification, dedicated workstation, 1-on-1 mock defense sessions, and client project earning opportunities).
+                </span>
+              </div>
+            )}
 
             {/* Big Alert Notice */}
             <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-amber-500/10 border-2 border-amber-400/50 flex items-start gap-3.5">
@@ -525,13 +681,13 @@ export default function CareersPage() {
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-300 mb-3">
-                  {selectedJob?.id === "project-manager" ? (
+                  {selectedJob?.isFullTime ? (
                     <span>
-                      This form is strictly for your <strong>contact details and questionnaire</strong> (recording your contact info, project management experience, and joining availability).
+                      This form is strictly for your <strong>contact details and questionnaire</strong> — recording your contact info, project delivery background, and availability.
                     </span>
                   ) : (
                     <span>
-                      This form is strictly for your <strong>contact details and questionnaires</strong> (recording class schedule, shift timings, and tech preferences).
+                      This form is strictly for your <strong>contact details and questionnaires</strong> — recording your academic class schedule, weekly shift availability, and preferred track.
                     </span>
                   )}
                 </p>
@@ -550,7 +706,7 @@ export default function CareersPage() {
             {/* Footer action */}
             <div className="pt-4 border-t border-white/10 flex items-center justify-between">
               <span className="text-xs font-mono text-slate-400">
-                Tongi Physical Workspace • {selectedJob?.duration || "Full-Time / Regular"}
+                Tongi Physical Workspace • {selectedJob?.duration || "10 AM - 1 PM Hybrid"}
               </span>
               <button
                 onClick={() => setIsModalOpen(false)}

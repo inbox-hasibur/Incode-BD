@@ -40,6 +40,79 @@ export default function Home() {
         {/* Hero Section with Ambient Hardware/Software Showcase Video */}
         <HeroSection />
 
+        {/* About Incode BD Section */}
+        <section id="about-spotlight" className="relative py-16 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-[#080B10]">
+          <div className="max-w-7xl mx-auto">
+            <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-white/10 relative overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-7 space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#B4F000]">
+                    <span>ABOUT INCODE BD // TECHNOLOGY STARTUP</span>
+                  </div>
+                  <h2 className="text-xl sm:text-3xl font-bold text-white tracking-tight leading-snug">
+                    Solving Business Problems with <br className="hidden sm:inline" />
+                    <span className="text-[#B4F000]">Hardware, Software, and Aesthetics.</span>
+                  </h2>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    Incode BD is a modern technology startup located at College Gate (Tongi), Dhaka. Our core philosophy is &ldquo;Solving Business Problems with Hardware, Software, and Aesthetics&rdquo; — engineering effective, high-stakes solutions by combining IoT hardware and scalable SaaS with award-caliber digital craft.
+                  </p>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                      <strong className="text-xs font-mono text-[#B4F000] block mb-1">
+                        01. Custom Client Solutions
+                      </strong>
+                      <span className="text-xs text-slate-300 leading-relaxed block">
+                        Custom web applications, Enterprise ERP, biometric &amp; cloud HRM, and specialized AI-driven software services for local and global clients.
+                      </span>
+                    </div>
+                    <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                      <strong className="text-xs font-mono text-[#B4F000] block mb-1">
+                        02. In-House Smart Products &amp; IoT
+                      </strong>
+                      <span className="text-xs text-slate-300 leading-relaxed block">
+                        Smart pet tracking (Incode Track), fleet transit maps, water tank automation, Khobor AI news digests, and microcontroller smart units.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono">
+                    <Link
+                      href="/about"
+                      className="btn-neon inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs"
+                    >
+                      <span>Explore About Us</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+                    </Link>
+                    <a
+                      href="https://incodebd.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-300 hover:text-[#B4F000] inline-flex items-center gap-1.5 transition"
+                    >
+                      <span>Official Portal: incodebd.com</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-xl group">
+                  <Image
+                    src="/office-interior.jpg"
+                    alt="Incode BD Engineering Workspace at College Gate, Tongi"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <div className="absolute bottom-3 left-3 px-3 py-1 rounded bg-[#0A0D14]/90 border border-white/10 text-[11px] font-mono text-slate-200">
+                    Akon Villa Ground Floor, College Gate, Tongi
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Core Engineering Pillars */}
         <PillarsSection />
 
