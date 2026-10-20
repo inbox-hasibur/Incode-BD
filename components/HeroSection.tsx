@@ -1,44 +1,15 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import Image from "next/image";
+import React from "react";
+
 import Link from "next/link";
 import {
   ArrowUpRight,
-  Play,
-  Pause,
-  Volume2,
-  VolumeX,
   Layers,
   MapPin,
-  Cpu,
-  Server,
-  Code2
 } from "lucide-react";
 
 export default function HeroSection() {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
-  const [videoError, setVideoError] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
-  };
-
-  const toggleMute = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
-  };
-
   return (
     <section className="relative min-h-[85vh] flex flex-col justify-center items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       
@@ -92,69 +63,6 @@ export default function HeroSection() {
             <Layers className="w-4 h-4 text-[#B4F000]" />
             <span>Our Products &amp; IoT</span>
           </Link>
-        </div>
-
-        {/* Sleek Hardware & Systems Showcase Video Container */}
-        <div className="relative w-full max-w-4xl mx-auto rounded-2xl p-1 bg-white/[0.04] border border-white/10">
-          
-          <div className="relative w-full aspect-video sm:aspect-[16/9] md:aspect-[21/9] bg-[#07090E] rounded-xl overflow-hidden group border border-white/[0.06]">
-            
-            {/* The Video Element */}
-            {!videoError ? (
-              <video
-                ref={videoRef}
-                src="/hero-video.mp4"
-                poster="/hero-3d-lab.jpg"
-                autoPlay
-                loop
-                muted
-                playsInline
-                onError={() => setVideoError(true)}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.01]"
-              />
-            ) : (
-              <Image
-                src="/hero-3d-lab.jpg"
-                alt="Incode BD 3D Hardware Ecosystem"
-                fill
-                priority
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.01]"
-              />
-            )}
-
-            {/* Subtle cyber vignette overlay */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0A0D14]/80 via-transparent to-transparent opacity-70" />
-
-            {/* Bottom Left Minimal Meta */}
-            <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-[#0A0D14]/85 border border-white/10 backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-[#B4F000]" />
-              <span className="text-xs font-mono text-slate-200">
-                Incode Hardware &amp; Embedded Systems
-              </span>
-            </div>
-
-            {/* Bottom Right Minimal Controls */}
-            <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2">
-              <button
-                onClick={togglePlay}
-                className="p-2 rounded-lg bg-[#0A0D14]/85 border border-white/10 text-slate-200 hover:text-[#B4F000] hover:border-[#B4F000]/40 transition backdrop-blur-md"
-                title={isPlaying ? "Pause Video" : "Play Video"}
-                aria-label="Play/Pause"
-              >
-                {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-              </button>
-
-              <button
-                onClick={toggleMute}
-                className="p-2 rounded-lg bg-[#0A0D14]/85 border border-white/10 text-slate-200 hover:text-[#B4F000] hover:border-[#B4F000]/40 transition backdrop-blur-md"
-                title={isMuted ? "Unmute Audio" : "Mute Audio"}
-                aria-label="Mute/Unmute"
-              >
-                {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
-              </button>
-            </div>
-
-          </div>
         </div>
 
         {/* Enterprise Highlights Strip */}

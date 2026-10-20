@@ -87,10 +87,6 @@ export default function JobCard({
               </h4>
             </div>
 
-            <p className="text-xs text-slate-300 leading-relaxed mb-3">
-              As an early-stage startup, we currently onboard self-paid interns with a dedicated office space management fee of 2,000 BDT per month.
-            </p>
-
             <div className="pt-2.5 border-t border-white/5">
               <span className="text-[11px] font-mono text-slate-400 block mb-2 font-medium">
                 What you will receive:
