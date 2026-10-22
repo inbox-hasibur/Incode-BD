@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   MapPin,
-  Phone,
+  MessageSquare,
   Mail,
   Globe,
   ArrowUpRight,
@@ -24,10 +24,15 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-[#07090E] border-t border-white/10 text-slate-300 pt-16 pb-12 overflow-hidden z-10">
-      {/* Background ambient lighting */}
+      {/* Rich Theme Ambient Glow along the footer bottom (Ref: Reference image) */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-[radial-gradient(circle_at_center,rgba(180,240,0,0.04)_0%,transparent_70%)] -z-10" 
+        className="pointer-events-none absolute -bottom-12 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl h-[350px] rounded-full filter blur-[100px] sm:blur-[120px] -z-10" 
+        style={{
+          background: isLight
+            ? "radial-gradient(ellipse 70% 60% at 50% 100%, rgba(255, 107, 0, 0.24) 0%, rgba(251, 146, 60, 0.20) 40%, rgba(254, 215, 170, 0.10) 70%, transparent 100%)"
+            : "radial-gradient(ellipse 70% 60% at 50% 100%, rgba(180, 240, 0, 0.30) 0%, rgba(16, 185, 129, 0.24) 40%, rgba(6, 182, 212, 0.12) 70%, transparent 100%)",
+        }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +63,7 @@ export default function Footer() {
             </Link>
 
             <p className="font-tagline text-sm text-slate-400 max-w-sm leading-relaxed">
-              &ldquo;Solving Business Problems with Hardware, Software, and Aesthetics.&rdquo; Building production-grade IoT telemetry, intelligent cloud stacks, and digital products.
+              Solving Business Problems with Hardware, Software, and Aesthetics. Building production-grade IoT telemetry, intelligent cloud stacks, and digital products.
             </p>
 
             {/* Social Icons */}
@@ -91,7 +96,7 @@ export default function Footer() {
                 <Github className="w-4 h-4" />
               </a>
               <a
-                href="https://maps.app.goo.gl/jeDY2fVmKujYxibK8"
+                href="https://maps.app.goo.gl/5r4h9GWFhw8EzHpL6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#B4F000] hover:border-[#B4F000]/40 transition"
@@ -181,9 +186,15 @@ export default function Footer() {
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#B4F000] flex-shrink-0" />
-                <a href="tel:+8801581495140" className="hover:text-white transition">
-                  +880 1581-495140
+                <MessageSquare className="w-4 h-4 text-[#B4F000] flex-shrink-0" />
+                <a
+                  href="https://wa.me/8801581495140"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition"
+                  title="WhatsApp Message Only"
+                >
+                  WhatsApp: +880 1581-495140 (Message Only)
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
@@ -207,10 +218,13 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>© 2026 Incode BD. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-slate-400">
-              <span className="w-2 h-2 rounded-full bg-[#FF6B00] dark:bg-[#B4F000] animate-pulse" />
-              Production Core: Live in Dhaka
-            </span>
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event("openCookieSettings"))}
+              className="text-slate-400 hover:text-[#B4F000] transition"
+            >
+              Manage Cookies
+            </button>
             <a
               href="https://incodebd.com"
               className="text-slate-400 hover:text-[#B4F000] transition"

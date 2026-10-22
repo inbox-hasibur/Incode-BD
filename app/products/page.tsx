@@ -3,8 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ThreeCanvas from "@/components/ThreeCanvas";
-import IncodeBotCompanion from "@/components/IncodeBotCompanion";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Compass,
@@ -22,118 +21,192 @@ import {
   SlidersHorizontal,
   Flame,
   Zap,
-  Navigation
+  Navigation,
+  Globe,
+  Droplets,
+  Plane,
+  CreditCard,
+  Server
 } from "lucide-react";
 
 export default function ProductsPage() {
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
 
   const products = [
+    // ==========================================
+    // [IoT Products Category]
+    // ==========================================
     {
-      id: "pet-tracking",
-      category: "telematics",
-      badge: "Commercial Hardware // Live Telemetry",
-      title: "Incode Track • Pet & Asset Telematics",
+      id: "catfinder-pet-tracker",
+      category: "iot",
+      badge: "IoT Products",
+      title: "Catfinder • GPS Pet Tracker",
       summary:
-        "Ultra-lightweight GPS, LoRa, and BLE telemetry device designed for pet tracking, livestock monitoring, and high-value mobile asset protection.",
+        "Keep your furry friend safe, wherever they go. Real-time GPS location, configurable safe zone alerts, extended battery endurance, waterproof IP67 casing, and interchangeable collar tag shapes.",
+      image: "/catfinder-preview.jpg",
+      isFeatured: true,
       features: [
-        "Real-time GPS coordinates with sub-3 meter accuracy",
-        "Configurable safe geofence zones with instant mobile push alerts",
-        "Ultra-low-power sleep modes providing up to 30 days battery endurance",
-        "Durable, water-resistant IP67 casing engineered for active pets",
+        "Real-time GPS tracking with high-accuracy sub-3 meter mobile telemetry",
+        "Configurable safe zone geofences with instant smartphone push alerts",
+        "Ultra-low-power Bluetooth & cellular telemetry with extended battery endurance",
+        "Waterproof IP67 design with multiple ergonomic shapes (Cat Head, Panda, Stone, Bone)",
       ],
-      specs: [
-        { label: "Hardware", val: "ESP32-S3 + NEO-6M GPS" },
-        { label: "Connectivity", val: "BLE 5.0 + 4G/LoRa" },
-        { label: "Battery", val: "850mAh LiPo" },
-      ],
-      linkText: "Request Hardware Specs",
-      linkHref: "mailto:contact@incodebd.com?subject=Incode Track Inquiry",
+      linkText: "Request Catfinder Specs",
+      linkHref: "mailto:contact@incodebd.com?subject=Catfinder Pet Tracker Inquiry",
     },
     {
-      id: "fleet-maps",
-      category: "telematics",
-      badge: "Enterprise Transportation Platform",
-      title: "Incode Transit & Custom Fleet Maps",
+      id: "touch-fire-sensors",
+      category: "iot",
+      badge: "Hardware & Sensors",
+      title: "Custom Sensors & IoT Modules",
       summary:
-        "Comprehensive organizational transit management suite providing live vehicle tracking, passenger dashboards, route analytics, and custom-styled interactive maps.",
+        "Small Sensors, Big Ideas. Complete range of modular sensors for robotics, automation, and IoT: Obstacle, Light, Fire, Motion PIR, Temperature/Humidity, Soil Moisture, Gas, GPS, and Camera modules.",
+      image: "/sensors-preview.jpg",
+      isFeatured: true,
+      features: [
+        "Ultrasonic & IR obstacle sensors, LDR light sensors, and optical flame/fire detectors",
+        "PIR motion, DHT11/DHT22 temp & humidity, soil moisture, and MQ gas detection",
+        "ESP32-CAM optical modules, NEO-6M/7M GPS, OLED/LCD displays, and relay units",
+        "Calibrated plug-and-play pinouts with custom enclosure fabrication available",
+      ],
+      linkText: "Request Sensor Catalog",
+      linkHref: "mailto:contact@incodebd.com?subject=Sensors and IoT Modules Inquiry",
+    },
+    {
+      id: "bus-tracking",
+      category: "iot",
+      badge: "IoT Products",
+      title: "BUS Tracking GPS & Fleet Telematics",
+      summary:
+        "Comprehensive public transit and organizational vehicle tracking system with passenger dashboards, route telemetry, and custom-styled interactive maps.",
+      image: "/ubus-preview.png",
+      isFeatured: true,
       features: [
         "Live interactive route visualization with sub-second websocket telemetry",
-        "Driver schedule optimization and delay notification pipelines",
-        "Vehicle health diagnostics and fuel consumption estimation",
-        "Custom branded map interfaces tailored for universities & enterprises",
-      ],
-      specs: [
-        { label: "Architecture", val: "Next.js + WebSockets" },
-        { label: "Map Engine", val: "Vector Tiles / Custom Layers" },
-        { label: "Latency", val: "< 100ms Broadcast" },
+        "Real-time arrival estimation and passenger mobile notifications",
+        "Vehicle health diagnostics and organizational fleet analytics",
+        "Custom branded map interfaces tailored for transit fleets & universities",
       ],
       linkText: "Schedule Fleet Demo",
-      linkHref: "mailto:contact@incodebd.com?subject=Incode Transit Inquiry",
+      linkHref: "mailto:contact@incodebd.com?subject=BUS Tracking GPS Inquiry",
+    },
+    {
+      id: "quicktap-attendance",
+      category: "iot",
+      badge: "IoT & Cloud",
+      title: "QuickTap • Anti-Proxy Attendance System",
+      summary:
+        "Cost-effective anti-proxy organizational attendance system with smart credential verification, instant cloud sync, and admin gateway.",
+      image: "/quicktap-preview.png",
+      isFeatured: true,
+      features: [
+        "Encrypted credential tap authentication eliminating attendance proxy & falsification",
+        "Offline-capable local hardware validation with automatic cloud server sync",
+        "Secure admin gateway with live roster check-ins and monthly exportable reports",
+        "Plug-and-play Wi-Fi gateway hardware with low power consumption",
+      ],
+      linkText: "Visit quicktapp.vercel.app",
+      linkHref: "https://quicktapp.vercel.app/",
+      isExternal: true,
+    },
+    {
+      id: "water-tank-automation",
+      category: "iot",
+      badge: "IoT Products",
+      title: "Water Tank Automation System",
+      summary:
+        "Non-contact ultrasonic liquid level detection system with heavy-duty pump relay switching, dry-run safety protection, and real-time mobile telemetry.",
+      image: "/pillar-hardware.jpg",
+      isFeatured: false,
+      features: [
+        "Ultrasonic liquid level monitoring accurate to ±1 centimeter",
+        "Automated pump control logic preventing overflow and dry-run pump burns",
+        "Over-the-air schedule overrides and water consumption statistics",
+        "Industrial-grade relay switches with surge protection",
+      ],
+      linkText: "Inquire Automation Specs",
+      linkHref: "mailto:contact@incodebd.com?subject=Water Tank Automation Inquiry",
+    },
+
+    // ==========================================
+    // [Software Products Category]
+    // ==========================================
+    {
+      id: "smart-pos",
+      category: "software",
+      badge: "Software & Retail",
+      title: "Retail & Supermarket Smart POS System",
+      summary:
+        "Faster Checkout. Smarter Business. Manage sales, inventory, customers, and revenues in one powerful, easy-to-use cloud POS platform engineered for modern retail and supermarkets.",
+      image: "/pos-preview.jpg",
+      isFeatured: true,
+      features: [
+        "High-speed checkout interface with barcode scanner and thermal receipt printer support",
+        "Automated inventory stock deductions, low-stock threshold alerts, and purchase orders",
+        "Integrated electronic cash drawer triggering and secure payment card terminals",
+        "Real-time multi-branch revenue analytics with offline-first billing & cloud synchronization",
+      ],
+      linkText: "Request POS Demo",
+      linkHref: "mailto:contact@incodebd.com?subject=Retail POS System Inquiry",
+    },
+    {
+      id: "cloud-erp-hrm",
+      category: "software",
+      badge: "Enterprise Cloud",
+      title: "Enterprise Cloud ERP & HRM Platform",
+      summary:
+        "Smarter People. Stronger Business. Streamline your operations, workforce management, and enterprise growth in an all-in-one scalable, secure cloud-based software.",
+      image: "/erp-hrm-preview.jpg",
+      isFeatured: true,
+      features: [
+        "Comprehensive HRM: Biometric attendance synchronization, automated payroll, and leave workflows",
+        "Integrated business modules: Inventory warehouse, Sales CRM, Purchase, and Finance ledgers",
+        "Modern web portal and companion mobile app for employee self-service and management",
+        "Enterprise data protection, automated daily backups, and role-based multi-branch access control",
+      ],
+      linkText: "Schedule ERP Demo",
+      linkHref: "mailto:contact@incodebd.com?subject=Cloud ERP and HRM Demo",
     },
     {
       id: "khobor-ai",
-      category: "ai",
-      badge: "AI Media & Aggregation Platform",
-      title: "Khobor AI • News Aggregator & Neural Audio",
+      category: "software",
+      badge: "Software Products",
+      title: "Khobor AI • News Aggregator",
       summary:
-        "Autonomous multi-source news aggregator featuring neural audible summaries, automated categorization, and live media IPTV streaming integration.",
+        "Autonomous multi-source news aggregator featuring neural audible summaries, automated Bengali categorization, and live media IPTV streaming integration.",
+      image: "/kahfnews-preview.png",
+      isFeatured: true,
       features: [
         "Automated continuous aggregation across major Bengali and global publications",
         "Neural text-to-speech audio engine generating 60-second news digests",
         "Integrated media player with live IPTV streaming and video news",
         "Zero-latency search and topic demixing powered by vector indexing",
       ],
-      specs: [
-        { label: "Live Demo", val: "kahfnews.vercel.app" },
-        { label: "Audio Engine", val: "Neural TTS Pipeline" },
-        { label: "Media Stream", val: "HLS / Live IPTV" },
-      ],
       linkText: "Visit kahfnews.vercel.app",
       linkHref: "https://kahfnews.vercel.app",
       isExternal: true,
     },
+
+    // ==========================================
+    // [Prototype / R&D Category]
+    // ==========================================
     {
       id: "autonomous-drone",
-      category: "hardware",
-      badge: "R&D Prototype // Autonomous Aviation",
-      title: "AeroAutonomous Drone Platform",
+      category: "rnd",
+      badge: "Prototype / R&D",
+      title: "Autonomous Surveillance Drone Platform",
       summary:
-        "AI-controlled aerial vehicle capable of executing complex multi-waypoint instructions and environmental inspection beyond the boundaries of standard manual radio control.",
+        "Smarter Eyes for a Safer Tomorrow. AI-controlled multi-rotor aerial system capable of executing autonomous waypoint surveys, edge computer vision obstacle detection, and encrypted flight telemetry.",
+      image: "/drone-preview.jpg",
+      isFeatured: true,
       features: [
-        "Onboard optical and spatial flow sensors for GPS-denied navigation",
-        "Autonomous mission instruction parsing without human pilot intervention",
-        "Edge computer vision pipeline for real-time obstacle detection",
-        "Failsafe auto-return and telemetry logging via encrypted cloud relay",
+        "Stable carbon multi-rotor frame with high-capacity Li-Po battery power system",
+        "4K stabilized gimbal camera for high-resolution aerial monitoring & inspection",
+        "Edge AI onboard computer running real-time vision algorithms for obstacle avoidance",
+        "Precision flight controller and long-range encrypted RF/telemetry communications",
       ],
-      specs: [
-        { label: "Flight Controller", val: "STM32 / PX4 Autopilot" },
-        { label: "Edge Processor", val: "Raspberry Pi CM4 / NPU" },
-        { label: "Range", val: "Autonomous Waypoint" },
-      ],
-      linkText: "Inquire R&D Specs",
-      linkHref: "mailto:contact@incodebd.com?subject=AeroAutonomous Drone Inquiry",
-    },
-    {
-      id: "smarthome-iot",
-      category: "hardware",
-      badge: "Custom PCB & Smart Environment",
-      title: "Incode Touch & Ambient Sensor Suite",
-      summary:
-        "Custom-fabricated capacitive touch switchboards and multi-sensor modules for smart buildings, commercial offices, and educational laboratories.",
-      features: [
-        "Sleek tempered glass capacitive touch switches for lights and fans",
-        "Modular ambient sensor nodes: smoke detection, obstacle sensors, and optical lux",
-        "Local Wi-Fi and Bluetooth mesh control with zero internet fallback",
-        "Custom PCB design and enclosure tailored to client interior aesthetics",
-      ],
-      specs: [
-        { label: "PCB Type", val: "Double-Layer FR4 Glass" },
-        { label: "Sensors", val: "Optical, Gas, Smoke, IR" },
-        { label: "Control", val: "Capacitive Touch & Web" },
-      ],
-      linkText: "Custom Hardware Quote",
-      linkHref: "mailto:contact@incodebd.com?subject=Custom PCB and IoT Quote",
+      linkText: "Inquire Drone R&D",
+      linkHref: "mailto:contact@incodebd.com?subject=Autonomous Drone Platform Inquiry",
     },
   ];
 
@@ -143,43 +216,34 @@ export default function ProductsPage() {
       : products.filter((p) => p.category === selectedFilter);
 
   return (
-    <div className="relative min-h-screen bg-[#0A0D14] text-slate-100 flex flex-col justify-between selection:bg-[#B4F000] selection:text-black">
-      <ThreeCanvas />
-      <IncodeBotCompanion />
+    <div className="relative min-h-screen text-slate-100 flex flex-col justify-between selection:bg-[#B4F000] selection:text-black">
       <Navbar />
 
-      <main className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full z-10">
-        
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto pt-6 pb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono text-[#B4F000] mb-4">
-            <Cpu className="w-3.5 h-3.5" />
-            <span>COMMERCIAL PRODUCTS &amp; HARDWARE</span>
-          </div>
-
-          <h1 className="font-tagline text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
-            Products Built for the Real World
+      <main className="w-full flex-grow pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h1 className="font-raleway text-2xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+            Production Products &amp; Prototypes
           </h1>
-
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto">
-            From connected GPS telematics and intelligent drones to autonomous news aggregators and custom PCB smart-home switchboards.
+          <p className="font-raleway text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            In-house hardware telemetry devices and scalable software platforms engineered, tested, and deployed at Incode BD.
           </p>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
+          {/* Category Filter Chips */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mt-8">
             {[
               { id: "all", label: "All Products" },
-              { id: "telematics", label: "Telematics & Tracking" },
-              { id: "hardware", label: "IoT Hardware & Drones" },
-              { id: "ai", label: "AI & Media Platforms" },
+              { id: "iot", label: "IoT Products" },
+              { id: "software", label: "Software Products" },
+              { id: "rnd", label: "Prototype / R&D" },
             ].map((f) => (
               <button
                 key={f.id}
                 onClick={() => setSelectedFilter(f.id)}
-                className={`px-4 py-1.5 rounded-xl text-xs font-mono transition-all ${
+                className={`px-5 py-2 rounded-full text-xs font-semibold transition-all ${
                   selectedFilter === f.id
-                    ? "btn-neon font-bold"
-                    : "bg-white/[0.03] text-slate-300 hover:text-white border border-white/10"
+                    ? "bg-[#FF6B00] dark:bg-[#B4F000] text-white dark:text-black shadow-md font-bold text-white-force"
+                    : "bg-white/80 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white border border-slate-200 dark:border-white/10 shadow-sm"
                 }`}
               >
                 {f.label}
@@ -188,93 +252,126 @@ export default function ProductsPage() {
           </div>
         </div>
 
-        {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {/* Product Cards Grid with Expansive 2-Column Wide Visual Hierarchy */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 items-stretch">
           {filteredProducts.map((prod) => (
             <div
               key={prod.id}
-              className="glass-card-interactive rounded-2xl p-6 sm:p-7 border border-white/10 flex flex-col justify-between"
+              className={`glass-card-interactive rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-white/10 flex flex-col justify-between group shadow-xl transition-all duration-300 relative overflow-hidden ${
+                prod.isFeatured
+                  ? "shadow-[0_15px_35px_-10px_rgba(0,0,0,0.1)] dark:shadow-[0_15px_35px_-10px_rgba(0,0,0,0.6)]"
+                  : ""
+              }`}
             >
+              {/* Optional Subtle Glow Aura for Featured Cards */}
+              {prod.isFeatured && (
+                <div 
+                  aria-hidden="true" 
+                  className="pointer-events-none absolute -bottom-16 left-1/2 -translate-x-1/2 w-48 h-20 rounded-full bg-[#FF6B00]/10 dark:bg-[#B4F000]/10 filter blur-2xl opacity-60 group-hover:opacity-100 transition-opacity" 
+                />
+              )}
+
               <div>
-                <span className="text-[11px] font-mono tracking-wider uppercase text-[#B4F000] px-2.5 py-1 rounded bg-[#B4F000]/10 border border-[#B4F000]/20 block w-fit mb-4">
-                  {prod.badge}
-                </span>
+                {/* Visual Image Banner for Prominent UI Legibility */}
+                {prod.image && (
+                  <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-6 border border-slate-200/80 dark:border-white/10 bg-slate-100 dark:bg-black/60 shadow-md">
+                    <Image
+                      src={prod.image}
+                      alt={prod.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover object-center"
+                    />
+                  </div>
+                )}
 
-                <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">
+                {/* Clean Top Header */}
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#FF6B00] dark:bg-[#B4F000]" />
+                    <span className="text-xs font-mono font-medium tracking-wide uppercase text-slate-500 dark:text-slate-400">
+                      {prod.badge}
+                    </span>
+                  </div>
+                  <Globe className="w-4 h-4 text-[#FF6B00] dark:text-[#B4F000]" />
+                </div>
+
+                <h3 className="font-raleway text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#FF6B00] dark:group-hover:text-[#B4F000] transition-colors leading-snug">
                   {prod.title}
-                </h2>
+                </h3>
 
-                <p className="text-sm text-slate-300 leading-relaxed mb-6">
+                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6 font-normal">
                   {prod.summary}
                 </p>
 
-                {/* Features List */}
-                <div className="space-y-2.5 mb-6">
-                  <span className="text-xs font-mono uppercase text-slate-400 block tracking-wider">
-                    Key Capabilities:
-                  </span>
-                  <ul className="space-y-2 text-xs text-slate-300">
-                    {prod.features.map((feat, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B4F000] flex-shrink-0 mt-0.5" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div>
-                {/* Tech Specs */}
-                <div className="pt-4 border-t border-white/10 grid grid-cols-3 gap-2 mb-6">
-                  {prod.specs.map((spec, sIdx) => (
-                    <div key={sIdx} className="bg-white/[0.02] p-2 rounded-lg border border-white/5">
-                      <p className="text-[9px] font-mono uppercase text-slate-400 truncate">
-                        {spec.label}
-                      </p>
-                      <p className="text-xs font-mono font-bold text-slate-200 truncate mt-0.5">
-                        {spec.val}
-                      </p>
+                {/* Technical Feature Specs List */}
+                <div className="space-y-2.5 mb-6 border-t border-slate-200/80 dark:border-white/10 pt-4">
+                  {prod.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#FF6B00] dark:text-[#B4F000] flex-shrink-0 mt-0.5" />
+                      <span className="leading-snug">{feature}</span>
                     </div>
                   ))}
                 </div>
+              </div>
 
-                {/* Action Link */}
-                <a
-                  href={prod.linkHref}
-                  target={prod.isExternal ? "_blank" : undefined}
-                  rel={prod.isExternal ? "noopener noreferrer" : undefined}
-                  className="btn-neon w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide"
-                >
-                  <span>{prod.linkText}</span>
-                  {prod.isExternal ? (
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  ) : (
+              {/* Action Link Row */}
+              <div className="pt-4 border-t border-slate-200/80 dark:border-white/10 flex items-center justify-between">
+                <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
+                  {prod.badge}
+                </span>
+
+                {prod.isExternal ? (
+                  <a
+                    href={prod.linkHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-neon inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold tracking-wide shadow-md"
+                  >
+                    <span>{prod.linkText}</span>
+                    <ExternalLink className="w-3.5 h-3.5 stroke-[2.5]" />
+                  </a>
+                ) : (
+                  <a
+                    href={prod.linkHref}
+                    className="btn-neon inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold tracking-wide shadow-md"
+                  >
+                    <span>{prod.linkText}</span>
                     <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
-                  )}
-                </a>
+                  </a>
+                )}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Custom Hardware Consultation Banner */}
-        <div className="glass-panel rounded-2xl p-8 border border-[#B4F000]/30 text-center max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-white mb-2">
-            Need a Custom IoT Hardware or Enterprise Software Solution?
+        {/* Bottom Banner */}
+        <div className="p-8 sm:p-10 rounded-3xl glass-panel border border-[#FF6B00]/30 dark:border-[#B4F000]/30 text-center relative overflow-hidden">
+          <span className="text-xs font-mono uppercase text-[#FF6B00] dark:text-[#B4F000] tracking-wider block mb-2">
+            Enterprise Custom Prototyping
+          </span>
+          <h2 className="text-xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2">
+            Need a Proprietary IoT Device or Custom SaaS Platform?
           </h2>
-          <p className="text-sm text-slate-300 max-w-2xl mx-auto mb-6">
-            We build proprietary hardware prototypes, custom firmware, and cloud backends tailored to your exact business specifications.
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-xl mx-auto mb-6 leading-relaxed">
+            Incode BD engineers custom circuit schematics, multi-layer PCBs, embedded firmware, and production cloud applications tailored to your proprietary requirements.
           </p>
-          <a
-            href="mailto:contact@incodebd.com?subject=Custom Engineering Inquiry"
-            className="btn-neon inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold"
-          >
-            <span>Discuss Your Product Requirements</span>
-            <ArrowUpRight className="w-4 h-4" />
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="mailto:contact@incodebd.com?subject=Proprietary Solution Inquiry"
+              className="btn-neon inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-bold"
+            >
+              <span>Contact Engineering Team</span>
+              <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+            </a>
+            <Link
+              href="/services"
+              className="px-6 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-[#FF6B00]/40 dark:hover:border-[#B4F000]/40 transition"
+            >
+              View Commercial Services
+            </Link>
+          </div>
         </div>
-
       </main>
 
       <Footer />

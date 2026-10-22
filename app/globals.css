@@ -16,26 +16,37 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: var(--font-raleway, 'Raleway'), 'Raleway', var(--font-inter, 'Inter'), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Raleway', var(--font-raleway, 'Raleway'), sans-serif;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: #0A0D14;
-  font-family: var(--font-raleway, 'Raleway'), 'Raleway', var(--font-inter, 'Inter'), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Raleway', var(--font-raleway, 'Raleway'), sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
 
-/* Logo Fancy Font: "Bagel Fat One" with fallback "Inter", sans-serif */
-.font-logo {
-  font-family: 'Bagel Fat One', var(--font-inter, 'Inter'), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+/* Raleway Universal Class */
+.raleway {
+  font-family: 'Raleway', sans-serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-/* Regular Tagline & Heading Font: "Raleway" with fallback "Inter", sans-serif */
+h1, h2, h3, h4, h5, h6, p, a, button, input, textarea {
+  font-family: 'Raleway', var(--font-raleway, 'Raleway'), sans-serif;
+}
+
+/* Logo Fancy Font: "Bagel Fat One" with fallback "Inter", sans-serif */
+.font-logo {
+  font-family: 'Bagel Fat One', 'Raleway', sans-serif !important;
+}
+
+/* Regular Tagline & Heading Font: "Raleway" */
 .font-tagline {
-  font-family: var(--font-raleway, 'Raleway'), 'Raleway', var(--font-inter, 'Inter'), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: 'Raleway', var(--font-raleway, 'Raleway'), sans-serif !important;
 }
 
 /* Custom sleek scrollbar */
@@ -64,9 +75,9 @@ body {
 .circuit-grid {
   background-size: 60px 60px;
   background-image:
-    radial-gradient(circle at 10px 10px, rgba(180, 240, 0, 0.1) 1.5px, transparent 0),
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    radial-gradient(circle at 10px 10px, rgba(180, 240, 0, 0.14) 1.5px, transparent 0),
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
 }
 
 /* Subtle ambient glow */
@@ -78,17 +89,82 @@ body {
   );
 }
 
-/* Buttons - Clean, crisp, NO heavy dark shadow blobs */
+/* ========================================================= */
+/* AMBIENT AURORA KEYFRAME ANIMATIONS (GPU Accelerated)       */
+/* ========================================================= */
+@keyframes auroraSlow {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(50px, -40px, 0) scale(1.12);
+  }
+  100% {
+    transform: translate3d(-30px, 20px, 0) scale(0.95);
+  }
+}
+
+@keyframes auroraReverse {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-40px, 50px, 0) scale(1.15);
+  }
+  100% {
+    transform: translate3d(30px, -20px, 0) scale(0.92);
+  }
+}
+
+@keyframes auroraPulse {
+  0%, 100% {
+    opacity: 0.30;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes auroraWave {
+  0%, 100% {
+    transform: translate3d(-50%, 0, 0) scaleX(1);
+    opacity: 0.50;
+  }
+  50% {
+    transform: translate3d(-50%, -25px, 0) scaleX(1.08);
+    opacity: 0.70;
+  }
+}
+
+.animate-aurora-slow {
+  animation: auroraSlow 22s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+.animate-aurora-reverse {
+  animation: auroraReverse 26s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+.animate-aurora-pulse {
+  animation: auroraPulse 16s ease-in-out infinite;
+}
+
+.animate-aurora-wave {
+  animation: auroraWave 18s ease-in-out infinite alternate;
+}
+
+/* Buttons - Clean, crisp, with rich matching ambient drop-shadow like reference pricing cards */
 .btn-neon {
   background-color: #B4F000;
   color: #0A0D14;
-  box-shadow: none;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 25px -4px rgba(180, 240, 0, 0.40), 0 4px 10px -2px rgba(180, 240, 0, 0.20);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-neon:hover {
   background-color: #C2F826;
-  box-shadow: none;
+  box-shadow: 0 14px 30px -4px rgba(180, 240, 0, 0.50), 0 6px 14px -2px rgba(180, 240, 0, 0.25);
   transform: translateY(-1px);
 }
 
@@ -96,40 +172,53 @@ body {
   transform: translateY(0);
 }
 
-/* Glass Panels & Cards - Clean hairline borders, zero muddy drop shadows */
+/* Glass Panels & Cards - High-transparency frosted glass showing circuit grid and background lighting */
 .glass-panel {
-  background: rgba(15, 20, 32, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: none;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(16, 23, 38, 0.22) 0%, rgba(9, 14, 24, 0.28) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.45), inset 0 1px 1px 0 rgba(255, 255, 255, 0.10);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel:hover {
-  border-color: rgba(180, 240, 0, 0.3);
+  border-color: rgba(180, 240, 0, 0.40);
+  background: linear-gradient(180deg, rgba(18, 26, 42, 0.32) 0%, rgba(11, 16, 28, 0.38) 100%);
+  box-shadow: 0 20px 42px -10px rgba(0, 0, 0, 0.6), 0 0 24px -6px rgba(180, 240, 0, 0.15), inset 0 1px 1px 0 rgba(255, 255, 255, 0.16);
 }
 
 .glass-card-interactive {
-  background: rgba(15, 20, 32, 0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: none;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(15, 22, 36, 0.20) 0%, rgba(8, 12, 22, 0.26) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card-interactive:hover {
-  transform: translateY(-2px);
-  border-color: rgba(180, 240, 0, 0.4);
-  box-shadow: none;
+  border-color: rgba(180, 240, 0, 0.45);
+  background: linear-gradient(180deg, rgba(18, 26, 44, 0.32) 0%, rgba(11, 16, 28, 0.38) 100%);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.4), 0 0 24px -6px rgba(180, 240, 0, 0.15), inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
 }
 
-/* Global shadow removal as requested */
-.shadow-2xl,
-.shadow-xl,
-.shadow-lg,
+/* Subtle modern utility shadows */
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+}
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4) !important;
+}
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
+}
 .shadow-md {
-  box-shadow: none !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Dark mode map: inverted cyber look */
@@ -148,15 +237,19 @@ html.light {
 }
 
 html.light,
-html.light body,
+html.light body {
+  background-color: #FAF9F6 !important;
+  color: #12141A !important;
+}
+
 html.light main,
 html.light .min-h-screen {
-  background-color: #F8F9FA !important;
+  background-color: transparent !important;
   color: #12141A !important;
 }
 
 html.light ::-webkit-scrollbar-track {
-  background-color: #F8F9FA;
+  background-color: #FAF9F6;
 }
 
 html.light ::-webkit-scrollbar-thumb {
@@ -173,50 +266,53 @@ html.light iframe {
   opacity: 1 !important;
 }
 
-/* Grids in Light Mode */
+/* Grids in Light Mode: Synchronized with Dark Mode circuit-grid */
 html.light .cyber-grid {
   background-image: 
     linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
 }
 
-html.light .circuit-grid {
+html.light .circuit-grid,
+html.light body.circuit-grid,
+html.light.circuit-grid {
+  background-size: 60px 60px;
   background-image:
-    radial-gradient(circle at 10px 10px, rgba(0, 0, 0, 0.08) 1.5px, transparent 0),
-    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    radial-gradient(circle at 10px 10px, rgba(255, 107, 0, 0.20) 1.5px, transparent 0),
+    linear-gradient(to right, rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.045) 1px, transparent 1px) !important;
 }
 
-/* Neutralize glow in light mode to keep clean light background */
+/* Neutralize ambient glow class in light mode in favor of AmbientBackground component */
 html.light .ambient-glow {
   background: none !important;
 }
 
-/* Button in Light Mode: Crisp Vibrant Brand Orange (no shadow) */
+/* Button in Light Mode: Crisp Vibrant Brand Orange with matching warm orange ambient drop-shadow */
 html.light .btn-neon {
   background-color: #FF6B00 !important;
   color: #FFFFFF !important;
-  box-shadow: none !important;
+  box-shadow: 0 10px 25px -4px rgba(255, 107, 0, 0.38), 0 4px 10px -2px rgba(255, 107, 0, 0.20) !important;
 }
 
 html.light .btn-neon:hover {
   background-color: #E85D00 !important;
-  box-shadow: none !important;
+  box-shadow: 0 14px 30px -4px rgba(255, 107, 0, 0.50), 0 6px 14px -2px rgba(255, 107, 0, 0.25) !important;
   color: #FFFFFF !important;
 }
 
-/* Dark section backgrounds mapped to clean light background */
-html.light [class*="bg-[#0A0D14]"],
-html.light [class*="bg-[#07090E]"],
-html.light [class*="bg-[#080B11]"],
-html.light [class*="bg-[#090C12]"],
-html.light [class*="bg-[#0D121D]"],
-html.light [class*="bg-black"] {
-  background-color: #F8F9FA !important;
+/* Dark section backgrounds mapped to transparent so warm ambient gradients shine through */
+html.light section[class*="bg-[#0A0D14]"],
+html.light section[class*="bg-[#07090E]"],
+html.light section[class*="bg-[#080B11]"],
+html.light section[class*="bg-[#090C12]"],
+html.light section[class*="bg-[#080B10]"],
+html.light section[class*="bg-[#0D121D]"] {
+  background-color: transparent !important;
   background-image: none !important;
 }
 
-/* Card surfaces mapped to pure White in Light Mode */
+/* Card surfaces mapped to elevated translucent white frosted glass with soft ambient backdrop shadow */
 html.light .glass-panel,
 html.light .glass-card-interactive,
 html.light [class*="bg-[#0F1420]"],
@@ -224,31 +320,60 @@ html.light [class*="bg-[#121927]"],
 html.light [class*="bg-[#0B0F17]"],
 html.light [class*="bg-[#0E1218]"],
 html.light [class*="bg-[#121826]"] {
-  background-color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
   background-image: none !important;
-  border-color: #E5E7EB !important;
-  box-shadow: none !important;
+  border-color: rgba(203, 213, 225, 0.45) !important; /* 45% transparent soft ash grey */
+  border-top-color: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04), inset 0 1px 0 #FFFFFF !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-/* Translucent pills / badges in Light Mode */
+html.light .glass-panel:hover,
+html.light .glass-card-interactive:hover {
+  border-color: rgba(148, 163, 184, 0.55) !important; /* 50-55% transparent ash grey on hover */
+  box-shadow: 0 22px 50px -10px rgba(15, 23, 42, 0.12), 0 8px 18px -2px rgba(15, 23, 42, 0.05), inset 0 1px 0 #FFFFFF !important;
+}
+
+/* Translucent pills / badges in Light Mode - 45% Transparent Soft Ash Borders */
 html.light [class*="bg-white/[0.0"] {
-  background-color: #F1F3F5 !important;
-  border-color: #E5E7EB !important;
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(203, 213, 225, 0.45) !important;
 }
 
-/* Borders in Light Mode */
+/* Borders in Light Mode - 40-50% Transparent Architectural Ash */
 html.light [class*="border-white/"],
 html.light [class*="border-white\\["] {
-  border-color: #E5E7EB !important;
+  border-color: rgba(203, 213, 225, 0.45) !important;
 }
 
 html.light .border-2 {
-  border-color: #E5E7EB !important;
+  border-color: rgba(203, 213, 225, 0.45) !important;
 }
 
 /* Typography Hierarchy in Light Mode */
 html.light .text-white {
   color: #12141A !important;
+}
+
+/* Force pure white text on filled brand buttons, badges, and dark button elements in Light Mode */
+.text-white-force,
+.text-white-force *,
+html.light .text-white-force,
+html.light .text-white-force *,
+html.light .btn-neon,
+html.light button.btn-neon,
+html.light a.btn-neon,
+html.light [class*="bg-[#FF6B00]"],
+html.light .bg-[#FF6B00],
+html.light .bg-orange-600,
+html.light a.bg-slate-900,
+html.light button.bg-slate-900,
+html.light a.bg-slate-950,
+html.light button.bg-slate-950,
+html.light [class*="bg-[#18181B]"] {
+  color: #FFFFFF !important;
 }
 
 html.light .text-slate-100,
@@ -290,7 +415,7 @@ html.light [class*="bg-[#B4F000]/"] {
 }
 
 html.light [class*="border-[#B4F000]"] {
-  border-color: rgba(255, 107, 0, 0.4) !important;
+  border-color: rgba(203, 213, 225, 0.50) !important;
 }
 
 /* Selection highlight */
@@ -299,11 +424,13 @@ html.light *::selection {
   color: #FFFFFF !important;
 }
 
-/* Navbar in Light Mode - Crisp white/offwhite, no shadow */
+/* Navbar in Light Mode - High-transparency modern frosted glass */
 html.light nav {
-  background-color: rgba(248, 249, 250, 0.95) !important;
-  border-bottom: 1px solid #E5E7EB !important;
-  box-shadow: none !important;
+  background-color: rgba(250, 249, 246, 0.60) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.70) !important;
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.03) !important;
 }
 
 /* Footer in Light Mode */

@@ -62,7 +62,7 @@ export default function LabSection() {
   };
 
   return (
-    <section id="lab" className="relative py-24 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-[#080B11]">
+    <section id="lab" className="relative py-24 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-[#080B11]/30 backdrop-blur-[2px]">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
@@ -94,7 +94,7 @@ export default function LabSection() {
                 <h3 className="text-lg font-bold text-white">Live Client Systems</h3>
               </div>
               <p className="text-sm text-slate-400 leading-relaxed">
-                We work on deployed commercial projects — from public transit tracking to AI audio isolation models. Every line of code impacts real users.
+                We work on deployed commercial projects, from public transit tracking to AI audio isolation models. Every line of code impacts real users.
               </p>
             </div>
 
@@ -144,7 +144,7 @@ export default function LabSection() {
                 <div className="w-3 h-3 rounded-full bg-green-500/80" />
                 <span className="ml-2 text-xs font-mono text-slate-400 flex items-center gap-1.5">
                   <Terminal className="w-3.5 h-3.5 text-[#B4F000]" />
-                  incode-telemetry-console // v2.6.4
+                  Workspace Terminal
                 </span>
               </div>
 

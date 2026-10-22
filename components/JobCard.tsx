@@ -17,7 +17,7 @@ export interface JobPosition {
   title: string;
   badges: string[];
   track: string;
-  category: "Tech Tracks — CSE / SWE / IT / EEE" | "Non-Tech Tracks — BBA / Any Discipline";
+  category: "Tech Tracks: CSE / SWE / IT / EEE" | "Non-Tech Tracks: BBA / Any Discipline";
   description: string;
   responsibilities: string[];
   requirements: string[];

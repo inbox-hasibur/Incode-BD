@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ThreeCanvas from "@/components/ThreeCanvas";
-import IncodeBotCompanion from "@/components/IncodeBotCompanion";
 import JobCard, { JobPosition } from "@/components/JobCard";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,18 +36,18 @@ import {
 
 const POSITIONS: JobPosition[] = [
   // ==========================================
-  // [Tech Tracks — CSE / SWE / IT / EEE]
+  // [Tech Tracks: CSE / SWE / IT / EEE]
   // ==========================================
   {
     id: "swe-intern",
     title: "Software Engineering & Web Development Intern",
     track: "Tech Tracks (CSE / SWE / IT / EEE)",
-    category: "Tech Tracks — CSE / SWE / IT / EEE",
+    category: "Tech Tracks: CSE / SWE / IT / EEE",
     badges: ["Flexible Tech Stack", "Full-Stack", "REST & WebSockets", "Databases"],
     duration: "3-4 Month Internship",
     schedule: "10 AM - 1 PM Hybrid",
     description:
-      "We believe strong fundamentals transcend any single framework. Whether you code in React, Next.js, Node.js, Python, PHP/Laravel, Flutter, Go, or Java — we welcome developers across all stacks to work on real client projects and scalable software architectures.",
+      "We believe strong fundamentals transcend any single framework. Whether you code in React, Next.js, Node.js, Python, PHP/Laravel, Flutter, Go, or Java, we welcome developers across all stacks to work on real client projects and scalable software architectures.",
     responsibilities: [
       "Develop clean, maintainable software components and REST/WebSocket APIs in your project's chosen stack.",
       "Integrate web and mobile client applications with databases (PostgreSQL, MySQL, MongoDB) and IoT telemetry feeds.",
@@ -67,7 +65,7 @@ const POSITIONS: JobPosition[] = [
     id: "creative-uiux-intern",
     title: "Creative & UI/UX Design Intern",
     track: "Tech Tracks (CSE / SWE / IT / EEE)",
-    category: "Tech Tracks — CSE / SWE / IT / EEE",
+    category: "Tech Tracks: CSE / SWE / IT / EEE",
     badges: ["Figma", "Tailwind CSS", "Visual Craft", "Design System"],
     duration: "3-4 Month Internship",
     schedule: "10 AM - 1 PM Hybrid",
@@ -90,7 +88,7 @@ const POSITIONS: JobPosition[] = [
     id: "iot-embedded-intern",
     title: "IoT & Embedded Systems Intern",
     track: "Tech Tracks (CSE / SWE / IT / EEE)",
-    category: "Tech Tracks — CSE / SWE / IT / EEE",
+    category: "Tech Tracks: CSE / SWE / IT / EEE",
     badges: ["ESP32", "Hardware & Smart Sensors", "PCB Design", "MicroPython"],
     duration: "3-4 Month Internship",
     schedule: "10 AM - 1 PM Hybrid",
@@ -113,7 +111,7 @@ const POSITIONS: JobPosition[] = [
     id: "ai-data-intern",
     title: "AI & Data Engineering Intern",
     track: "Tech Tracks (CSE / SWE / IT / EEE)",
-    category: "Tech Tracks — CSE / SWE / IT / EEE",
+    category: "Tech Tracks: CSE / SWE / IT / EEE",
     badges: ["Pipelines & AI/ML Models", "Python", "Data Engineering", "LLM Integration"],
     duration: "3-4 Month Internship",
     schedule: "10 AM - 1 PM Hybrid",
@@ -134,13 +132,13 @@ const POSITIONS: JobPosition[] = [
   },
 
   // ==========================================
-  // [Non-Tech Tracks — BBA / Any Discipline]
+  // [Non-Tech Tracks: BBA / Any Discipline]
   // ==========================================
   {
     id: "project-manager",
     title: "Project Manager",
     track: "Project Management",
-    category: "Non-Tech Tracks — BBA / Any Discipline",
+    category: "Non-Tech Tracks: BBA / Any Discipline",
     badges: ["Full-Time / Regular", "Agile Sprints", "Client Delivery"],
     duration: "Full-Time / Regular",
     schedule: "Full-Time Schedule",
@@ -164,7 +162,7 @@ const POSITIONS: JobPosition[] = [
     id: "marketing-growth-intern",
     title: "Marketing & Growth Intern",
     track: "Non-Tech Tracks (BBA / Any Discipline)",
-    category: "Non-Tech Tracks — BBA / Any Discipline",
+    category: "Non-Tech Tracks: BBA / Any Discipline",
     badges: ["B2B Deals", "Campus Outreach", "Growth Strategy", "Content & Media"],
     duration: "3-4 Month Internship",
     schedule: "10 AM - 1 PM Hybrid",
@@ -187,7 +185,7 @@ const POSITIONS: JobPosition[] = [
     id: "client-relations-executive",
     title: "Client Relations / Customer Support Executive",
     track: "Non-Tech Tracks (BBA / Any Discipline)",
-    category: "Non-Tech Tracks — BBA / Any Discipline",
+    category: "Non-Tech Tracks: BBA / Any Discipline",
     badges: ["Client Relations", "Customer Support", "CRM", "Communication"],
     duration: "3-4 Month Internship / Fellowship",
     schedule: "10 AM - 1 PM Hybrid",
@@ -210,7 +208,7 @@ const POSITIONS: JobPosition[] = [
     id: "hr-talent-intern",
     title: "HR & Talent Operations Intern",
     track: "Non-Tech Tracks (BBA / Any Discipline)",
-    category: "Non-Tech Tracks — BBA / Any Discipline",
+    category: "Non-Tech Tracks: BBA / Any Discipline",
     badges: ["People Ops", "Talent Acquisition", "Batch Coordination", "Office Ops"],
     duration: "3-4 Month Internship",
     schedule: "10 AM - 1 PM Hybrid",
@@ -260,18 +258,16 @@ export default function CareersPage() {
 
   const filteredPositions = POSITIONS.filter((pos) => {
     if (activeTab === "tech") {
-      return pos.category === "Tech Tracks — CSE / SWE / IT / EEE";
+      return pos.category === "Tech Tracks: CSE / SWE / IT / EEE";
     }
     if (activeTab === "non-tech") {
-      return pos.category === "Non-Tech Tracks — BBA / Any Discipline";
+      return pos.category === "Non-Tech Tracks: BBA / Any Discipline";
     }
     return true;
   });
 
   return (
-    <div className="relative min-h-screen bg-[#0A0D14] text-slate-100 flex flex-col justify-between selection:bg-[#B4F000] selection:text-black">
-      <ThreeCanvas />
-      <IncodeBotCompanion />
+    <div className="relative min-h-screen text-slate-100 flex flex-col justify-between selection:bg-[#B4F000] selection:text-black">
       <Navbar />
 
       <main className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full z-10">
@@ -282,7 +278,7 @@ export default function CareersPage() {
         <div className="text-center max-w-4xl mx-auto pt-6 pb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-[#B4F000] text-xs font-mono mb-6 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-[#FF6B00] dark:bg-[#B4F000] animate-pulse" />
-            <span>INCODE BD // CAREERS &amp; INTERNSHIP FELLOWSHIP</span>
+            <span>Careers &amp; Fellowships</span>
           </div>
 
           <h1 className="font-tagline text-2xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4 leading-tight">
@@ -319,11 +315,11 @@ export default function CareersPage() {
             </div>
           </div>
 
-          {/* Big Critical Notice: BOTH STEPS MANDATORY */}
-          <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-amber-500/10 border-2 border-amber-400/50 flex items-start gap-4">
-            <AlertTriangle className="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" />
+          {/* Big Critical Notice: BOTH STEPS MANDATORY (Brand Theme Aligned) */}
+          <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-[#B4F000]/10 border-2 border-[#B4F000]/40 shadow-[0_0_25px_rgba(180,240,0,0.1)] flex items-start gap-4">
+            <AlertTriangle className="w-6 h-6 text-[#B4F000] flex-shrink-0 mt-0.5" />
             <div className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-              <strong className="text-amber-300 text-sm sm:text-base block font-bold mb-1 uppercase tracking-wide">
+              <strong className="text-[#B4F000] text-sm sm:text-base block font-bold mb-1 uppercase tracking-wide">
                 ⚠️ ATTENTION CANDIDATES: BOTH STEPS ARE STRICTLY MANDATORY!
               </strong>
               <span>
@@ -367,7 +363,7 @@ export default function CareersPage() {
                   </button>
                 </div>
               </div>
-              <p className="text-xs font-mono text-slate-400 bg-black/50 px-3 py-1.5 rounded-lg border border-white/5">
+              <p className="text-xs font-mono text-slate-800 dark:text-slate-300 bg-slate-100 dark:bg-black/50 px-3 py-2 rounded-xl border border-slate-300/80 dark:border-white/10 shadow-sm">
                 Subject format: [Role Name] - [Your University Name / Name]
               </p>
             </div>
@@ -388,7 +384,7 @@ export default function CareersPage() {
                   <ExternalLink className="w-4 h-4 text-[#B4F000]" />
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
-                  The Google form is for <strong>contact details and questionnaires</strong> — recording your academic class schedule, weekly shift availability, and preferred track.
+                  The Google form is for <strong>contact details and questionnaires</strong> to record your academic class schedule, weekly shift availability, and preferred track.
                 </p>
               </div>
               <div className="pt-2">
@@ -475,7 +471,7 @@ export default function CareersPage() {
               <div className="flex items-center gap-3 mb-6 pb-3 border-b border-white/10">
                 <Code2 className="w-5 h-5 text-[#B4F000]" />
                 <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                  [Tech Tracks — CSE / SWE / IT / EEE]
+                  [Tech Tracks: CSE / SWE / IT / EEE]
                 </h3>
                 <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-[#B4F000]/10 text-[#B4F000] border border-[#B4F000]/25">
                   4 Active Tracks
@@ -483,12 +479,12 @@ export default function CareersPage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {POSITIONS.filter((j) => j.category === "Tech Tracks — CSE / SWE / IT / EEE").map(
+                {POSITIONS.filter((j) => j.category === "Tech Tracks: CSE / SWE / IT / EEE").map(
                   (job) => (
                     <JobCard
-                      key={job.id}
-                      job={job}
-                      onApply={() => handleApplyClick(job)}
+                       key={job.id}
+                       job={job}
+                       onApply={() => handleApplyClick(job)}
                     />
                   )
                 )}
@@ -502,7 +498,7 @@ export default function CareersPage() {
               <div className="flex items-center gap-3 mb-6 pb-3 border-b border-white/10">
                 <Users className="w-5 h-5 text-[#B4F000]" />
                 <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                  [Non-Tech Tracks — BBA / Any Discipline]
+                  [Non-Tech Tracks: BBA / Any Discipline]
                 </h3>
                 <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-white/10 text-slate-300 border border-white/15">
                   4 Active Tracks
@@ -510,7 +506,7 @@ export default function CareersPage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {POSITIONS.filter((j) => j.category === "Non-Tech Tracks — BBA / Any Discipline").map(
+                {POSITIONS.filter((j) => j.category === "Non-Tech Tracks: BBA / Any Discipline").map(
                   (job) => (
                     <JobCard
                       key={job.id}
@@ -537,7 +533,7 @@ export default function CareersPage() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute bottom-3 left-3 px-3 py-1 rounded bg-[#0A0D14]/90 border border-white/10 text-xs font-mono text-slate-200">
+              <div className="absolute bottom-3 left-3 px-3.5 py-1.5 rounded-xl bg-white/95 dark:bg-black/90 border border-slate-300/80 dark:border-white/20 text-xs font-mono text-slate-900 dark:text-white shadow-md">
                 Akon Villa Ground Floor Engineering Workspace
               </div>
             </div>
@@ -550,7 +546,7 @@ export default function CareersPage() {
                 A Real, Dedicated Physical Workspace Built for Makers
               </h2>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                No corporate fluff or artificial claims — just an authentic, collaborative environment equipped with dedicated desks, high-speed fiber internet, hardware testing tools, and teammates who genuinely care about building software and hardware that works.
+                No corporate fluff or artificial claims, just an authentic, collaborative environment equipped with dedicated desks, high-speed fiber internet, hardware testing tools, and teammates who genuinely care about building software and hardware that works.
               </p>
               <div className="flex flex-wrap gap-2 text-xs font-mono text-slate-300 pt-1">
                 <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10">
@@ -582,13 +578,13 @@ export default function CareersPage() {
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="max-w-2xl w-full bg-[#0D121D] border-2 border-[#B4F000] rounded-3xl p-6 sm:p-9 shadow-[0_0_80px_rgba(180,240,0,0.3)] text-left relative overflow-hidden max-h-[90vh] overflow-y-auto"
+            className="max-w-2xl w-full bg-white dark:bg-[#0D121D] border-2 border-[#FF6B00] dark:border-[#B4F000] rounded-3xl p-6 sm:p-9 shadow-[0_0_80px_rgba(255,107,0,0.2)] dark:shadow-[0_0_80px_rgba(180,240,0,0.3)] text-left relative overflow-hidden max-h-[90vh] overflow-y-auto text-slate-900 dark:text-white"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-5 right-5 p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition"
+              className="absolute top-5 right-5 p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -596,22 +592,22 @@ export default function CareersPage() {
 
             {/* Header */}
             <div className="mb-4 pr-10">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B4F000]/15 border border-[#B4F000]/30 text-[#B4F000] text-xs font-mono font-bold uppercase mb-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF6B00]/15 dark:bg-[#B4F000]/15 border border-[#FF6B00]/30 dark:border-[#B4F000]/30 text-[#FF6B00] dark:text-[#B4F000] text-xs font-mono font-bold uppercase mb-2">
                 <span>Both Steps are Strictly Mandatory</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-black text-white">
+              <h3 className="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white">
                 Applying for {selectedJob?.title || "Position"}
               </h3>
-              <p className="text-xs font-mono text-slate-400 mt-1">
+              <p className="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">
                 Track: {selectedJob?.track}
               </p>
             </div>
 
-            {/* Big Alert Notice */}
-            <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-amber-500/10 border-2 border-amber-400/50 flex items-start gap-3.5">
-              <AlertTriangle className="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" />
-              <div className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-                <strong className="text-amber-300 block font-bold mb-1 uppercase tracking-wide">
+            {/* Big Alert Notice (Theme Aligned) */}
+            <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-[#FF6B00]/10 dark:bg-[#B4F000]/10 border-2 border-[#FF6B00]/40 dark:border-[#B4F000]/40 shadow-[0_0_20px_rgba(255,107,0,0.1)] dark:shadow-[0_0_20px_rgba(180,240,0,0.1)] flex items-start gap-3.5">
+              <AlertTriangle className="w-6 h-6 text-[#FF6B00] dark:text-[#B4F000] flex-shrink-0 mt-0.5" />
+              <div className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed">
+                <strong className="text-[#FF6B00] dark:text-[#B4F000] block font-bold mb-1 uppercase tracking-wide">
                   ⚠️ BOTH STEPS ARE REQUIRED TO COMPLETE APPLICATION!
                 </strong>
                 <span>
@@ -623,20 +619,20 @@ export default function CareersPage() {
             {/* The 2 Steps */}
             <div className="space-y-4 mb-6">
               {/* Step 1 */}
-              <div className="p-5 rounded-2xl bg-white/[0.03] border-2 border-white/10">
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border-2 border-slate-200 dark:border-white/10">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs sm:text-sm font-mono font-bold text-[#B4F000] uppercase">
+                  <span className="text-xs sm:text-sm font-mono font-bold text-[#FF6B00] dark:text-[#B4F000] uppercase">
                     Step 01 (Mandatory): Email Your Updated CV
                   </span>
-                  <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-[#B4F000]/20 text-[#B4F000] font-mono font-bold">
+                  <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-[#FF6B00]/15 dark:bg-[#B4F000]/20 text-[#FF6B00] dark:text-[#B4F000] font-mono font-bold">
                     Required
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-300 mb-2">
+                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 mb-2">
                   Email your CV, GitHub, or portfolio directly to{" "}
-                  <span className="text-[#B4F000] font-mono font-bold">career@incodebd.com</span>
+                  <span className="text-[#FF6B00] dark:text-[#B4F000] font-mono font-bold">career@incodebd.com</span>
                 </p>
-                <p className="text-xs font-mono text-slate-400 bg-black/60 px-3 py-1 rounded border border-white/5 mb-3">
+                <p className="text-xs font-mono text-slate-800 dark:text-slate-300 bg-slate-100 dark:bg-black/60 px-3 py-1.5 rounded-lg border border-slate-300/80 dark:border-white/5 mb-3">
                   Subject: [{selectedJob?.title || "Role"}] - [Your Name]
                 </p>
                 <div className="flex flex-wrap gap-2.5">
@@ -651,32 +647,32 @@ export default function CareersPage() {
                   </a>
                   <button
                     onClick={handleCopyEmail}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-200 transition"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-xs font-mono text-slate-700 dark:text-slate-200 transition"
                   >
-                    {copiedEmail ? <Check className="w-3.5 h-3.5 text-[#B4F000]" /> : <Copy className="w-3.5 h-3.5 text-[#B4F000]" />}
+                    {copiedEmail ? <Check className="w-3.5 h-3.5 text-[#FF6B00] dark:text-[#B4F000]" /> : <Copy className="w-3.5 h-3.5 text-[#FF6B00] dark:text-[#B4F000]" />}
                     <span>{copiedEmail ? "Copied career@incodebd.com" : "Copy Email Address"}</span>
                   </button>
                 </div>
               </div>
 
               {/* Step 2 */}
-              <div className="p-5 rounded-2xl bg-white/[0.03] border-2 border-white/10">
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border-2 border-slate-200 dark:border-white/10">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs sm:text-sm font-mono font-bold text-slate-200 uppercase">
+                  <span className="text-xs sm:text-sm font-mono font-bold text-slate-800 dark:text-slate-200 uppercase">
                     Step 02 (Mandatory): Submit Contact Details &amp; Questionnaire
                   </span>
-                  <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-white/15 text-slate-200 font-mono font-bold">
+                  <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-slate-200 dark:bg-white/15 text-slate-800 dark:text-slate-200 font-mono font-bold">
                     Required
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-300 mb-3">
+                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 mb-3">
                   {selectedJob?.isFullTime ? (
                     <span>
-                      This form is strictly for your <strong>contact details and questionnaire</strong> — recording your contact info, project delivery background, and availability.
+                      This form is strictly for your <strong>contact details and questionnaire</strong> to record your contact info, project delivery background, and availability.
                     </span>
                   ) : (
                     <span>
-                      This form is strictly for your <strong>contact details and questionnaires</strong> — recording your academic class schedule, weekly shift availability, and preferred track.
+                      This form is strictly for your <strong>contact details and questionnaires</strong> to record your academic class schedule, weekly shift availability, and preferred track.
                     </span>
                   )}
                 </p>

@@ -3,7 +3,7 @@
 import React from "react";
 import {
   MapPin,
-  Phone,
+  MessageSquare,
   Mail,
   Clock,
   ArrowUpRight,
@@ -13,12 +13,12 @@ import {
 } from "lucide-react";
 
 export default function LocationMapSection() {
-  const googleMapSearchUrl = "https://maps.app.goo.gl/jeDY2fVmKujYxibK8";
+  const googleMapSearchUrl = "https://maps.app.goo.gl/5r4h9GWFhw8EzHpL6";
   const embedMapUrl =
-    "https://maps.google.com/maps?q=College+Gate+Tongi+Gazipur&t=&z=15&ie=UTF8&iwloc=&output=embed";
+    "https://maps.google.com/maps?q=Incode+BD,+College+Gate,+Tongi,+Dhaka&t=&z=16&ie=UTF8&iwloc=B&output=embed";
 
   return (
-    <section id="location" className="relative py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-[#090C12]">
+    <section id="location" className="relative py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-[#090C12]/30 backdrop-blur-[2px]">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
@@ -68,11 +68,13 @@ export default function LocationMapSection() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Phone className="w-4 h-4 text-[#B4F000] flex-shrink-0" />
+                  <MessageSquare className="w-4 h-4 text-[#B4F000] flex-shrink-0" />
                   <div>
-                    <strong className="text-white block mb-0.5">Direct Line:</strong>
+                    <strong className="text-white block mb-0.5">WhatsApp (Message Only):</strong>
                     <a
-                      href="tel:+8801581495140"
+                      href="https://wa.me/8801581495140"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="hover:text-[#B4F000] transition font-mono text-xs sm:text-sm"
                     >
                       +880 1581-495140
@@ -128,12 +130,22 @@ export default function LocationMapSection() {
           </div>
 
           {/* Right Bordered Interactive Google Map Container */}
-          <div className="lg:col-span-7 rounded-2xl overflow-hidden border border-white/10 relative min-h-[350px] sm:min-h-[420px] bg-[#0E1218] p-1">
-            <div className="w-full h-full rounded-xl overflow-hidden relative border border-white/10">
-              {/* Map watermark overlay */}
-              <div className="absolute top-3 left-3 z-20 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0A0D14]/90 border border-white/10 text-xs font-mono text-slate-300">
+          <div className="lg:col-span-7 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 relative min-h-[350px] sm:min-h-[420px] bg-slate-100 dark:bg-[#0E1218] p-1">
+            <div className="w-full h-full rounded-xl overflow-hidden relative border border-slate-200 dark:border-white/10">
+              {/* Map watermark badge - Light & Dark Synced */}
+              <div className="absolute top-3 left-3 z-20 flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/95 dark:bg-[#0A0D14]/90 border border-slate-300/80 dark:border-white/10 text-xs font-mono text-slate-900 dark:text-slate-200 shadow-md">
                 <span className="w-2 h-2 rounded-full bg-[#FF6B00] dark:bg-[#B4F000]" />
-                <span>INCODE BD // COLLEGE GATE TONGI</span>
+                <span>College Gate, Tongi, Dhaka</span>
+              </div>
+
+              {/* Explicit Animated Office Pin Marker Overlay - Light & Dark Synced */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none flex flex-col items-center">
+                <div className="px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0A0D14]/95 border-2 border-[#FF6B00] dark:border-[#B4F000] text-xs font-mono font-bold text-slate-900 dark:text-white shadow-[0_0_25px_rgba(255,107,0,0.35)] dark:shadow-[0_0_30px_rgba(180,240,0,0.65)] flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#FF6B00] dark:bg-[#B4F000] animate-ping" />
+                  <span>📍 Incode BD Office: Akon Villa Ground Floor</span>
+                </div>
+                <div className="w-0.5 h-6 bg-[#FF6B00] dark:bg-[#B4F000] shadow-[0_0_10px_rgba(255,107,0,0.5)] dark:shadow-[0_0_10px_#B4F000]" />
+                <div className="w-3.5 h-3.5 rounded-full bg-[#FF6B00] dark:bg-[#B4F000] shadow-[0_0_16px_rgba(255,107,0,0.5)] dark:shadow-[0_0_16px_#B4F000] animate-pulse" />
               </div>
 
               <iframe

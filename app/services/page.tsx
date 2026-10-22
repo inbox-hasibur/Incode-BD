@@ -3,8 +3,6 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ThreeCanvas from "@/components/ThreeCanvas";
-import IncodeBotCompanion from "@/components/IncodeBotCompanion";
 import Link from "next/link";
 import {
   Server,
@@ -19,7 +17,8 @@ import {
   Globe,
   Database,
   Terminal,
-  Code2
+  Code2,
+  MessageSquare
 } from "lucide-react";
 
 export default function ServicesPage() {
@@ -102,9 +101,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#0A0D14] text-slate-100 flex flex-col justify-between selection:bg-[#B4F000] selection:text-black">
-      <ThreeCanvas />
-      <IncodeBotCompanion />
+    <div className="relative min-h-screen text-slate-100 flex flex-col justify-between selection:bg-[#B4F000] selection:text-black">
       <Navbar />
 
       <main className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full z-10">
@@ -138,32 +135,32 @@ export default function ServicesPage() {
                 {/* Left Overview Column */}
                 <div className="lg:col-span-5 space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-[#0F1420] border border-white/10 flex items-center justify-center text-[#B4F000] shadow-lg">
+                    <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-[#0F1420] border border-slate-200 dark:border-white/10 flex items-center justify-center text-[#FF6B00] dark:text-[#B4F000] shadow-md">
                       <IconComponent className="w-6 h-6" />
                     </div>
                     <div>
-                      <span className="text-[11px] font-mono tracking-wider uppercase text-[#B4F000] block">
+                      <span className="text-[11px] font-mono tracking-wider uppercase text-[#FF6B00] dark:text-[#B4F000] block">
                         {svc.badge}
                       </span>
-                      <h2 className="text-xl sm:text-2xl font-bold text-white">
+                      <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
                         {svc.title}
                       </h2>
                     </div>
                   </div>
 
-                  <p className="text-sm text-slate-300 leading-relaxed">
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {svc.summary}
                   </p>
 
                   <div className="pt-2">
-                    <span className="text-[10px] font-mono uppercase text-slate-400 block mb-2">
+                    <span className="text-[10px] font-mono uppercase text-slate-500 dark:text-slate-400 block mb-2">
                       Core Technology Stack:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {svc.techStack.map((tech, tIdx) => (
                         <span
                           key={tIdx}
-                          className="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/5 text-[11px] font-mono text-slate-300"
+                          className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5 text-[11px] font-mono text-slate-700 dark:text-slate-300"
                         >
                           {tech}
                         </span>
@@ -172,21 +169,21 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                {/* Right Offerings Column */}
-                <div className="lg:col-span-7 bg-[#090C12]/80 rounded-xl p-6 border border-white/5 space-y-4">
-                  <h3 className="text-xs font-mono uppercase text-[#B4F000] tracking-wider">
+                {/* Right Offerings Column - Light Mode & Dark Mode Synced */}
+                <div className="lg:col-span-7 bg-slate-50/80 dark:bg-[#090C12]/80 rounded-2xl p-6 border border-slate-200/80 dark:border-white/5 space-y-4">
+                  <h3 className="text-xs font-mono uppercase text-[#FF6B00] dark:text-[#B4F000] tracking-wider">
                     Capabilities Included:
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700 dark:text-slate-300">
                     {svc.offerings.map((item, iIdx) => (
-                      <div key={iIdx} className="flex items-start gap-2.5 p-2.5 rounded-lg border border-white/[0.06] bg-white/[0.02]">
-                        <CheckCircle2 className="w-4 h-4 text-[#B4F000] flex-shrink-0 mt-0.5" />
+                      <div key={iIdx} className="flex items-start gap-2.5 p-2.5 rounded-xl border border-slate-200/90 dark:border-white/[0.06] bg-white/80 dark:bg-white/[0.02] shadow-sm dark:shadow-none">
+                        <CheckCircle2 className="w-4 h-4 text-[#FF6B00] dark:text-[#B4F000] flex-shrink-0 mt-0.5" />
                         <span className="leading-snug">{item}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="pt-3 border-t border-white/5 flex justify-end">
+                  <div className="pt-3 border-t border-slate-200 dark:border-white/5 flex justify-end">
                     <a
                       href={`mailto:contact@incodebd.com?subject=Inquiry: ${svc.title}`}
                       className="btn-neon inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold"
@@ -246,6 +243,50 @@ export default function ServicesPage() {
             </div>
           </div>
         </div>
+
+        {/* High-Conversion Custom Solution CTA Banner */}
+        <section className="relative py-12">
+          <div className="max-w-4xl mx-auto rounded-3xl p-8 sm:p-12 glass-panel border border-[#B4F000]/30 text-center relative overflow-hidden">
+            <span className="text-xs font-mono uppercase text-[#B4F000] tracking-wider block mb-2">
+              Enterprise Consultation &amp; Prototyping
+            </span>
+
+            <h2 className="text-xl sm:text-3xl font-bold text-white tracking-tight mb-3">
+              Need a Custom IoT Hardware or Enterprise Software Solution?
+            </h2>
+
+            <p className="text-xs sm:text-base text-slate-300 max-w-xl mx-auto mb-8 font-normal leading-relaxed">
+              Whether you need customized GPS tracking hardware, intelligent SaaS ERP/HRM, or a high-performance retail POS platform, our Dhaka engineering team is ready to engineer and deploy it.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+              <a
+                href="https://wa.me/8801581495140"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-neon w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full text-sm font-bold"
+              >
+                <MessageSquare className="w-4 h-4" />
+                <span>WhatsApp (Message Only)</span>
+              </a>
+
+              <a
+                href="mailto:contact@incodebd.com?subject=Enterprise Solution Inquiry"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full text-sm font-semibold text-slate-200 bg-white/5 border border-white/10 hover:border-[#B4F000]/40 transition"
+              >
+                <span>Email Our Tech Leads</span>
+                <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+              </a>
+
+              <Link
+                href="/products"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-[#B4F000] bg-white/[0.03] border border-white/10 hover:bg-white/[0.08] transition"
+              >
+                <span>Browse Products</span>
+              </Link>
+            </div>
+          </div>
+        </section>
 
       </main>
 

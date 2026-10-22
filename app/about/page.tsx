@@ -3,13 +3,11 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ThreeCanvas from "@/components/ThreeCanvas";
-import IncodeBotCompanion from "@/components/IncodeBotCompanion";
 import Image from "next/image";
 import Link from "next/link";
 import {
   MapPin,
-  Phone,
+  MessageSquare,
   Mail,
   ShieldCheck,
   CheckCircle2,
@@ -28,14 +26,12 @@ import {
 } from "lucide-react";
 
 export default function AboutPage() {
-  const googleMapUrl = "https://maps.app.goo.gl/jeDY2fVmKujYxibK8";
+  const googleMapUrl = "https://www.google.com/maps/search/?api=1&query=Incode+BD";
   const embedMapUrl =
     "https://maps.google.com/maps?q=College+Gate+Tongi+Gazipur&t=&z=15&ie=UTF8&iwloc=&output=embed";
 
   return (
-    <div className="relative min-h-screen bg-[#0A0D14] text-slate-100 flex flex-col justify-between selection:bg-[#B4F000] selection:text-black">
-      <ThreeCanvas />
-      <IncodeBotCompanion />
+    <div className="relative min-h-screen text-slate-100 flex flex-col justify-between selection:bg-[#B4F000] selection:text-black">
       <Navbar />
 
       <main className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full z-10">
@@ -46,7 +42,7 @@ export default function AboutPage() {
         <div className="text-center max-w-4xl mx-auto pt-6 pb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono text-[#B4F000] mb-5 backdrop-blur-md">
             <Building2 className="w-3.5 h-3.5" />
-            <span>ABOUT INCODE BD // TECHNOLOGY STARTUP</span>
+            <span>About Incode BD</span>
           </div>
 
           <h1 className="font-tagline text-2xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-5 leading-tight">
@@ -58,7 +54,7 @@ export default function AboutPage() {
 
           <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/10 text-left max-w-3xl mx-auto mt-6">
             <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal mb-3">
-              <strong className="text-white font-semibold">Incode BD</strong> is a modern technology startup located in College Gate (Tongi), Dhaka. Our core vision and philosophy is: <span className="text-[#B4F000] font-medium">&ldquo;Solving Business Problems with Hardware, Software, and Aesthetics.&rdquo;</span> We engineer smart, effective business solutions by combining embedded hardware (IoT) and scalable software (SaaS) with award-grade modern digital design.
+              <strong className="text-white font-semibold">Incode BD</strong> is a modern technology startup located in College Gate (Tongi), Dhaka. Our core vision and philosophy is: <span className="text-[#B4F000] font-medium">Solving Business Problems with Hardware, Software, and Aesthetics.</span> We engineer smart, effective business solutions by combining embedded hardware (IoT) and scalable software (SaaS) with award-grade modern digital design.
             </p>
             <div className="flex items-center gap-2 text-xs font-mono text-slate-400 pt-2 border-t border-white/5">
               <MapPin className="w-3.5 h-3.5 text-[#B4F000]" />
@@ -93,7 +89,7 @@ export default function AboutPage() {
                     <Server className="w-6 h-6" />
                   </div>
                   <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300">
-                    STREAM 01 // CLIENT
+                    Client Solutions
                   </span>
                 </div>
 
@@ -144,7 +140,7 @@ export default function AboutPage() {
                     <Cpu className="w-6 h-6" />
                   </div>
                   <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300">
-                    STREAM 02 // PROPRIETARY
+                    Proprietary Products
                   </span>
                 </div>
 
@@ -225,8 +221,8 @@ export default function AboutPage() {
         {/* ========================================================= */}
         {/* Featured Office Interior Showcase (User Photo)            */}
         {/* ========================================================= */}
-        <div className="mb-20 rounded-2xl p-1 bg-gradient-to-b from-white/15 via-white/5 to-transparent border border-white/10 shadow-2xl">
-          <div className="bg-[#0B0F17] rounded-xl overflow-hidden border border-white/[0.06]">
+        <div className="mb-20 rounded-2xl p-1 bg-gradient-to-b from-white/15 via-white/5 to-transparent border border-slate-200/80 dark:border-white/10 shadow-2xl">
+          <div className="bg-slate-50/90 dark:bg-[#0B0F17] rounded-xl overflow-hidden border border-slate-200 dark:border-white/[0.06]">
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10">
               
@@ -237,13 +233,13 @@ export default function AboutPage() {
                   alt="Incode BD Physical Engineering Workspace & Meeting Room"
                   fill
                   priority
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D14]/80 via-transparent to-transparent opacity-60" />
                 
-                <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0A0D14]/90 border border-white/10 backdrop-blur-md text-xs font-mono text-slate-200">
+                <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/95 dark:bg-black/90 text-slate-900 dark:text-white border border-slate-300/80 dark:border-white/20 backdrop-blur-md text-xs font-mono shadow-md">
                   <span className="w-2 h-2 rounded-full bg-[#FF6B00] dark:bg-[#B4F000]" />
-                  <span>Akon Villa Ground Floor Engineering Workspace</span>
+                  <span className="font-medium">Akon Villa Ground Floor Engineering Workspace</span>
                 </div>
               </div>
 
@@ -349,9 +345,15 @@ export default function AboutPage() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <Phone className="w-4 h-4 text-[#B4F000] flex-shrink-0" />
-                  <a href="tel:+8801581495140" className="hover:text-white font-mono">
-                    +880 1581-495140
+                  <MessageSquare className="w-4 h-4 text-[#B4F000] flex-shrink-0" />
+                  <a
+                    href="https://wa.me/8801581495140"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white font-mono"
+                    title="WhatsApp Message Only"
+                  >
+                    WhatsApp: +880 1581-495140 (Message Only)
                   </a>
                 </div>
                 <div className="flex items-center gap-2.5">

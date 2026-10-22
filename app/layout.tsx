@@ -3,6 +3,9 @@ import { Inter, Raleway } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/ThemeProvider";
+import AmbientBackground from "@/components/AmbientBackground";
+import TubesCursorBackground from "@/components/TubesCursorBackground";
+import CookieSettings from "@/components/CookieSettings";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +23,7 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Incode BD — Solving Business Problems with Hardware, Software, and Aesthetics",
+  title: "Incode BD | Solving Business Problems with Hardware, Software, and Aesthetics",
   description:
     "Official launchpad for Incode BD. Solving business problems with hardware, software, and aesthetics. Dhaka, Bangladesh.",
   keywords: [
@@ -60,7 +63,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Incode BD — Hardware, Software, & Aesthetics",
+    title: "Incode BD | Hardware, Software, & Aesthetics",
     description:
       "Solving Business Problems with Hardware, Software, and Aesthetics. Official Launching This October | Dhaka.",
     url: "https://www.incodebd.com",
@@ -159,7 +162,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Raleway:ital,wght@0,100..900;1,100..900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
         />
         <script
@@ -181,8 +184,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${raleway.variable} ${inter.variable} font-sans antialiased transition-colors duration-300`}>
+      <body className={`${raleway.variable} ${inter.variable} font-sans antialiased circuit-grid transition-colors duration-300`}>
         <ThemeProvider>
+          <AmbientBackground />
+          <TubesCursorBackground />
+          <CookieSettings />
           {children}
         </ThemeProvider>
       </body>

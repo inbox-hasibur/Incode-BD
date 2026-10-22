@@ -1,6 +1,6 @@
-# Incode BD — Coming Soon & Launchpad
+# Incode BD | Launchpad & Web Platform
 
-Official launchpad web application for **Incode BD** — *"Solving Business Problems with Hardware, Software, and Aesthetics."*
+Official web application for **Incode BD** | *"Solving Business Problems with Hardware, Software, and Aesthetics."*
 
 ## 🚀 Overview
 
