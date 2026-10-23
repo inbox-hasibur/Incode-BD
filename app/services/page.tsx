@@ -36,7 +36,7 @@ export default function ServicesPage() {
         "Role-based granular access control (RBAC) with complete audit logging",
         "Direct synchronization with hardware barcode scanners and IoT telemetry",
       ],
-      techStack: ["Next.js App Router", "PostgreSQL", "Supabase", "Docker"],
+      techStack: ["Flexible Stack", "Latest Frameworks", "Cloud-Native", "Best-Fit Architecture"],
     },
     {
       id: "crm-hrm",
@@ -51,7 +51,7 @@ export default function ServicesPage() {
         "Multi-stage sales pipeline tracking with automated client email and SMS follow-ups",
         "Performance review analytics, leave approval workflows, and document vaults",
       ],
-      techStack: ["React / TypeScript", "Node.js", "Redis", "REST / GraphQL"],
+      techStack: ["Flexible Stack", "Best-Fit Architecture", "Latest Technologies"],
     },
     {
       id: "isp-management",
@@ -66,7 +66,7 @@ export default function ServicesPage() {
         "Automated client disconnection on bill expiry and instant reactivation on payment",
         "Fiber network outage mapping and automated customer support ticketing",
       ],
-      techStack: ["MikroTik RouterOS API", "FreeRADIUS", "PostgreSQL", "Next.js"],
+      techStack: ["Flexible Stack", "Best-Fit Architecture", "Latest Technologies"],
     },
     {
       id: "bespoke-web",
@@ -81,7 +81,7 @@ export default function ServicesPage() {
         "Custom CMS architectures, headless blogging, and technical SEO structure",
         "Interactive 3D WebGL canvases and dynamic data visualization viewports",
       ],
-      techStack: ["Next.js 14", "Tailwind CSS", "Three.js", "Framer Motion"],
+      techStack: ["Flexible Stack", "Best-Fit Architecture", "Latest Technologies"],
     },
     {
       id: "hardware-prototyping",
@@ -96,7 +96,7 @@ export default function ServicesPage() {
         "Firmware development for wireless sensor nodes (Wi-Fi, BLE, LoRa, cellular)",
         "End-to-end hardware-to-cloud telemetry infrastructure and remote OTA updates",
       ],
-      techStack: ["ESP-IDF / C++", "KiCad", "MQTT", "WebSockets"],
+      techStack: ["Flexible Stack", "Best-Fit Architecture", "Latest Technologies"],
     },
   ];
 
@@ -154,7 +154,7 @@ export default function ServicesPage() {
 
                   <div className="pt-2">
                     <span className="text-[10px] font-mono uppercase text-slate-500 dark:text-slate-400 block mb-2">
-                      Core Technology Stack:
+                      Technologies — Chosen per Project:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {svc.techStack.map((tech, tIdx) => (

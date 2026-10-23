@@ -13,9 +13,9 @@ import {
 } from "lucide-react";
 
 export default function LocationMapSection() {
-  const googleMapSearchUrl = "https://maps.app.goo.gl/5r4h9GWFhw8EzHpL6";
+  const googleMapSearchUrl = "https://maps.app.goo.gl/Cp9kd2viABBDQNhH8";
   const embedMapUrl =
-    "https://maps.google.com/maps?q=Incode+BD,+College+Gate,+Tongi,+Dhaka&t=&z=16&ie=UTF8&iwloc=B&output=embed";
+    "https://maps.google.com/maps?q=Incode+BD,+Akon+Villa,+College+Gate,+Tongi,+Gazipur&t=&z=17&ie=UTF8&iwloc=B&output=embed";
 
   return (
     <section id="location" className="relative py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-[#090C12]/30 backdrop-blur-[2px]">

@@ -26,9 +26,9 @@ import {
 } from "lucide-react";
 
 export default function AboutPage() {
-  const googleMapUrl = "https://www.google.com/maps/search/?api=1&query=Incode+BD";
+  const googleMapUrl = "https://maps.app.goo.gl/Cp9kd2viABBDQNhH8";
   const embedMapUrl =
-    "https://maps.google.com/maps?q=College+Gate+Tongi+Gazipur&t=&z=15&ie=UTF8&iwloc=&output=embed";
+    "https://maps.google.com/maps?q=Incode+BD,+Akon+Villa,+College+Gate,+Tongi,+Gazipur&t=&z=17&ie=UTF8&iwloc=B&output=embed";
 
   return (
     <div className="relative min-h-screen text-slate-100 flex flex-col justify-between selection:bg-[#B4F000] selection:text-black">

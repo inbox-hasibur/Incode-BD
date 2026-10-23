@@ -190,14 +190,14 @@ export default function HeroPillarsAccordion() {
                     <div className="pt-2">
                       <Link
                         href={pillar.href}
-                        className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ease-in-out text-white-force ${
+                        className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ease-in-out ${
                           isLight
                             ? "bg-[#18181B] text-white hover:bg-black shadow-[0_10px_25px_-4px_rgba(0,0,0,0.40),0_4px_10px_-2px_rgba(0,0,0,0.20)] hover:shadow-[0_14px_30px_-4px_rgba(0,0,0,0.50)]"
-                            : "bg-[#B4F000] text-black hover:bg-[#C2F826] shadow-[0_10px_25px_-4px_rgba(180,240,0,0.45),0_4px_10px_-2px_rgba(180,240,0,0.25)]"
+                            : "bg-[#B4F000] text-[#0A0D14] hover:bg-[#C2F826] shadow-[0_10px_25px_-4px_rgba(180,240,0,0.45),0_4px_10px_-2px_rgba(180,240,0,0.25)]"
                         }`}
                       >
-                        <span className="text-white-force font-bold tracking-wide">{pillar.cta}</span>
-                        <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5] text-white-force" />
+                        <span className={`font-bold tracking-wide ${isLight ? "text-white" : "text-[#0A0D14]"}`}>{pillar.cta}</span>
+                        <ArrowUpRight className={`w-3.5 h-3.5 stroke-[2.5] ${isLight ? "text-white" : "text-[#0A0D14]"}`} />
                       </Link>
                     </div>
                   </div>

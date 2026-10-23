@@ -232,7 +232,7 @@ const POSITIONS: JobPosition[] = [
 export default function CareersPage() {
   const formUrl =
     process.env.NEXT_PUBLIC_INTERNSHIP_FORM_URL ||
-    "https://forms.gle/dE1ivECwFbrzrLHf6";
+    "https://forms.gle/jar4AikSZNRMiNac8";
 
   const [activeTab, setActiveTab] = useState<"all" | "tech" | "non-tech">("all");
   const [selectedJob, setSelectedJob] = useState<JobPosition | null>(null);
@@ -323,7 +323,7 @@ export default function CareersPage() {
                 ⚠️ ATTENTION CANDIDATES: BOTH STEPS ARE STRICTLY MANDATORY!
               </strong>
               <span>
-                You <strong>MUST</strong> complete <strong>BOTH</strong> steps below. Do <strong>NOT</strong> only submit the form or only send an email. The Google Form is solely for <strong>contact details and questionnaires</strong> (class schedule &amp; background), while your formal application is reviewed from your <strong>emailed CV</strong>. Missing either step will result in an incomplete application!
+                You <strong>MUST</strong> complete <strong>BOTH</strong> steps below. Do <strong>NOT</strong> only submit the form or only send an email. The Google Form is solely for <strong>IncodeBD Onboarding Screening Form</strong> (class schedule &amp; background), while your formal application is reviewed from your <strong>emailed CV</strong>. Missing either step will result in an incomplete application!
               </span>
             </div>
           </div>
@@ -380,11 +380,11 @@ export default function CareersPage() {
                   </span>
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-white mb-2 flex items-center gap-2">
-                  <span>Submit Contact Details &amp; Questionnaire</span>
+                  <span>IncodeBD Onboarding Screening Form</span>
                   <ExternalLink className="w-4 h-4 text-[#B4F000]" />
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
-                  The Google form is for <strong>contact details and questionnaires</strong> to record your academic class schedule, weekly shift availability, and preferred track.
+                  The Google form is for <strong>IncodeBD Onboarding Screening Form</strong> to record your academic class schedule, weekly shift availability, and preferred track.
                 </p>
               </div>
               <div className="pt-2">
@@ -394,7 +394,7 @@ export default function CareersPage() {
                   rel="noopener noreferrer"
                   className="btn-neon w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold"
                 >
-                  <span>Open Contact Details &amp; Questionnaire Form</span>
+                  <span>IncodeBD Onboarding Screening Form</span>
                   <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
                 </a>
               </div>
@@ -659,7 +659,7 @@ export default function CareersPage() {
               <div className="p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border-2 border-slate-200 dark:border-white/10">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs sm:text-sm font-mono font-bold text-slate-800 dark:text-slate-200 uppercase">
-                    Step 02 (Mandatory): Submit Contact Details &amp; Questionnaire
+                    Step 02 (Mandatory): Submit IncodeBD Onboarding Screening Form
                   </span>
                   <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-slate-200 dark:bg-white/15 text-slate-800 dark:text-slate-200 font-mono font-bold">
                     Required
@@ -668,11 +668,11 @@ export default function CareersPage() {
                 <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 mb-3">
                   {selectedJob?.isFullTime ? (
                     <span>
-                      This form is strictly for your <strong>contact details and questionnaire</strong> to record your contact info, project delivery background, and availability.
+                      This form is strictly for your <strong>IncodeBD Onboarding Screening Form</strong> to record your contact info, project delivery background, and availability.
                     </span>
                   ) : (
                     <span>
-                      This form is strictly for your <strong>contact details and questionnaires</strong> to record your academic class schedule, weekly shift availability, and preferred track.
+                      This form is strictly for your <strong>IncodeBD Onboarding Screening Form</strong> to record your academic class schedule, weekly shift availability, and preferred track.
                     </span>
                   )}
                 </p>
@@ -682,7 +682,7 @@ export default function CareersPage() {
                   rel="noopener noreferrer"
                   className="btn-neon inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold"
                 >
-                  <span>Open Contact Details &amp; Questionnaire Form</span>
+                  <span>IncodeBD Onboarding Screening Form</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
               </div>
