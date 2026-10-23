@@ -423,7 +423,7 @@ export default function CareersPage() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <span className="text-xs font-mono uppercase text-[#B4F000] tracking-wider block mb-1">
-                📌 Open Tracks
+                Open Tracks
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
                 Select Your Role &amp; Apply

@@ -415,7 +415,7 @@ export default function Navbar() {
                               </span>
                             )}
                           </div>
-                          <h5 className="text-sm font-bold text-white group-hover:text-[#B4F000] transition-colors duration-200">
+                          <h5 className={`text-sm font-bold ${isLight ? "text-[#FF6B00]" : "text-white"} group-hover:text-[#B4F000] transition-colors duration-200`}>
                             {item.title}
                           </h5>
                           <p className="text-xs text-slate-400 line-clamp-2 mt-1 leading-relaxed">

@@ -9,7 +9,6 @@ import {
   MapPin,
   MessageSquare,
   Mail,
-  ShieldCheck,
   CheckCircle2,
   Users,
   Cpu,
@@ -17,7 +16,6 @@ import {
   ArrowUpRight,
   Sparkles,
   Building2,
-  HeartHandshake,
   Server,
   Radio,
   ExternalLink,
@@ -289,40 +287,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* ========================================================= */}
-        {/* Company Principles Grid                                   */}
-        {/* ========================================================= */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-          <div className="glass-panel p-7 rounded-2xl border border-white/10">
-            <div className="w-10 h-10 rounded-xl bg-[#B4F000]/10 border border-[#B4F000]/30 text-[#B4F000] flex items-center justify-center mb-4">
-              <Cpu className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-bold text-white mb-2">Integrated Silicon &amp; Web</h3>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              We bridge software with actual physical microcontrollers. We believe real engineering happens when digital algorithms control physical hardware.
-            </p>
-          </div>
 
-          <div className="glass-panel p-7 rounded-2xl border border-white/10">
-            <div className="w-10 h-10 rounded-xl bg-[#B4F000]/10 border border-[#B4F000]/30 text-[#B4F000] flex items-center justify-center mb-4">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-bold text-white mb-2">Zero-Blandness Standard</h3>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Every digital interface we author adheres to award-level visual hierarchy, typography, and micro-interactions. Functionality must look and feel exceptional.
-            </p>
-          </div>
-
-          <div className="glass-panel p-7 rounded-2xl border border-white/10">
-            <div className="w-10 h-10 rounded-xl bg-[#B4F000]/10 border border-[#B4F000]/30 text-[#B4F000] flex items-center justify-center mb-4">
-              <HeartHandshake className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-bold text-white mb-2">Mentorship &amp; Growth</h3>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              We invest heavily in university CSE/EEE talent through our Fellowship batches, providing mock defense training, practicum verification, and real client projects.
-            </p>
-          </div>
-        </div>
 
         {/* ========================================================= */}
         {/* Physical Location & Map Box                               */}
