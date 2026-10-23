@@ -248,7 +248,7 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <span className="font-logo text-xl sm:text-[1.35rem] tracking-tight text-white flex items-center gap-1.5 select-none">
+            <span className={`font-logo text-xl sm:text-[1.35rem] tracking-tight ${isLight ? "text-slate-900" : "text-white"} flex items-center gap-1.5 select-none`}>
               Incode <span className={isLight ? "text-[#FF6B00]" : "text-[#B4F000]"}>BD</span>
             </span>
           </Link>
@@ -273,8 +273,8 @@ export default function Navbar() {
                     className={`inline-flex items-center gap-1 px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ease-in-out ${
                       isActive || isHovered
                         ? isLight
-                          ? "text-[#FF6B00] bg-[#FF6B00]/10"
-                          : "text-[#B4F000] bg-[#B4F000]/10"
+                          ? "!text-[#FF6B00] bg-[#FF6B00]/10 font-bold"
+                          : "!text-[#B4F000] bg-[#B4F000]/10 font-bold"
                         : isLight
                           ? "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
                           : "text-slate-300 hover:text-white hover:bg-white/[0.04]"
@@ -311,7 +311,9 @@ export default function Navbar() {
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-white/5 border border-slate-300/40 dark:border-white/10 text-slate-200 hover:text-white focus:outline-none transition-colors duration-200"
+              className={`p-2 rounded-xl bg-white/5 border border-slate-300/40 dark:border-white/10 ${
+                isLight ? "text-slate-700 hover:text-slate-950" : "text-slate-200 hover:text-white"
+              } focus:outline-none transition-colors duration-200`}
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? (
@@ -356,7 +358,7 @@ export default function Navbar() {
                 {/* Board Top Header */}
                 <div className="flex items-center justify-between border-b pb-4 border-slate-200/60 dark:border-white/10">
                   <div>
-                    <h4 className="font-raleway text-lg font-bold text-white tracking-tight">
+                    <h4 className={`font-raleway text-lg font-bold ${isLight ? "text-slate-900" : "text-white"} tracking-tight`}>
                       {subcategoryData[activeTab].title}
                     </h4>
                     <p className="text-xs text-slate-400 mt-0.5">
@@ -366,7 +368,9 @@ export default function Navbar() {
                   <Link
                     href={subcategoryData[activeTab].footerLink.href}
                     onClick={() => setActiveTab(null)}
-                    className="group inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#B4F000] dark:text-[#B4F000] hover:underline"
+                    className={`group inline-flex items-center gap-1.5 text-xs font-mono font-bold ${
+                      isLight ? "text-[#FF6B00] hover:text-[#e05e00]" : "text-[#B4F000] dark:text-[#B4F000]"
+                    } hover:underline`}
                   >
                     <span>{subcategoryData[activeTab].footerLink.text}</span>
                     <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5] transition-transform duration-300 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -423,7 +427,9 @@ export default function Navbar() {
                           </p>
                         </div>
 
-                        <div className="mt-4 pt-3 border-t border-slate-100 dark:border-white/5 flex items-center justify-between text-[11px] font-medium text-slate-400 group-hover:text-white transition-colors duration-200">
+                        <div className={`mt-4 pt-3 border-t border-slate-100 dark:border-white/5 flex items-center justify-between text-[11px] font-medium text-slate-400 ${
+                          isLight ? "group-hover:text-slate-900" : "group-hover:text-white"
+                        } transition-colors duration-200`}>
                           <span>View on page</span>
                           <ArrowUpRight className="w-3.5 h-3.5 stroke-[2] opacity-70 group-hover:opacity-100 transition-opacity" />
                         </div>
@@ -462,8 +468,8 @@ export default function Navbar() {
                   className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ease-in-out ${
                     isActive
                       ? isLight
-                        ? "text-[#FF6B00] bg-[#FF6B00]/10"
-                        : "text-[#B4F000] bg-[#B4F000]/10"
+                        ? "!text-[#FF6B00] bg-[#FF6B00]/10 font-bold"
+                        : "!text-[#B4F000] bg-[#B4F000]/10 font-bold"
                       : isLight
                         ? "text-slate-700 hover:bg-slate-100"
                         : "text-slate-300 hover:text-white hover:bg-white/5"

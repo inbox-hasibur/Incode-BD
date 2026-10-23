@@ -365,15 +365,20 @@ html.light .text-white-force *,
 html.light .btn-neon,
 html.light button.btn-neon,
 html.light a.btn-neon,
-html.light [class*="bg-[#FF6B00]"],
-html.light .bg-[#FF6B00],
+html.light .bg-\[\#FF6B00\],
 html.light .bg-orange-600,
 html.light a.bg-slate-900,
 html.light button.bg-slate-900,
 html.light a.bg-slate-950,
 html.light button.bg-slate-950,
-html.light [class*="bg-[#18181B]"] {
+html.light [class*="bg-[#18181B]"],
+html.light [class*="bg-[#18181B]"] * {
   color: #FFFFFF !important;
+}
+
+/* Ensure translucent orange badges and active links stay crisp orange in Light Mode */
+html.light [class*="bg-[#FF6B00]/"] {
+  color: #FF6B00 !important;
 }
 
 html.light .text-slate-100,
